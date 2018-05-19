@@ -1,0 +1,244 @@
+@import "color";
+@import "override";
+@import "common";
+
+html {
+  height: 100%;
+  display: flex;
+  font-family: sans-serif;
+  body {
+    flex: 1;
+    margin: 0;
+    display: flex;
+    font-size: 28px;
+    overflow: auto;
+    font-family: 'arial';
+    #app {
+      flex: 1;
+      display: flex;
+      overflow: auto;
+      color: #555;
+    }
+  }
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+strong {
+  font-weight: normal;
+}
+em {
+  font-style: normal;
+}
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+.rt-clear-float {
+  zoom: 1;
+}
+.rt-clear-float:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+// 顶部错误提示
+#error-notice {
+  height: auto;
+  z-index: 999999;
+  background-color: #fffada;
+  position: absolute;
+  width: 100%;
+  & > div {
+    height: 80px;
+    line-height: 80px;
+    color: #f86e21;
+    font-size: 32px;
+    flex: 1;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: auto 30px;
+  }
+}
+
+#app {
+  @placeholderFontSize: 28px;
+  // 修改 placeholder 样式
+  input[placeholder], [placeholder], *[placeholder] {
+    color: @color-placeholder;
+    font-size: @placeholderFontSize;
+  }
+  input::-webkit-input-placeholder { /* WebKit browsers */
+    color: @color-placeholder;
+    font-size: @placeholderFontSize;
+  }
+  input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: @color-placeholder;
+    font-size: @placeholderFontSize;
+  }
+  input:moz-placeholder { /* Mozilla Firefox 19+ */
+    color: @color-placeholder;
+    font-size: @placeholderFontSize;
+  }
+  input::-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: @color-placeholder;
+    font-size: @placeholderFontSize;
+  }
+}
+#app .rt-new-goodsandnum {
+  @placeholderFontSize: 40px;
+  // 修改 placeholder 样式
+  input[placeholder], [placeholder], *[placeholder] {
+    color: #343233;
+    font-size: @placeholderFontSize;
+  }
+  input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #343233;
+    font-size: @placeholderFontSize;
+  }
+  input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #343233;
+    font-size: @placeholderFontSize;
+  }
+  input:moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #343233;
+    font-size: @placeholderFontSize;
+  }
+  input::-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #343233;
+    font-size: @placeholderFontSize;
+  }
+}
+#app  .am-search-input {
+  @placeholderFontSize: 24px;
+  // 修改 placeholder 样式
+  input[placeholder], [placeholder], *[placeholder] {
+    color: #bbb;
+    font-size: @placeholderFontSize;
+  }
+  input::-webkit-input-placeholder { /* WebKit browsers */
+    color: #bbb;
+    font-size: @placeholderFontSize;
+  }
+  input::-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #bbb;
+    font-size: @placeholderFontSize;
+  }
+  input:moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #bbb;
+    font-size: @placeholderFontSize;
+  }
+  input::-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #bbb;
+    font-size: @placeholderFontSize;
+  }
+}
+.rt-app-container {
+  flex: 1;
+  display: flex;
+  overflow: auto;
+  & > div {
+    flex: 1;
+    background-color: @color-background;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.rt-notice-bar {
+  background-color: #6F7072;
+  height: 80px;
+  line-height: 80px;
+  color: #fff;
+  font-size: 24px;
+  .-notice_change {
+    display: inline-block;
+    padding: 2px 12px;
+    border: 2px solid #FFFFFF;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 8px;
+    margin-left: 12px;
+  }
+}
+
+.am-modal-wrap {
+  background: rgba(0,0,0,.6);
+  .am-modal.am-modal-transparent {
+    width: 90%!important;
+    .am-modal-content{
+      padding-top: 0;
+      top: -100px;
+      border-radius: 0;
+      .am-modal-header{
+        padding-top: 32px;
+        padding-bottom: 32px;
+        background: #9DBE19;
+        .am-modal-title{
+          color:#fff;
+        }
+      }
+     .am-modal-body{
+       color: #3E3E3E;
+     } 
+      .am-modal-header{
+        .am-modal-title{
+          text-align: center;
+        }
+      }
+      .am-modal-body{
+        text-align: center;
+        .alert-tip{
+          p{
+            text-align: center;
+          }
+        }
+      }
+      .am-modal-footer{
+        padding-bottom:0;
+         .am-modal-button-group-h {
+           justify-content: space-between;
+           
+           padding: 0;
+           &>:first-child{
+            border-top: 2px solid #F6F6F6;
+           }
+            .am-modal-button {
+              width: 50%;
+              height: 80px;
+              line-height: 80px;
+              margin-left: 0!important;
+              padding: 0 0 0 0 ;
+              border-bottom: 6px solid #E5E5E5;
+              &:last-child {
+                background: #9DBE19;
+                color: #fff;
+                border-color: #8dab16;
+              }
+            }
+        }
+      }
+     
+    }
+  }
+}
+
+.am-modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+@import '../../components/trade/style';
+@import '../../components/user/style';
+@import '../../components/position/style';
+@import '../../components/finance/style';
+@import '../../components/chat/style';

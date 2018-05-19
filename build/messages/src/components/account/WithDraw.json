@@ -1,0 +1,14 @@
+[
+  {
+    "id": "placeholder",
+    "defaultMessage": "请输入"
+  },
+  {
+    "id": "extra",
+    "defaultMessage": "请选择银行卡"
+  },
+  {
+    "id": "yuan",
+    "defaultMessage": "元"
+  }
+]

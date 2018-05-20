@@ -36,6 +36,9 @@ import {
 } from 'component/account'
 import { ChatPage } from 'component/chat'
 
+
+
+
 import 'appRoot/statics/less/app.less'
 
 const routes = (

@@ -36,7 +36,12 @@ import {
 } from 'component/account'
 import { ChatPage } from 'component/chat'
 
+<<<<<<< HEAD
 import { Attention, DealDetail, Fans } from 'component/personal/society'
+=======
+import PersonalIndex from 'component/personal/index'
+
+>>>>>>> 10656d2dcc79771ab43f1eea3b8ef5a846553e53
 
 import 'appRoot/statics/less/app.less'
 
@@ -68,6 +73,7 @@ const routes = (
     <Route path="/personal/attention" component={Attention} />
     <Route path="/personal/dealdetail" component={DealDetail} />
     <Route path="/personal/fans" component={Fans} />
+    <Route path="/personal" component={PersonalIndex} />
   </Route>
 )
 

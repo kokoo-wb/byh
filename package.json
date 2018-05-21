@@ -51,6 +51,7 @@
     "classnames": "^2.2.5",
     "cos-js-sdk-v4": "^1.1.2",
     "crypto-js": "^3.1.6",
+    "echarts": "^4.1.0",
     "fetch-jsonp": "^1.0.5",
     "html-webpack-plugin": "^2.26.0",
     "lodash": "^4.17.4",

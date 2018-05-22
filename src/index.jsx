@@ -35,7 +35,7 @@ import {
   ClientAgreement
 } from 'component/account'
 import { ChatPage } from 'component/chat'
-
+import { Attention, DealDetail, Fans } from 'component/personal/society'
 import PersonalIndex from 'component/personal/index'
 
 import {
@@ -69,6 +69,9 @@ const routes = (
     <Route path="/notice/detail" component={NoticeDetail} />
     <Route path="/finance" component={FinancePage} />
     <Route path="/chat" component={ChatPage} />
+    <Route path="/personal/attention" component={Attention} />
+    <Route path="/personal/dealdetail" component={DealDetail} />
+    <Route path="/personal/fans" component={Fans} />
     <Route path="/personal" component={PersonalIndex} />
     <Route path="/helpcenter" component={HelpCenter} />
   </Route>

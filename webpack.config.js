@@ -58,7 +58,7 @@ module.exports = {
     loaders: [
       {
         test: /\.less$/,
-        loader: 'style-loader!css-loader!postcss-loader?parser=postcss-less!less-loader',
+        loader: 'style-loader!css-loader!postcss-loader?modules&parser=postcss-less!less-loader',
       },
       {
         test: /\.css$/,

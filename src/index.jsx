@@ -73,7 +73,7 @@ const routes = (
     <Route path="/personal/dealdetail" component={DealDetail} />
     <Route path="/personal/fans" component={Fans} />
     <Route path="/personal" component={PersonalIndex} />
-    <Route path="/helpcenter" component={HelpCenter} />
+    <Route path="/personal/helpcenter" component={HelpCenter} />
   </Route>
 )
 

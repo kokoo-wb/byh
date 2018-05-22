@@ -36,12 +36,43 @@ import {
 } from 'component/account'
 import { ChatPage } from 'component/chat'
 
-<<<<<<< HEAD
 import { Attention, DealDetail, Fans } from 'component/personal/society'
-=======
+
+import { 
+  AceRanking, 
+  AceSearch, 
+  DealerDetail,
+  DealerRecord,
+  DealerRecordDetail,
+  DealMatch,
+  DealMatchRanking
+} from 'component/personal/ranking'
+
+import { 
+  Commodity, 
+  MyWeapon, 
+  WeaponDetail,
+  WeaponRecord,
+  WeaponRecordDetail
+} from 'component/personal/commodity'
+
+import { 
+  ActivityDetail, 
+  ActivityList, 
+  ActivityRecord,
+  DealMatchDetail,
+  DealMatchJoin,
+  DealMatchList,
+  DealMatchRules,
+  LotteryDrawRecord,
+  TaskDetail,
+  TaskList,
+  TaskRecord,
+  TaskRules 
+} from 'component/personal/activity'
+
 import PersonalIndex from 'component/personal/index'
 
->>>>>>> 10656d2dcc79771ab43f1eea3b8ef5a846553e53
 
 import 'appRoot/statics/less/app.less'
 
@@ -70,9 +101,38 @@ const routes = (
     <Route path="/notice/detail" component={NoticeDetail} />
     <Route path="/finance" component={FinancePage} />
     <Route path="/chat" component={ChatPage} />
+    
     <Route path="/personal/attention" component={Attention} />
     <Route path="/personal/dealdetail" component={DealDetail} />
     <Route path="/personal/fans" component={Fans} />
+
+    <Route path="/personal/aceranking" component={AceRanking} />
+    <Route path="/personal/acesearch" component={AceSearch} />
+    <Route path="/personal/dealerdetail" component={DealerDetail} />
+    <Route path="/personal/dealerrecord" component={DealerRecord} />
+    <Route path="/personal/dealerrecorddetail" component={DealerRecordDetail} />
+    <Route path="/personal/dealmatch" component={DealMatch} />
+    <Route path="/personal/dealmatchranking" component={DealMatchRanking} />
+
+    <Route path="/personal/commodity" component={Commodity} />
+    <Route path="/personal/myweapon" component={MyWeapon} />
+    <Route path="/personal/weapondetail" component={WeaponDetail} />
+    <Route path="/personal/weaponrecord" component={WeaponRecord} />
+    <Route path="/personal/weaponrecorddetail" component={WeaponRecordDetail} />
+
+    <Route path="/personal/activitydetail" component={ActivityDetail} />
+    <Route path="/personal/activitylist" component={ActivityList} />
+    <Route path="/personal/activityrecord" component={ActivityRecord} />
+    <Route path="/personal/dealmatchdetail" component={DealMatchDetail} />
+    <Route path="/personal/dealmatchjoin" component={DealMatchJoin} />
+    <Route path="/personal/dealmatchlist" component={DealMatchList} />
+    <Route path="/personal/dealmatchrules" component={DealMatchRules} />
+    <Route path="/personal/lotterydrawrecord" component={LotteryDrawRecord} />
+    <Route path="/personal/taskdetail" component={TaskDetail} />
+    <Route path="/personal/tasklist" component={TaskList} />
+    <Route path="/personal/taskrecord" component={TaskRecord} />
+    <Route path="/personal/taskrules" component={TaskRules} />
+
     <Route path="/personal" component={PersonalIndex} />
   </Route>
 )

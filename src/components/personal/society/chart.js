@@ -1,13 +1,13 @@
 
 export const linechart = function(id, data) {
-    const echarts = require('echarts/lib/echarts');
+    const echarts = require('echarts/lib/echarts')
 
-    require('echarts/lib/chart/line');
+    require('echarts/lib/chart/line')
     
-    const myChart = echarts.init(document.getElementById(id));
+    const myChart = echarts.init(document.getElementById(id))
 
-    const dataIncomeRate = data.map(item => item.incomeRate);
-    const dataRewardRate = data.map(item => item.rewardRate);
+    const dataIncomeRate = data.map(item => item.incomeRate)
+    const dataRewardRate = data.map(item => item.rewardRate)
     const dataAxis = [7, 6, 5, 4, 3, 2, 1]
 
     myChart.setOption({
@@ -91,5 +91,5 @@ export const linechart = function(id, data) {
                 }
             }
         ]
-    });
+    })
 }

@@ -35,7 +35,7 @@ class DealDetail extends Component {
         //         { incomeRate: 20, rewardRate: 60 },
         //         { incomeRate: 80, rewardRate: 30 },
         //         { incomeRate: 60, rewardRate: 40 }
-        //     ]);         
+        //     ])         
         // }
 
         setTimeout(() => {
@@ -47,8 +47,8 @@ class DealDetail extends Component {
                 { incomeRate: 20, rewardRate: 60 },
                 { incomeRate: 80, rewardRate: 30 },
                 { incomeRate: 60, rewardRate: 40 }
-            ]);     
-        }, 200);
+            ])     
+        }, 200)
     }
 
 	render() {

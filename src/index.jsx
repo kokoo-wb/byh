@@ -39,7 +39,9 @@ import { Attention, DealDetail, Fans } from 'component/personal/society'
 import PersonalIndex from 'component/personal/index'
 
 import {
-  HelpCenter
+  HelpCenter,
+  Service,
+  Faq
 } from 'component/personal/services'
 
 import 'appRoot/statics/less/app.less'
@@ -74,6 +76,8 @@ const routes = (
     <Route path="/personal/fans" component={Fans} />
     <Route path="/personal" component={PersonalIndex} />
     <Route path="/personal/helpcenter" component={HelpCenter} />
+    <Route path="/personal/service" component={Service} />
+    <Route path="/personal/faq" component={Faq} />
   </Route>
 )
 

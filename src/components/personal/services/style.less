@@ -1,3 +1,4 @@
+/******帮助中心*******/
 .help-center{
     background: #f0f0f0 !important;
     padding: 34px 30px;
@@ -25,5 +26,42 @@
             line-height: 1.5em;
             padding: 0px 25px;
         }
+    }
+}
+
+/*******客服务服*******/
+.service,.faq{
+    background: #f0f0f0 !important;
+}
+.faq-item{
+    padding: 30px;
+    background: #fff;
+    margin-bottom: 30px;
+    position: relative;
+    .faq-content{
+        padding-bottom: 30px;
+        position:relative;
+        line-height:1.4em;
+        overflow:hidden;
+        &::after{
+            content:"...";
+            width: 30%;
+            height: 1.4em;
+            line-height:1.4em;
+            font-weight:bold;
+            position:absolute;
+            bottom:0;
+            right:0;
+            padding:0 100px;
+            background: url(../../../statics/images/ellipsis_bg.png) repeat-y;
+            background-size: 100%;
+        }
+    }
+    .open{
+        position: absolute;
+        right: 30px;
+        bottom: 30px;
+        font-size: 24px;
+        color: #a1c700;
     }
 }

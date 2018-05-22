@@ -3,8 +3,11 @@ import './style.less'
 
 export default class PersonalIndex extends Component {
 
-  state = {
-    
+  constructor(...args){
+    super(...args)
+    this.state = {
+        
+    }
   }
   componentDidMount() {
     

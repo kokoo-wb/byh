@@ -38,6 +38,9 @@ import { ChatPage } from 'component/chat'
 
 import PersonalIndex from 'component/personal/index'
 
+import {
+  HelpCenter
+} from 'component/personal/services'
 
 import 'appRoot/statics/less/app.less'
 
@@ -67,6 +70,7 @@ const routes = (
     <Route path="/finance" component={FinancePage} />
     <Route path="/chat" component={ChatPage} />
     <Route path="/personal" component={PersonalIndex} />
+    <Route path="/helpcenter" component={HelpCenter} />
   </Route>
 )
 

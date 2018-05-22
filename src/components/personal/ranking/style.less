@@ -1,0 +1,296 @@
+.attention-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    li {
+        width: 100%;
+        border-bottom: 1px solid #e8e8e8;
+        background: #fff;
+        height: 220px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &:last-child {
+            border: 0;
+        }
+
+        .attention-list-item {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            padding: 0 30px;
+
+            .confirm-btn {
+                position: absolute;
+                right: 20px; 
+                color: #fff;
+                display: block;
+                background: #a1c770;
+                padding: 12px 38px;
+                border-radius: 50px;
+            }
+
+            .head-img {
+                display: block;
+                width: 130px;
+                height: 130px;
+                border-radius: 100px;
+            }
+
+            .user-msg {
+                margin-left: 20px;
+                color: #999;
+                p {
+                    margin-bottom: 10px;
+                    .income30 {
+                        margin-left: 50px;
+                    }
+                    .income-rate {
+                        color: #a1c770;
+                        font-size: 30px;
+                    }
+                    .income-num {
+                        color: #ff1c1c;
+                        font-size: 30px;
+                    }
+                }
+
+                .username {
+                    font-size: 36px;
+                    font-weight: bold;
+                    color: #282828;
+                }
+            }
+        }
+    }
+}
+
+
+.ace-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    li {
+        width: 100%;
+        margin-bottom: 15px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        &:last-child {
+            border: 0;
+        }
+
+        .header {
+            display: flex;
+            height: 100px;
+            padding: 0 30px;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e8e8e8;
+            .user {                
+                display: flex;
+                align-items: center;
+                img {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 60px;
+                }
+                span {
+                    margin-left: 20px;
+                    font-size: 30px;
+                    font-weight: bold;
+                    color: #282828;
+                }                
+            }
+
+            .attention-btn {
+                color: #fff;
+                display: block;
+                background: #a1c770;
+                padding: 12px 38px;
+                border-radius: 50px;
+            }
+        }
+
+        .ace-list-item {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 30px;           
+
+            img {
+                display: block;
+                width: 200px;
+                height: 180px;
+            }
+
+            .data-msg {
+                text-align: center;
+                color: #999;
+                .data--msg-item {
+                    margin-bottom: 30px;
+                    &:last-child {
+                        margin: 0;
+                    }
+                    p {
+                        margin-bottom: 10px;
+                        &:last-child {
+                            margin: 0;
+                        }
+                    }
+                    .data-num1,
+                    .data-num2,
+                    .data-num3 {
+                        font-size: 30px;
+                        font-weight: bold;
+                    }
+                    .data-num1 {
+                        color: #ff1c1c;
+                    }
+    
+                    .data-num2 {
+                        color: #a1c770;
+                    }
+    
+                    .data-num3 {
+                        color: #282828;
+                    }
+    
+                    .label {
+                        color: #999;
+                    }
+                }                
+            }
+        }
+    }
+}
+
+
+.deal-container {
+    .header-box {
+        height: 520px;
+        background: #a9cd11;
+        text-align: center;
+        .head-img {
+            border: 2px solid #fff;
+            width: 150px;
+            height: 150px;
+            border-radius: 100px;
+            margin-top: 100px;
+        }
+
+        .userinfo {
+            color: #fff;
+            font-size: 38px;
+            margin-top: 20px;
+        }
+
+        .attention-btn {
+            margin-top: 20px;
+            display: inline-block;
+            width: 170px;
+            padding: 10px 0px;
+            background: #fff;
+            color: #a0cf2c;
+            border-radius: 100px;
+        }
+
+        .ace-attention {
+            display: flex;
+            color: #fff;
+            justify-content: space-between;
+            width: 450px;
+            margin: 0 auto;
+            margin-top: 40px;
+
+            .num {
+                font-size: 40px;
+            }
+        }
+    }
+    .deal-menu {
+        display: flex;
+        border: 1px solid #e8e8e8;
+        font-size: 32px;
+        .deal-menu-item {
+            width: 50%;
+            text-align: center;
+            height: 100px;
+            line-height: 100px;
+            a {
+                display: inline-block;
+                height: 100px;
+                &.active {
+                    color: #a9cd11;
+                    border-bottom: 2px solid #a9cd11;
+                }
+            }
+        }
+    }
+
+    .legend {
+        height: 100px;
+        line-height: 100px;
+        text-align: right;
+        padding: 0 30px;
+
+        span {
+            position: relative;
+            margin-left: 100px;
+            &::before {
+                position: absolute;
+                content: '';
+                top: 4px;
+                left: -30px;
+                width: 22px;
+                height: 22px; 
+                border-radius: 4px;               
+            }
+
+            &:nth-child(1)::before {
+                background: #ff0000;
+            }
+            &:nth-child(2)::before {
+                background: #38aae0;
+            }
+        }
+    }
+
+    .deal-record {
+        li {
+            padding: 0 30px;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e8e8e8;
+        }
+        .buy span:nth-child(4) {
+            color: #fff;
+            background: #f90100;
+            font-size: 20px;
+            padding: 10px 20px;
+            border-radius: 40px;
+        }
+
+        .buy span:nth-child(5) {
+            color: #f90100;
+        }
+
+        .sale span:nth-child(4) {
+            color: #fff;
+            background: #02da4a;
+            font-size: 20px;
+            padding: 10px 20px;
+            border-radius: 40px;
+        }
+
+        .sale span:nth-child(5) {
+            color: #02da4a;
+        }
+    }
+}

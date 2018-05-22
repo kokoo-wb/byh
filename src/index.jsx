@@ -73,9 +73,6 @@ import {
 
 import PersonalIndex from 'component/personal/index'
 
-import { Attention, DealDetail, Fans } from 'component/personal/society'
-import PersonalIndex from 'component/personal/index'
-
 import {
   HelpCenter,
   Service,

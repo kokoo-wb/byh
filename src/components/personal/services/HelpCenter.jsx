@@ -27,7 +27,7 @@ export default class HelpCenter extends Component {
                     />
                 </div>
                 <div className="help-items">
-                    <div className="help-item">
+                    <div className="help-item" onClick={() => {hashHistory.push('/personal/helpcenterdetail')}}>
                         <div className="item-name">
                             <h4>开立账户</h4>
                             <img src="../../../statics/images/chat_01.png" />

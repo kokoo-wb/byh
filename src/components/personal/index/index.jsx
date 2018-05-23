@@ -53,7 +53,7 @@ export default class PersonalIndex extends Component {
         </div>
         <div className="title-item">最新活动</div>
         <div className="banner">
-            <img src="../../../statics/images/banner.jpg" />
+            <img src="../../../statics/images/banner.png" />
         </div>
         <div className="title-item">主选单</div>
         <div className="main-content">

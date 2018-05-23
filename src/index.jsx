@@ -75,9 +75,14 @@ import PersonalIndex from 'component/personal/index'
 
 import {
   HelpCenter,
+  HelpCenterDetail,
   Service,
   Faq
 } from 'component/personal/services'
+
+import {
+  PushSetting
+} from 'component/personal/setting'
 
 import 'appRoot/statics/less/app.less'
 
@@ -140,8 +145,11 @@ const routes = (
 
     <Route path="/personal" component={PersonalIndex} />
     <Route path="/personal/helpcenter" component={HelpCenter} />
+    <Route path="/personal/helpcenterdetail" component={HelpCenterDetail} />
     <Route path="/personal/service" component={Service} />
     <Route path="/personal/faq" component={Faq} />
+
+    <Route path="/personal/pushsetting" component={PushSetting} />
   </Route>
 )
 

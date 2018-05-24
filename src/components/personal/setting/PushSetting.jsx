@@ -68,21 +68,21 @@ class PushSetting extends Component {
                         onClick={(checked) => { console.log(checked); }}/>}>
                         积分变更
                     </Item>
-                    <Item extra={<Switch {...getFieldProps('Switch6', {
+                    <Item extra={<Switch {...getFieldProps('Switch7', {
                             initialValue: true,
                             valuePropName: 'checked',
                         })}
                         onClick={(checked) => { console.log(checked); }}/>}>
                         武器变更
                     </Item>
-                    <Item extra={<Switch {...getFieldProps('Switch6', {
+                    <Item extra={<Switch {...getFieldProps('Switch8', {
                             initialValue: true,
                             valuePropName: 'checked',
                         })}
                         onClick={(checked) => { console.log(checked); }}/>}>
                         最新活动
                     </Item>
-                    <Item extra={<Switch {...getFieldProps('Switch6', {
+                    <Item extra={<Switch {...getFieldProps('Switch9', {
                             initialValue: true,
                             valuePropName: 'checked',
                         })}

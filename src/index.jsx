@@ -81,8 +81,15 @@ import {
 } from 'component/personal/services'
 
 import {
-  PushSetting
+  PushSetting,
+  BindThirdParty,
+  About
 } from 'component/personal/setting'
+
+import {
+  MyDeal,
+  DealHistory
+} from 'component/personal/deal'
 
 import 'appRoot/statics/less/app.less'
 
@@ -150,6 +157,10 @@ const routes = (
     <Route path="/personal/faq" component={Faq} />
 
     <Route path="/personal/pushsetting" component={PushSetting} />
+    <Route path="/personal/bindthirdparty" component={BindThirdParty} />
+    <Route path="/personal/about" component={About} />
+    <Route path="/personal/mydeal" component={MyDeal} />
+    <Route path="/personal/dealhistory" component={DealHistory} />
   </Route>
 )
 

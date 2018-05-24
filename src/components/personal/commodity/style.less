@@ -1,3 +1,4 @@
+.commodity-weapon,
 .my-weapon-container {
     padding-bottom: 100px;
 
@@ -206,8 +207,9 @@
 
 
 .weapon-record {
-
+    background: #e0eef0 !important;
     ul {
+        background: #fff;
         li {
             display: flex; 
             border-bottom: 1px solid #e8e8e8; 
@@ -238,6 +240,42 @@
                 right: 40px; 
                 color: #a4cb00;
                 font-size: 38px;
+            }
+        }
+    }
+}
+
+.commodity-container {
+    .am-wingblank.am-wingblank-lg {
+        margin: 40px;
+
+        .slider-frame {
+            border-radius: 20px;
+        }
+    }
+
+    .menu-choose {
+        border-bottom: 1px solid #e8e8e8;
+        height: 100px;
+
+        .menu-choose-content {
+            font-size: 32px;
+            height: 100px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            width: 600px;
+            margin: 0 auto;
+
+            a {
+                display: block;
+                height: 100px;
+                line-height: 100px;
+            }
+
+            a.active {
+                border-bottom: 4px solid #a4cb00;
+                color: #a4cb00;
             }
         }
     }

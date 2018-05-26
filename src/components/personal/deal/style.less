@@ -37,3 +37,137 @@
         }
     }
 }
+.deal-history{
+    background: #f0f0f0 !important;
+    .am-tabs-bar .am-tabs-tab-active{
+        color: #a1c700;
+    }
+    .am-tabs-ink-bar{
+        background-color: #a1c700;
+    }
+    .history{
+        .history-title{
+            font-size: 22px;
+            color: #969696;
+            padding: 22px 30px;
+            background: #fafafa;
+        }
+        .history-table{
+            background: #fff;
+            .history-thead{
+                display: flex;
+                padding: 0 30px;
+                border-top: 1px solid #f0f0f0;
+                span{
+                    display: inline-flex;
+                    align-items: center;
+                    height: 80px;
+                    font-size: 24px;
+                    color: #969696;
+                    text-align: left;
+                    &:nth-child(1){
+                        width: 142px;
+                    }
+                    &:nth-child(2){
+                        width: 149px;
+                    }
+                    &:nth-child(3){
+                        width: 133px;
+                    }
+                    &:nth-child(4){
+                        width: 108px;
+                    }
+                    &:nth-child(5){
+                        width: 146px;
+                    }
+                }
+            }
+            .history-tbody{
+                .history-tr{
+                    display: flex;
+                    padding: 0 30px;
+                    border-top: 1px solid #f0f0f0;
+                    position: relative;
+                    span{
+                        display: inline-flex;
+                        align-items: center;
+                        height: 88px;
+                        font-size: 24px;
+                        color: #282828;
+                        text-align: left;
+                        &:nth-child(1){
+                            width: 142px;
+                        }
+                        &:nth-child(2){
+                            width: 149px;
+                        }
+                        &:nth-child(3){
+                            width: 133px;
+                        }
+                        &:nth-child(4){
+                            width: 108px;
+                            em{
+                                display: inline-block;
+                                width: 56px;
+                                height: 40px;
+                                line-height: 40px;
+                                border-radius: 20px;
+                                font-style: normal;
+                                font-size: 20px;
+                                color: #fff;
+                                text-align: center;
+                                &.sale{
+                                    background: #00d94b;
+                                }
+                                &.buy{
+                                    background: #ff0000;
+                                }
+                            }
+                        }
+                        &:nth-child(5){
+                            width: 146px;
+                            i{
+                                font-style: normal;
+                                font-size: 24px;
+                                &.down{
+                                    color: #00d94b;
+                                }
+                                &.up{
+                                    color: #ff0000;
+                                }
+                            }
+                        }
+                        &:nth-child(6){
+                            position: absolute;
+                            right: 20px;
+                            top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .log{
+        .log-item{
+            background: #fff;
+            padding: 30px;
+            margin-bottom: 15px;
+            h4{
+                font-size: 28px;
+                color: #282828;
+                margin-bottom: 30px;
+            }
+            p{
+                font-size: 24px;
+                color: #969696;
+                margin-bottom: 20px;
+            }
+            i{
+                font-style: normal;
+                font-size: 20px;
+                color: #bdbdbd;
+                margin-top: 30px;
+            }
+        }
+    }
+}

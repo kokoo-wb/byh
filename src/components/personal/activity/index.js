@@ -21,3 +21,5 @@ export { default as TaskList } from './TaskList'
 export { default as TaskRules } from './TaskRules'
 
 export { default as TaskRecord } from './TaskRecord'
+
+export { default as NewActivity } from './NewActivity'

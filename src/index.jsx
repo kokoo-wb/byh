@@ -89,8 +89,20 @@ import {
 
 import {
     MyDeal,
-    DealHistory
+    DealHistory,
+    HistoryRecord
 } from 'component/personal/deal'
+
+import {
+    InviteFriends,
+    InviteShare,
+    InviteExplain
+} from 'component/personal/invite'
+
+import {
+    MessageCenter,
+    MessageDetail
+} from 'component/personal/message'
 
 import 'appRoot/statics/less/app.less'
 
@@ -163,6 +175,14 @@ const routes = (
         <Route path="/personal/about" component={About} />
         <Route path="/personal/mydeal" component={MyDeal} />
         <Route path="/personal/dealhistory" component={DealHistory} />
+        <Route path="/personal/historyrecord" component={HistoryRecord} />
+
+        <Route path="/personal/invitefriends" component={InviteFriends} />
+        <Route path="/personal/inviteshare" component={InviteShare} />
+        <Route path="/personal/inviteexplain" component={InviteExplain} />
+
+        <Route path="/personal/messagecenter" component={MessageCenter} />
+        <Route path="/personal/messagedetail" component={MessageDetail} />
     </Route>
 )
 

@@ -28,19 +28,79 @@ export default class DealHistory extends Component {
                     defaultActiveKey="1" 
                     onChange={this.callback} 
                     animated={false}
-                    tabBarUnderlineStyle={{borderColor:'#a1c700'}}
                 >
                     <TabPane tab="交易历史" key="1">
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '5rem', backgroundColor: '#fff' }}>
-                            选项卡一内容
+                        <div className="history">
+                            <div className="history-title">最近30天交易记录</div>
+                            <div className="history-table">
+                                <div className="history-thead">
+                                    <span>平仓日期</span>
+                                    <span>商品</span>
+                                    <span>数量</span>
+                                    <span>方向</span>
+                                    <span>交易盈亏</span>
+                                </div>
+                                <div className="history-tbody">
+                                    <div className="history-tr">
+                                        <span>4/11</span>
+                                        <span>欧元/美元</span>
+                                        <span>10</span>
+                                        <span><em className="sale">卖</em></span>
+                                        <span><i className="down">-24</i></span>
+                                        <span><Icon type="right"/></span>
+                                    </div>
+                                    <div className="history-tr">
+                                        <span>4/11</span>
+                                        <span>欧元/美元</span>
+                                        <span>10</span>
+                                        <span><em className="buy">买</em></span>
+                                        <span><i className="up">+128</i></span>
+                                        <span><Icon type="right"/></span>
+                                    </div>
+                                    <div className="history-tr">
+                                        <span>4/11</span>
+                                        <span>欧元/美元</span>
+                                        <span>10</span>
+                                        <span><em className="sale">卖</em></span>
+                                        <span><i className="down">-24</i></span>
+                                        <span><Icon type="right"/></span>
+                                    </div>
+                                    <div className="history-tr">
+                                        <span>4/11</span>
+                                        <span>欧元/美元</span>
+                                        <span>10</span>
+                                        <span><em className="buy">买</em></span>
+                                        <span><i className="up">+128</i></span>
+                                        <span><Icon type="right"/></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </TabPane>
                     <TabPane tab="日志" key="2">
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '5rem', backgroundColor: '#fff' }}>
-                            选项卡二内容
+                        <div className="log">
+                            <div className="log-item">
+                                <h4>建仓确认</h4>
+                                <p>您的订单号2017081954：外汇交易建仓</p>
+                                <p>成本：1.0070</p>
+                                <p>数量：100000</p>
+                                <p>方向：买</p>
+                                <p>账户：970791164@qq.com</p>
+                                <i>2018/04/12 12:02</i>
+                            </div>
+                            <div className="log-item">
+                                <h4>建仓确认</h4>
+                                <p>您的订单号2017081954：外汇交易建仓</p>
+                                <p>成本：1.0070</p>
+                                <p>数量：100000</p>
+                                <p>方向：买</p>
+                                <p>账户：970791164@qq.com</p>
+                                <i>2018/04/12 12:02</i>
+                            </div>
                         </div>
                     </TabPane>
                 </Tabs>
+
             </div>
         )
     }

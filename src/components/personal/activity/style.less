@@ -144,6 +144,52 @@
 
         .slider-frame {
             border-radius: 20px;
+            .swiper-item {
+                display: inline-block;
+                width: 100%;
+                position: relative;
+                
+                img {
+                    width: 100%;
+                    vertical-align: top;
+                    height: 460px;
+                }
+
+                span {
+                    position: absolute;
+                    bottom: 20px;
+                    z-index: 100;
+                    left: 30px;
+                    color: #fff;
+                    font-size: 26px;
+                }
+            }
+        }
+
+        .am-carousel-wrap {
+            text-align: right;
+            .am-carousel-wrap-dot span {
+                width: 48px;                
+                background: none;
+                border: 2px solid #fff;
+                height: 4px;
+                border-radius: 10px;                
+            }
+
+            .am-carousel-wrap-dot-active span {
+                background: #fff;
+                height: 8px;
+                border: 0;
+            }
+        }
+
+        .slider-decorator-0 {
+            height: 90px;
+            display: flex;
+            align-items: center;
+            .am-carousel-wrap {
+                padding-right: 30px;
+            }
         }
     }
 

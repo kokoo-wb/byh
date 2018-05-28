@@ -13,12 +13,12 @@ class DealDetail extends Component {
         }
     }
 
-    componentDidMount() {  
+    componentDidMount() {
 
     }
 
     changeMenu = (key) => {
-        this.setState(Object.assign({}, this.state, {key: key}));
+        this.setState(Object.assign({}, this.state, { key: key }));
     }
 
     /**
@@ -28,40 +28,40 @@ class DealDetail extends Component {
     drawChart = () => {
         // if (document.getElementById('dealTrend')) { 
         //     linechart('dealTrend', [
-        //         { incomeRate: 30, rewardRate: 20 },
-        //         { incomeRate: 50, rewardRate: 10 },
-        //         { incomeRate: 60, rewardRate: 70 },
-        //         { incomeRate: 40, rewardRate: 50 },
-        //         { incomeRate: 20, rewardRate: 60 },
-        //         { incomeRate: 80, rewardRate: 30 },
-        //         { incomeRate: 60, rewardRate: 40 }
+        //         { incomeRate: 15, rewardRate: 20 },
+        //         { incomeRate: 20, rewardRate: 25 },
+        //         { incomeRate: 35, rewardRate: 36 },
+        //         { incomeRate: 45, rewardRate: 30 },
+        //         { incomeRate: 30, rewardRate: 47 },
+        //         { incomeRate: 40, rewardRate: 30 },
+        //         { incomeRate: 55, rewardRate: 48 }
         //     ])         
         // }
 
         setTimeout(() => {
             linechart('dealTrend', [
-                { incomeRate: 30, rewardRate: 20 },
-                { incomeRate: 50, rewardRate: 10 },
-                { incomeRate: 60, rewardRate: 70 },
-                { incomeRate: 40, rewardRate: 50 },
-                { incomeRate: 20, rewardRate: 60 },
-                { incomeRate: 80, rewardRate: 30 },
-                { incomeRate: 60, rewardRate: 40 }
-            ])     
+                { incomeRate: 15, rewardRate: 20 },
+                { incomeRate: 20, rewardRate: 25 },
+                { incomeRate: 35, rewardRate: 36 },
+                { incomeRate: 45, rewardRate: 30 },
+                { incomeRate: 30, rewardRate: 47 },
+                { incomeRate: 40, rewardRate: 30 },
+                { incomeRate: 55, rewardRate: 48 }
+            ])
         }, 200)
     }
 
-	render() {
+    render() {
 
         const dealRecordList = [
-            {time: '4/11', dealNum: 10, type: '欧美/美元', trend: -24},
-            {time: '4/11', dealNum: 10, type: '欧美/美元', trend: 128},
-            {time: '4/11', dealNum: 10, type: '欧美/美元', trend: -24},
-            {time: '4/11', dealNum: 10, type: '欧美/美元', trend: -24},
-            {time: '4/11', dealNum: 10, type: '欧美/美元', trend: 128}
+            { time: '4/11', dealNum: 10, type: '欧美/美元', trend: -24 },
+            { time: '4/11', dealNum: 10, type: '欧美/美元', trend: 128 },
+            { time: '4/11', dealNum: 10, type: '欧美/美元', trend: -24 },
+            { time: '4/11', dealNum: 10, type: '欧美/美元', trend: -24 },
+            { time: '4/11', dealNum: 10, type: '欧美/美元', trend: 128 }
         ];
-		
-		return (
+
+        return (
             <div className="deal-container">
                 <div className="header-box">
                     <img className="head-img" src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2222457038,1434704351&fm=58" />
@@ -78,7 +78,7 @@ class DealDetail extends Component {
                         </div>
                     </div>
                 </div>
-                
+
                 <div className="deal-menu">
                     <div className="deal-menu-item" onClick={() => this.changeMenu(0)}>
                         <a className={this.state.key == 0 ? 'active' : ''}>交易策略</a>
@@ -95,7 +95,7 @@ class DealDetail extends Component {
                 )}
 
                 {this.state.key == 0 && (
-                    <div id="dealTrend" style={{width: '100%', height: '500px'}}></div>
+                    <div id="dealTrend" style={{ width: '100%', height: '500px' }}></div>
                 )}
 
                 {this.state.key == 1 && (
@@ -115,8 +115,8 @@ class DealDetail extends Component {
 
                 {this.state.key == 0 && this.drawChart()}
             </div>
-		)
-	}
+        )
+    }
 }
 
 export default DealDetail

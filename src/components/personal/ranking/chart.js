@@ -1,13 +1,14 @@
 
-export const linechart = function(id, data) {
+export const linechart = function (id, data) {
     const echarts = require('echarts/lib/echarts')
 
     require('echarts/lib/chart/line')
-    
+
     const myChart = echarts.init(document.getElementById(id))
 
     const dataIncomeRate = data.map(item => item.incomeRate)
-    const dataRewardRate = data.map(item => item.rewardRate)
+    const dataAvgBackRate = data.map(item => item.avgBackRate)
+    const dataMaxBackRate = data.map(item => item.maxBackRate)
     const dataAxis = [7, 6, 5, 4, 3, 2, 1]
 
     myChart.setOption({
@@ -25,7 +26,7 @@ export const linechart = function(id, data) {
             axisLabel: {
                 fontSize: 28,
                 color: '#7a8489',
-                formatter: function(value) {
+                formatter: function (value) {
                     const datenow = new Date();
                     const oneday = 1000 * 60 * 60 * 24;
                     const day = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
@@ -67,7 +68,7 @@ export const linechart = function(id, data) {
         },
         series: [
             {
-                name: '收益率',
+                name: '获益率',
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
@@ -79,15 +80,27 @@ export const linechart = function(id, data) {
                 }
             },
             {
-                name: '回报率',
+                name: '平均回撤率',
                 type: 'line',
                 smooth: true,
                 showSymbol: false,
                 symbolSize: 0,
-                data: dataRewardRate,
+                data: dataAvgBackRate,
                 lineStyle: {
                     width: 4,
                     color: '#38aae0'
+                }
+            },
+            {
+                name: '最大回撤率',
+                type: 'line',
+                smooth: true,
+                showSymbol: false,
+                symbolSize: 0,
+                data: dataMaxBackRate,
+                lineStyle: {
+                    width: 4,
+                    color: '#00d94b'
                 }
             }
         ]

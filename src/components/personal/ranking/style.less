@@ -171,28 +171,49 @@
 
 
 .deal-container {
+    display: block !important;
     .header-box {
-        height: 520px;
+        height: 570px;
         background: #a9cd11;
         text-align: center;
+        color: #fff;
+        line-height: 1em;
         .head-img {
             border: 2px solid #fff;
-            width: 150px;
-            height: 150px;
+            width: 160px;
+            height: 160px;
             border-radius: 100px;
-            margin-top: 100px;
+            margin-top: 70px;
         }
 
         .userinfo {
             color: #fff;
-            font-size: 38px;
+            font-size: 30px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .goodat {
+            font-size: 24px;
             margin-top: 20px;
         }
 
-        .attention-btn {
+        .begintime {
+            font-size: 20px;
             margin-top: 20px;
+        }
+
+        .btn-box {
+            width: 344px;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+
+        .attention-btn {
+            margin-top: 40px;
             display: inline-block;
-            width: 170px;
+            width: 144px;
             padding: 10px 0px;
             background: #fff;
             color: #a0cf2c;
@@ -202,34 +223,73 @@
         .ace-attention {
             display: flex;
             color: #fff;
-            justify-content: space-between;
-            width: 450px;
+            justify-content: space-between;            
+            width: 531px;
             margin: 0 auto;
-            margin-top: 40px;
-
+            margin-top: 37px;
+            margin-bottom: 45px;
+            font-size: 20px;
+            line-height: 1em;
+            div {
+                display: flex;
+                align-items: flex-end;
+            }
             .num {
-                font-size: 40px;
+                font-size: 30px;
             }
         }
     }
-    .deal-menu {
+
+    .deal-data {
         display: flex;
-        border: 1px solid #e8e8e8;
-        font-size: 32px;
-        .deal-menu-item {
-            width: 50%;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px 30px;
+        border-bottom: 16px solid #edeef0;
+
+        .deal-data-item {
+            margin-bottom: 40px;            
+            display: flex;
+            justify-content: space-around;
             text-align: center;
-            height: 100px;
-            line-height: 100px;
-            a {
-                display: inline-block;
-                height: 100px;
-                &.active {
-                    color: #a9cd11;
-                    border-bottom: 2px solid #a9cd11;
+            &:last-child {
+                margin-bottom: 0;  
+            }
+            div {
+                p:first-child {
+                    color: #929496;
+                    font-size: 24px;
+                }
+
+                p:last-child {
+                    font-size: 26px;
+                    margin-top: 20px;
+                }
+
+                &:nth-child(1) {
+                    color: #ff0000;
+                }
+
+                &:nth-child(2) {
+                    color: #00d94b;
+                }
+
+                &:nth-child(3) {
+                    color: #282828;
                 }
             }
         }
+    }
+
+    .deal-menu {
+        display: flex;
+        border-bottom: 1px solid #e8e8e8;
+        font-size: 28px;
+        font-weight: bold;
+        color: #282828;
+        padding: 0 30px;
+        height: 76px;
+        line-height: 76px;
     }
 
     .legend {
@@ -240,7 +300,7 @@
 
         span {
             position: relative;
-            margin-left: 100px;
+            margin-left: 90px;
             &::before {
                 position: absolute;
                 content: '';
@@ -256,6 +316,9 @@
             }
             &:nth-child(2)::before {
                 background: #38aae0;
+            }
+            &:nth-child(3)::before {
+                background: #00d94b;
             }
         }
     }
@@ -291,6 +354,34 @@
 
         .sale span:nth-child(5) {
             color: #02da4a;
+        }
+    }
+}
+
+
+.dealer-record-detail {
+    width: 100%;
+
+    li {
+        border-bottom: 1px solid #e8e8e8;
+        height: 88px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #fff; 
+        padding: 0 30px;
+        font-size: 28px;
+
+        span:first-child {
+            color: #282828;
+        }
+
+        span:last-child {
+            color: rgba(111,112,114,0.7);
+            text-align: right;
+            p:last-child {
+                font-size: 20px;
+            }
         }
     }
 }

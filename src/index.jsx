@@ -104,6 +104,11 @@ import {
     MessageDetail
 } from 'component/personal/message'
 
+import {
+    MyPoints,
+    MyLevel
+} from 'component/personal/bonusPoints'
+
 import 'appRoot/statics/less/app.less'
 
 const routes = (
@@ -183,6 +188,9 @@ const routes = (
 
         <Route path="/personal/messagecenter" component={MessageCenter} />
         <Route path="/personal/messagedetail" component={MessageDetail} />
+
+        <Route path="/personal/mypoints" component={MyPoints} />
+        <Route path="/personal/mylevel" component={MyLevel} />
     </Route>
 )
 

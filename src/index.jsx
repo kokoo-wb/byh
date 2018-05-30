@@ -106,7 +106,9 @@ import {
 
 import {
     MyPoints,
-    MyLevel
+    MyLevel,
+    PointsInstro,
+    LevelInstro
 } from 'component/personal/bonusPoints'
 
 import 'appRoot/statics/less/app.less'
@@ -191,6 +193,8 @@ const routes = (
 
         <Route path="/personal/mypoints" component={MyPoints} />
         <Route path="/personal/mylevel" component={MyLevel} />
+        <Route path="/personal/pointsinstro" component={PointsInstro} />
+        <Route path="/personal/levelinstro" component={LevelInstro} />
     </Route>
 )
 

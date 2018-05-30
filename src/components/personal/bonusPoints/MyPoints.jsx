@@ -86,20 +86,38 @@ export default class MyPoints extends Component {
                         </div>
                     </TabPane>
                     <TabPane tab="兑换记录" key="2">
-                        <List className="my-list">
-                            <Item multipleLine extra={<a style={{color: 'red'}}>+80积分</a>}>
-                                我邀请了xxx加入 <Brief>2018/5/26 09:00</Brief>
-                            </Item>
-                            <Item multipleLine extra={<a style={{color: 'red'}}>+80积分</a>}>
-                                我邀请了xxx加入 <Brief>2018/5/26 09:00</Brief>
-                            </Item>
-                            <Item multipleLine extra={<a style={{color: 'red'}}>+80积分</a>}>
-                                我邀请了xxx加入 <Brief>2018/5/26 09:00</Brief>
-                            </Item>
-                            <Item multipleLine extra={<a style={{color: 'red'}}>+80积分</a>}>
-                                我邀请了xxx加入 <Brief>2018/5/26 09:00</Brief>
-                            </Item>
-                        </List>
+                        <div className="earn-record">
+                            <div className="earn-item">
+                                <div className="earn-item-left">
+                                    <p className="earn-item-title">我邀请了xxx加入</p>
+                                    <p className="earn-item-date">2017/09/09 09:00</p>
+                                </div>
+                                <div className="earn-item-right">
+                                    <p className="earn-item-point">+80积分</p>
+                                    <p className="earn-item-sum">当前总积分 70</p>
+                                </div>
+                            </div>
+                            <div className="earn-item">
+                                <div className="earn-item-left">
+                                    <p className="earn-item-title">我邀请了xxx加入</p>
+                                    <p className="earn-item-date">2017/09/09 09:00</p>
+                                </div>
+                                <div className="earn-item-right">
+                                    <p className="earn-item-point">+80积分</p>
+                                    <p className="earn-item-sum">当前总积分 70</p>
+                                </div>
+                            </div>
+                            <div className="earn-item">
+                                <div className="earn-item-left">
+                                    <p className="earn-item-title">我邀请了xxx加入</p>
+                                    <p className="earn-item-date">2017/09/09 09:00</p>
+                                </div>
+                                <div className="earn-item-right">
+                                    <p className="earn-item-point">+80积分</p>
+                                    <p className="earn-item-sum">当前总积分 70</p>
+                                </div>
+                            </div>
+                        </div>
                     </TabPane>
                     <TabPane tab="活动记录" key="3">
                         <div className="act-record">

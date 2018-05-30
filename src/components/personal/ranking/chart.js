@@ -84,7 +84,7 @@ export const linechart = function (id, data) {
                 symbolSize: 0,
                 data: dataIncomeRate,
                 lineStyle: {
-                    width: 4,
+                    width: 3,
                     color: '#ff0000'
                 }
             },
@@ -96,7 +96,7 @@ export const linechart = function (id, data) {
                 symbolSize: 0,
                 data: dataAvgBackRate,
                 lineStyle: {
-                    width: 4,
+                    width: 3,
                     color: '#38aae0'
                 }
             },
@@ -108,7 +108,7 @@ export const linechart = function (id, data) {
                 symbolSize: 0,
                 data: dataMaxBackRate,
                 lineStyle: {
-                    width: 4,
+                    width: 3,
                     color: '#00d94b'
                 }
             }

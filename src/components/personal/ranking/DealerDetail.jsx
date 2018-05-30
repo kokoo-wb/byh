@@ -77,7 +77,7 @@ class DealerDetail extends Component {
                     <p className="goodat">擅长：美元/欧元</p>
                     <p className="begintime">开户日期：2017/01/01</p>
                     <div className="btn-box">
-                        <a className="attention-btn">关注</a>
+                        <a className="attention-btn attention-btn-done">已关注</a>
                         <a className="attention-btn">关注</a>
                     </div>
 
@@ -128,35 +128,20 @@ class DealerDetail extends Component {
                     </div>
                 </div>
 
-                <div className="deal-menu">交易策略</div>
-                {this.state.key == 0 && (
-                    <p className="legend">
-                        <span>获益率</span>
-                        <span>平均回撤率</span>
-                        <span>最大回撤率</span>
-                    </p>
-                )}
+                <div className="chart-title">交易策略</div>
+                <p className="legend">
+                    <span>获益率</span>
+                    <span>平均回撤率</span>
+                    <span>最大回撤率</span>
+                </p>
 
-                {this.state.key == 0 && (
-                    <div id="dealTrend" style={{ width: '100%', height: '500px' }}></div>
-                )}
+                <div id="dealTrend" style={{ width: '100%', height: '500px' }}></div>
 
-                {this.state.key == 1 && (
-                    <ul className="deal-record">
-                        {dealRecordList.map((item, index) => (
-                            <li key={index} className={item.trend > 0 ? 'buy' : 'sale'}>
-                                <span>{item.time}</span>
-                                <span>{item.type}</span>
-                                <span>{item.dealNum}</span>
-                                <span className={item.trend > 0 ? 'buy' : 'sale'}>{item.trend > 0 ? '买' : '卖'}</span>
-                                <span className={item.trend > 0 ? 'buy' : 'sale'}>{item.trend}</span>
-                                <Icon type="right" />
-                            </li>
-                        ))}
-                    </ul>
-                )}
+                {this.drawChart()}
 
-                {this.state.key == 0 && this.drawChart()}
+                <div className="footer">
+                    <a>查看交易记录</a>
+                </div>
             </div>
         )
     }

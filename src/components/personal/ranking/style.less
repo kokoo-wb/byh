@@ -1,73 +1,31 @@
-.attentions-list {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-
-    li {
-        width: 100%;
-        border-bottom: 1px solid #e8e8e8;
-        background: #fff;
-        height: 220px;
+.ace-search,
+.ace-ranking {
+    display: block !important;
+    background: #edeef0 !important;
+    .nodata {        
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        &:last-child {
-            border: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        background: #fff;
+        align-items: center;
+        color: #969696;
+        font-size: 26px;
+        img {
+            margin-top: 270px;
+            width: 83px;
+            height: 100px;
         }
 
-        .attention-list-item {
-            position: relative;
-            display: flex;
-            flex-direction: row;
-            padding: 0 30px;
-
-            .confirm-btn {
-                position: absolute;
-                right: 20px; 
-                color: #fff;
-                display: block;
-                background: #a1c770;
-                padding: 12px 38px;
-                border-radius: 50px;
-            }
-
-            .head-img {
-                display: block;
-                width: 130px;
-                height: 130px;
-                border-radius: 100px;
-            }
-
-            .user-msg {
-                margin-left: 20px;
-                color: #999;
-                p {
-                    margin-bottom: 10px;
-                    .income30 {
-                        margin-left: 50px;
-                    }
-                    .income-rate {
-                        color: #a1c770;
-                        font-size: 30px;
-                    }
-                    .income-num {
-                        color: #ff1c1c;
-                        font-size: 30px;
-                    }
-                }
-
-                .username {
-                    font-size: 36px;
-                    font-weight: bold;
-                    color: #282828;
-                }
-            }
+        p {
+            margin-top: 38px;
         }
     }
 }
-
-
-.ace-list {
+    
+.rank-list {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -85,7 +43,7 @@
 
         .header {
             display: flex;
-            height: 100px;
+            height: 96px;
             padding: 0 30px;
             justify-content: space-between;
             align-items: center;
@@ -94,28 +52,50 @@
                 display: flex;
                 align-items: center;
                 img {
-                    width: 60px;
-                    height: 60px;
+                    width: 56px;
+                    height: 56px;
                     border-radius: 60px;
                 }
-                span {
+                & > span {
                     margin-left: 20px;
-                    font-size: 30px;
+                    font-size: 24px;
                     font-weight: bold;
                     color: #282828;
-                }                
+                }
+                
+                .level {
+                    background-color: #f5ba2e;
+                    color: #fff;
+                    font-size: 20px;
+                    width: 90px;
+                    display: flex;
+                    align-items: center;
+                    border-radius: 50px;
+                    height: 32px;
+                    font-size: 20px;
+                    margin-left: 5px;
+
+                    img {
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
             }
 
             .attention-btn {
                 color: #fff;
                 display: block;
-                background: #a1c770;
-                padding: 12px 38px;
+                background: #a1c700;
+                width: 116px;
+                height: 48px;
+                text-align: center;
+                line-height: 48px;
                 border-radius: 50px;
+                font-size: 20px;
             }
         }
 
-        .ace-list-item {
+        .rank-list-item {
             position: relative;
             display: flex;
             flex-direction: row;
@@ -124,8 +104,8 @@
 
             img {
                 display: block;
-                width: 200px;
-                height: 180px;
+                width: 173px;
+                height: 152px;
             }
 
             .data-msg {
@@ -145,7 +125,7 @@
                     .data-num1,
                     .data-num2,
                     .data-num3 {
-                        font-size: 30px;
+                        font-size: 24px;
                         font-weight: bold;
                     }
                     .data-num1 {
@@ -153,7 +133,7 @@
                     }
     
                     .data-num2 {
-                        color: #a1c770;
+                        color: #a1c700;
                     }
     
                     .data-num3 {
@@ -161,7 +141,8 @@
                     }
     
                     .label {
-                        color: #999;
+                        color: #969696;
+                        font-size: 20px; 
                     }
                 }                
             }
@@ -687,21 +668,6 @@
     display: block !important;        
     width: 100%;
 
-    .select-match {
-        height: 88px;
-        border-bottom: 1px solid #e8e8e8;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 26px;
-        color: #282828;
-
-        .am-icon-md {
-            width: 28px;
-            margin-left: 10px;
-        }
-    }
-
     ul {
         padding: 40px;
         li {
@@ -746,5 +712,23 @@
                 }
             }
         }
+    }
+}
+
+
+.select-type {
+    height: 88px;
+    border-bottom: 1px solid #e8e8e8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    color: #282828;
+    background: #fff;
+    margin-bottom: 3px;
+
+    .am-icon-md {
+        width: 28px;
+        margin-left: 10px;
     }
 }

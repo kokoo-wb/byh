@@ -3,7 +3,7 @@ import { Button } from 'antd-mobile'
 
 import './style.less'
 
-class Attention extends Component {
+class DealAttention extends Component {
     render() {
 
         const attentionList = [
@@ -53,6 +53,8 @@ class Attention extends Component {
                                             </span>
                                         </p>
                                     </div>
+
+                                    <a className="confirm-btn">确认</a>
                                 </div>
                             </li>
                         ))}
@@ -60,7 +62,7 @@ class Attention extends Component {
                 ) : (
                         <div className="nodata">
                             <img src={require('../../../statics/images/no_user.png')} />
-                            <p>当前还没有关注人哦</p>
+                            <p>当前还没有待关注人哦</p>
                         </div>
                     )}
             </div>
@@ -68,4 +70,4 @@ class Attention extends Component {
     }
 }
 
-export default Attention
+export default DealAttention

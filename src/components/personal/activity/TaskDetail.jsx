@@ -21,7 +21,8 @@ class TaskDetail extends Component {
         return (
             <div className="task-detail">
                 <div className="match-header">
-                    <div className="endTime">
+                    <div className="end-time">
+                        <img src={require('../../../statics/images/time.png')} />
                         <span>距离结束：00:00:00:00</span>
                     </div>
                     <img src="http://p3.pstatp.com/large/pgc-image/15271525818363e41e859cd" />

@@ -36,7 +36,7 @@ import {
 } from 'component/account'
 import { ChatPage } from 'component/chat'
 
-import { Attention, DealDetail, Fans } from 'component/personal/society'
+import { Attention, DealAttention, DealDetail, Fans } from 'component/personal/society'
 
 import {
     AceRanking,
@@ -138,6 +138,7 @@ const routes = (
         <Route path="/chat" component={ChatPage} />
 
         <Route path="/personal/attention" component={Attention} />
+        <Route path="/personal/dealattention" component={DealAttention} />
         <Route path="/personal/dealdetail" component={DealDetail} />
         <Route path="/personal/fans" component={Fans} />
 

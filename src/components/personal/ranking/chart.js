@@ -14,29 +14,32 @@ export const linechart = function (id, data) {
     myChart.setOption({
         grid: {
             top: '30',
-            left: '40',
-            right: '50',
+            left: '30',
+            right: '30',
             bottom: '15',
             containLabel: true
         },
         xAxis: {
             type: 'category',
-            boundaryGap: false,
+            boundaryGap: true,
 
             axisLabel: {
-                fontSize: 28,
-                color: '#7a8489',
+                fontSize: 20,
+                color: '#969696',
                 formatter: function (value) {
                     const datenow = new Date();
                     const oneday = 1000 * 60 * 60 * 24;
                     const day = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
                     const dateValue = new Date(datenow - value * oneday);
                     const dateAxisValue = dateValue.getMonth() + 1 + '-' + dateValue.getDate()
-                    return dateAxisValue + '\n' + day[dateValue.getDay()];
+                    return dateAxisValue + '\n\n' + day[dateValue.getDay()];
                 }
             },
             axisLine: {
-                show: true
+                show: true,
+                lineStyle: {
+                    color: '#e8e8e8'
+                }
             },
             axisTick: {
                 show: false
@@ -49,18 +52,24 @@ export const linechart = function (id, data) {
         yAxis: {
             type: 'value',
             axisLabel: {
-                fontSize: 28,
+                fontSize: 24,
                 formatter: '{value}',
-                color: '#7a8489'
+                color: '#969696',
             },
             axisLine: {
-                show: true
+                show: true,
+                lineStyle: {
+                    color: '#e8e8e8'
+                }
             },
             axisTick: {
                 show: false
             },
             splitLine: {
-                show: false
+                show: true,
+                lineStyle: {
+                    color: '#e8e8e8'
+                }
             },
             axisPointer: {
                 snap: true

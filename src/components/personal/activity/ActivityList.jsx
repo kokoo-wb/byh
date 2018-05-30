@@ -5,9 +5,9 @@ import './style.less'
 
 // constants
 const ENUM = {
-    day: '每日奖赏',
-    month: '每月奖赏',
-    special: '特别奖励'
+    day: { name: '每日奖赏', img: require('../../../statics/images/daily.png') },
+    month: { name: '每月奖赏', img: require('../../../statics/images/monthly.png') },
+    special: { name: '特别奖励', img: require('../../../statics/images/special.png') }
 }
 
 class ActivityList extends Component {
@@ -57,6 +57,7 @@ class ActivityList extends Component {
                 <div className="bonus-point">
                     <div className="bonus-point-level">
                         <p>LV46</p>
+                        <img src={require('../../../statics/images/bonuspoint.png')} />
                     </div>
 
                     <div className="bonus-point-num">
@@ -72,7 +73,10 @@ class ActivityList extends Component {
                     {activityList.map((item, index) => {
                         return (
                             <li key={index}>
-                                <h1>{ENUM[item.type]}</h1>
+                                <h1>
+                                    <img src={ENUM[item.type].img} />
+                                    {ENUM[item.type].name}
+                                </h1>
                                 <p>
                                     <label>参与对象:</label>
                                     <span>{item.actor}</span>

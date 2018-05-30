@@ -65,7 +65,15 @@ class DealDetail extends Component {
             <div className="deal-container">
                 <div className="header-box">
                     <img className="head-img" src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2222457038,1434704351&fm=58" />
-                    <p className="userinfo">奥利维亚</p>
+                    <p className="userinfo">
+                        <span>
+                            <span>奥利维亚</span>
+                            <div className="level">
+                                <img src={require('../../../statics/images/level.png')} />
+                                <span>LV88</span>
+                            </div>
+                        </span>
+                    </p>
                     <a className="attention-btn">关注</a>
                     <div className="fans-attention">
                         <div>
@@ -95,7 +103,7 @@ class DealDetail extends Component {
                 )}
 
                 {this.state.key == 0 && (
-                    <div id="dealTrend" style={{ width: '100%', height: '500px' }}></div>
+                    <div id="dealTrend" style={{ width: '100%', height: '400px' }}></div>
                 )}
 
                 {this.state.key == 1 && (

@@ -1,4 +1,4 @@
-.attention-list {
+.attentions-list {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -170,7 +170,7 @@
 }
 
 
-.deal-container {
+.dealer-container {
     display: block !important;
     .header-box {
         height: 570px;
@@ -191,6 +191,26 @@
             font-size: 30px;
             margin-top: 20px;
             font-weight: bold;
+            span {
+                position: relative;
+                .level {
+                    background-color: #f5ba2e;
+                    font-size: 20px;
+                    width: 90px;
+                    position: absolute;
+                    top: 0;
+                    right: -110px;
+                    display: flex;
+                    align-items: center;
+                    border-radius: 50px;
+                    height: 34px;
+
+                    img {
+                        height: 30px;
+                        width: 30px;
+                    }
+                }
+            }    
         }
 
         .goodat {
@@ -297,6 +317,7 @@
         line-height: 100px;
         text-align: right;
         padding: 0 30px;
+        font-size: 24px;
 
         span {
             position: relative;

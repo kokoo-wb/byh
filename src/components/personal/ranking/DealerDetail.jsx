@@ -62,10 +62,18 @@ class DealerDetail extends Component {
         ];
 
         return (
-            <div className="deal-container">
+            <div className="dealer-container">
                 <div className="header-box">
                     <img className="head-img" src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2222457038,1434704351&fm=58" />
-                    <p className="userinfo">奥利维亚</p>
+                    <p className="userinfo">
+                        <span>
+                            <span>奥利维亚</span>
+                            <div className="level">
+                                <img src={require('../../../statics/images/level.png')} />
+                                <span>LV88</span>
+                            </div>
+                        </span>
+                    </p>
                     <p className="goodat">擅长：美元/欧元</p>
                     <p className="begintime">开户日期：2017/01/01</p>
                     <div className="btn-box">

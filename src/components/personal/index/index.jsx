@@ -58,35 +58,35 @@ export default class PersonalIndex extends Component {
         <div className="title-item">主选单</div>
         <div className="main-content">
           <div className="main-item">
-            <img src="../../../statics/images/chat_01.png" />
+            <img src="../../../statics/images/main_menu_one.png" />
             <p>我的交易</p>
           </div>
           <div className="main-item">
-            <img src="../../../statics/images/chat_01.png" />
+            <img src="../../../statics/images/main_menu_two.png" />
             <p>商品市场</p>
           </div>
           <div className="main-item">
-            <img src="../../../statics/images/chat_01.png" />
+            <img src="../../../statics/images/main_menu_three.png" />
             <p>高手排行</p>
           </div>
           <div className="main-item">
-            <img src="../../../statics/images/chat_01.png" />
+            <img src="../../../statics/images/main_menu_four.png" />
             <p>客服服务</p>
           </div>
           <div className="main-item">
-            <img src="../../../statics/images/chat_01.png" />
+            <img src="../../../statics/images/main_menu_five.png" />
             <p>会员中心</p>
           </div>
           <div className="main-item">
-            <img src="../../../statics/images/chat_01.png" />
+            <img src="../../../statics/images/main_menu_six.png" />
             <p>经常活动</p>
           </div>
           <div className="main-item">
-            <img src="../../../statics/images/chat_01.png" />
+            <img src="../../../statics/images/main_menu_seven.png" />
             <p>推荐好友</p>
           </div>
           <div className="main-item">
-            <img src="../../../statics/images/chat_01.png" />
+            <img src="../../../statics/images/main_menu_eight.png" />
             <p>抽奖</p>
           </div>
         </div>

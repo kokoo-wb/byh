@@ -26,24 +26,24 @@ export default class MyLevel extends Component {
             <div className="my-level">
                 <div className="level-steps">
                     <div className="level-step">
-                        <img src="../../../statics/images/diamond.png" />
+                        <img src="../../../statics/images/level_one_small.png" />
                         <p>等级1</p>
                     </div>
                     <div className="level-step current-step">
-                        <img src="../../../statics/images/diamond.png" />
-                        <p>等级1</p>
+                        <img src="../../../statics/images/level_two_small.png" />
+                        <p>等级2</p>
                     </div>
                     <div className="level-step">
-                        <img src="../../../statics/images/diamond.png" />
-                        <p>等级1</p>
+                        <img src="../../../statics/images/level_three_small.png" />
+                        <p>等级3</p>
                     </div>
                     <div className="level-step">
-                        <img src="../../../statics/images/diamond.png" />
-                        <p>等级1</p>
+                        <img src="../../../statics/images/level_four_small.png" />
+                        <p>等级4</p>
                     </div>
                 </div>
                 <div className="level-con">
-                    <img src="../../../statics/images/diamond.png" />
+                    <img src="../../../statics/images/level_two_big.png" />
                     <label>LV36</label>
                     <div className="level-progress"><div className="progress" style={{width: '50%'}}></div></div>
                     <p>距离下一等级还差778积分</p>

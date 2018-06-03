@@ -29,6 +29,7 @@ export default class MyPoints extends Component {
                 <div className="bonus-point">
                     <div className="bonus-point-level">
                         <p>LV46</p>
+                        <img src={require('../../../statics/images/bonuspoint.png')} />
                     </div>
 
                     <div className="bonus-point-num">

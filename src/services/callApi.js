@@ -2,7 +2,7 @@ import { hashHistory } from 'react-router'
 import 'whatwg-fetch'
 import fetchJsonp from 'fetch-jsonp'
 import { Toast } from 'antd-mobile'
-import errorJson from '../errorJson'
+import errorJson from './errorJson'
 
 export function callApi(endpoint, method = 'POST', data = {}, jsonp = false) {
 

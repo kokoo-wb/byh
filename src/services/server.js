@@ -5,10 +5,10 @@ const HTTP = 'http://'
 const HTTPS = 'https://'
 
 // 测试环境Server
-const TEST_API_SERVER = HTTP + '47.75.10.124'
+const TEST_API_SERVER = HTTP + '139.199.175.39:8877'
 
 // 生产环境Server
-const PRO_API_SERVER = HTTP + '47.75.10.124'
+const PRO_API_SERVER = HTTP + '139.199.175.39:8877'
 
 
 const ApiBase = {

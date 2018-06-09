@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { WingBlank, Carousel } from 'antd-mobile'
 
-import { callApi } from '../../../services/callApi';
+import * as Api from '../../../services';
 
 import './style.less'
 
@@ -22,7 +22,7 @@ class ActivityList extends Component {
     }
 
     componentDidMount() {
-        callApi()
+        Api.getUserInfo();
     }
 
     render() {

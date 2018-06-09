@@ -1848,4 +1848,4 @@ const errorJson = {
         "zh-CN": "下单执行中出错"
     }
 }
-export default errorListJson
+export default errorJson

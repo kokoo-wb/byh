@@ -2,7 +2,7 @@ import { hashHistory } from 'react-router'
 import 'whatwg-fetch'
 import fetchJsonp from 'fetch-jsonp'
 import { Toast } from 'antd-mobile'
-import errorJson from '../errorJson'
+import errorJson from './errorJson'
 
 export function callApi(endpoint, method = 'POST', data = {}, jsonp = false) {
 
@@ -10,11 +10,11 @@ export function callApi(endpoint, method = 'POST', data = {}, jsonp = false) {
 
     let authToken = localStorage.token
     if (!authToken) {
-        Toast.hide()
-        // 请先登录
-        Toast.fail('请先登录', 2, () => {
-            hashHistory.push('/')
-        })
+        // Toast.hide()
+        // // 请先登录
+        // Toast.fail('请先登录', 2, () => {
+        //     hashHistory.push('/')
+        // })
     } else {
         data = Object.assign({ SESN: authToken }, data)
     }

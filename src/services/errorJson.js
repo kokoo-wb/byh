@@ -1,4 +1,4 @@
-const errorJson = {
+const ErrorJson = {
     "org.jboss.seam.NoConversation": {
         "en": "hidden message",
         "zh-CN": "-"
@@ -1848,4 +1848,4 @@ const errorJson = {
         "zh-CN": "下单执行中出错"
     }
 }
-export default errorJson
+export default ErrorJson

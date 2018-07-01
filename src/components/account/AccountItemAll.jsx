@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { FormattedMessage } from 'react-intl'
+import { defineMessages, intlShape, injectIntl, FormattedMessage } from 'react-intl'
 import { hashHistory } from 'react-router'
 import { Icon, Grid, Modal } from 'antd-mobile'
+import { messagex } from './'
 
 
 
@@ -9,9 +10,7 @@ const dataArr = [
   {
     icon: <Icon type={require('static/svg/icon_47.svg')}/>,
     name: <span>
-            <FormattedMessage id="deposit"/>
-            <span>／</span>
-            <FormattedMessage id="withdraw"/>
+            <FormattedMessage id="ChangeDeposit"/>
           </span>,
     deposit:true,
     link: '/account/depositdraw'
@@ -36,8 +35,7 @@ const dataArr = [
   {
     icon: <Icon type={require('static/svg/icon_49.svg')}/>,
     name: <span>
-            <FormattedMessage id="trade1"/>
-            <FormattedMessage id="history"/>
+            <FormattedMessage id="ChangeTradeHistory"/>
           </span>,
     link: '/account/history'
   },
@@ -48,11 +46,12 @@ const dataArr = [
   }
 ]
 
-  const onFetchLink = function (val) {
+  const onFetchLink = function (val,formatMessage) {
+    
     if (val.deposit) {
       const alert = Modal.alert
       let close  = alert(<div className="rt-deposit-withdraw-tips">
-        <span>提示</span>
+        <span>{formatMessage(messagex.prompts)}</span>
         <span
           className="-cross"
           onClick={
@@ -64,12 +63,12 @@ const dataArr = [
           <Icon type="cross"/>
         </span>
       </div>, <div className="alert-tip">
-        <p>您的账户是模拟账户</p>
-        <p>充值功能为模拟操作</p>
-        <p>如要开始真实交易请开通展示账户</p>
+        <p>{formatMessage(messagex.AccountIsDemo)}</p>
+        <p>{formatMessage(messagex.DepositIsDemoAction)}</p>
+        <p>{formatMessage(messagex.ifDepositToOppen)}</p>
       </div>, [
-        { text: '立即开户', onPress: () => console.log('cancel') },
-        { text: '先体验充值', onPress: () => {hashHistory.push(`${val.link}`)} },
+        { text: formatMessage(messagex.OpenAccountRightNow), onPress: () => {hashHistory.push('/openaccount')} },
+        { text: formatMessage(messagex.EnjoyDepositFirst), onPress: () => {hashHistory.push(`${val.link}`)} },
       ])
       return
     }else{
@@ -77,34 +76,67 @@ const dataArr = [
     }
     
   }
-const AccountItemAll = function() {
-  return (
-    <div className="rt-account-itemall">
-      <Grid data={dataArr}
-        columnNum={3}
-        hasLine={false}
-        renderItem={(val, index) => (
-          <div
-            key={index}
-            className="-item"
-            onClick={
-              () => {
-                onFetchLink(val)
+class AccountItemAll extends Component {
+  
+  render() {
+    return (
+      <div className="rt-account-itemall">
+        <Grid data={dataArr}
+          columnNum={3}
+          hasLine={false}
+          renderItem={(val, index) => (
+            <div
+              key={index}
+              className="-item"
+              onClick={
+                () => {
+                  onFetchLink(val,this.props.intl.formatMessage)
+                }
               }
-            }
-          >
-            <span className="-left">{val.icon}</span>
-            <span>
-              {
-                val.name
-              }
-            </span>
-            
-          </div>
-        )}
-      />
-    </div>
-  )
+            >
+              <span className="-left">{val.icon}</span>
+              <span>
+                {
+                  val.name
+                }
+              </span>
+              
+            </div>
+          )}
+        />
+      </div>
+    )
+  }
 }
+// const AccountItemAll = function() {
+//   const formatMessage = this.props.intl.formatMessage
+//   return (
+//     <div className="rt-account-itemall">
+//       <Grid data={dataArr}
+//         columnNum={3}
+//         hasLine={false}
+//         renderItem={(val, index) => (
+//           <div
+//             key={index}
+//             className="-item"
+//             onClick={
+//               () => {
+//                 onFetchLink(val,formatMessage)
+//               }
+//             }
+//           >
+//             <span className="-left">{val.icon}</span>
+//             <span>
+//               {
+//                 val.name
+//               }
+//             </span>
+            
+//           </div>
+//         )}
+//       />
+//     </div>
+//   )
+// }
 
-export default AccountItemAll
+export default injectIntl(AccountItemAll)

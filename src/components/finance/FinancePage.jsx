@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { FormattedMessage } from 'react-intl'
 import { InputItem, NoticeBar ,Icon, Button} from 'antd-mobile'
 import { FooterBar } from 'component/footer'
 import { CommonHeader } from 'component/header'
 import { TopAccount } from 'component/trade'
 import { SimpleSwitchBtn } from 'component/common'
-import { InformationList, CalenderPage } from './'
+import { InformationList, CalenderPage, messages } from './'
+import { defineMessages, intlShape, injectIntl, FormattedMessage } from 'react-intl'
 
 
 class FinancePage extends Component {
@@ -27,9 +27,10 @@ class FinancePage extends Component {
   }
   render() {
     //console.log(this.props)
+    const formatMessage = this.props.intl.formatMessage
     return (
       <div>
-        <CommonHeader title="资讯" paly="0"/>
+        <CommonHeader title={formatMessage(messages.informationTitle)} paly="0"/>
         <SimpleSwitchBtn
           left={
               <FormattedMessage id="news"/>
@@ -52,4 +53,4 @@ class FinancePage extends Component {
   }
 }
 
-export default FinancePage
+export default injectIntl(FinancePage)

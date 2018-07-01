@@ -186,5 +186,65 @@
   {
     "id": "XAG",
     "defaultMessage": "白银"
+  },
+  {
+    "id": "TradeLoading",
+    "defaultMessage": "TradeLoading"
+  },
+  {
+    "id": "TradeIsNothing",
+    "defaultMessage": "TradeIsNothing"
+  },
+  {
+    "id": "PleaseModifyNickNameFirst",
+    "defaultMessage": "PleaseModifyNickNameFirst"
+  },
+  {
+    "id": "submitting",
+    "defaultMessage": "submitting"
+  },
+  {
+    "id": "submitFaild",
+    "defaultMessage": "submitFaild"
+  },
+  {
+    "id": "ChangeBugPendingSuccess",
+    "defaultMessage": "ChangeBugPendingSuccess"
+  },
+  {
+    "id": "ChangeMatchingResultFound",
+    "defaultMessage": "ChangeMatchingResultFound"
+  },
+  {
+    "id": "NotSameInputPassword",
+    "defaultMessage": "NotSameInputPassword"
+  },
+  {
+    "id": "PasswordLengthNeeds",
+    "defaultMessage": "PasswordLengthNeeds"
+  },
+  {
+    "id": "PasswordNeedsNumberAnd",
+    "defaultMessage": "PasswordNeedsNumberAnd"
+  },
+  {
+    "id": "ChangePasswordSuccessing",
+    "defaultMessage": "ChangePasswordSuccessing"
+  },
+  {
+    "id": "ChangePasswordFailling",
+    "defaultMessage": "ChangePasswordFailling"
+  },
+  {
+    "id": "ChangeUploading",
+    "defaultMessage": "ChangeUploading"
+  },
+  {
+    "id": "ChangeUploadeFailure",
+    "defaultMessage": "ChangeUploadeFailure"
+  },
+  {
+    "id": "ChangeUploadeSuccess",
+    "defaultMessage": "ChangeUploadeSuccess"
   }
 ]

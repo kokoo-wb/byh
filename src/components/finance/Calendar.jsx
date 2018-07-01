@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Carousel } from 'antd-mobile'
 import moment from 'moment'
+import { defineMessages, intlShape, injectIntl, FormattedMessage } from 'react-intl'
+import { messages } from './'
 
 // 空操作
 function noop() {}
@@ -81,7 +83,7 @@ function generateWeek(i) {
   }
 }
 
-export default class Calendar extends Component {
+class Calendar extends Component {
   constructor() {
     super()
     this.state = {
@@ -96,6 +98,7 @@ export default class Calendar extends Component {
     this.props.onChange(moment().format('YYYY-MM-DD'))
   }
   render() {
+    const formatMessage = this.props.intl.formatMessage
     const { carouselIndex, date } = this.state
     const month = moment(this.date).format('M')
     return (
@@ -137,7 +140,7 @@ export default class Calendar extends Component {
             return (
               <div key={i} className={`cm-calendar-box`}>
                 <div className={`-month`}>
-                  <span>{month}月</span>
+                  <span>{month}{formatMessage(messages.month)}</span>
                 </div>
                 <div className={`-week`}>
                   {
@@ -165,7 +168,7 @@ export default class Calendar extends Component {
                             }
                           }
                         >
-                          <span className={`${v.dayIndex == ii ? '-active' : ''}`}>{today ? '今天' : generateWeek(ii)}</span>
+                          <span className={`${v.dayIndex == ii ? '-active' : ''}`}>{today ? formatMessage(messages.ChartRoomToday) : generateWeek(ii)}</span>
                           <span
                             className={`-day ${this.flag ? v.dayIndex == ii ? '-active' : '' : 
                             this.state.dayIndex == ii ? '-active' : ''
@@ -194,3 +197,5 @@ Calendar.defaultProps = {
 Calendar.propTypes = {
   onChange: PropTypes.func,
 }
+
+export default injectIntl(Calendar)

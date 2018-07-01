@@ -2,5 +2,113 @@
   {
     "id": "Back",
     "defaultMessage": "返回"
+  },
+  {
+    "id": "IsLogouting",
+    "defaultMessage": "IsLogouting"
+  },
+  {
+    "id": "LogoutFaill",
+    "defaultMessage": "LogoutFaill"
+  },
+  {
+    "id": "LogoutSuccess",
+    "defaultMessage": "LogoutSuccess"
+  },
+  {
+    "id": "prompts",
+    "defaultMessage": "prompts"
+  },
+  {
+    "id": "AccountIsDemo",
+    "defaultMessage": "AccountIsDemo"
+  },
+  {
+    "id": "DepositIsDemoAction",
+    "defaultMessage": "DepositIsDemoAction"
+  },
+  {
+    "id": "ifDepositToOppen",
+    "defaultMessage": "ifDepositToOppen"
+  },
+  {
+    "id": "OpenAccountRightNow",
+    "defaultMessage": "OpenAccountRightNow"
+  },
+  {
+    "id": "EnjoyDepositFirst",
+    "defaultMessage": "EnjoyDepositFirst"
+  },
+  {
+    "id": "ChangeUnbundling",
+    "defaultMessage": "ChangeUnbundling"
+  },
+  {
+    "id": "closeposition1",
+    "defaultMessage": "closeposition1"
+  },
+  {
+    "id": "OpenGranaryProvide",
+    "defaultMessage": "OpenGranaryProvide"
+  },
+  {
+    "id": "LoadingLoad",
+    "defaultMessage": "LoadingLoad"
+  },
+  {
+    "id": "Nopositionstodisplay",
+    "defaultMessage": "Nopositionstodisplay"
+  },
+  {
+    "id": "MoreLoad",
+    "defaultMessage": "MoreLoad"
+  },
+  {
+    "id": "SetUpSuccess",
+    "defaultMessage": "SetUpSuccess"
+  },
+  {
+    "id": "ChangeNickName",
+    "defaultMessage": "ChangeNickName"
+  },
+  {
+    "id": "MarketPriceLimitPrice",
+    "defaultMessage": "MarketPriceLimitPrice"
+  },
+  {
+    "id": "IFD1",
+    "defaultMessage": "IFD1"
+  },
+  {
+    "id": "IFD2",
+    "defaultMessage": "IFD2"
+  },
+  {
+    "id": "IFO1",
+    "defaultMessage": "IFO1"
+  },
+  {
+    "id": "IFO2LimitPrice",
+    "defaultMessage": "IFO2LimitPrice"
+  },
+  {
+    "id": "IFO2StopLoss",
+    "defaultMessage": "IFO2StopLoss"
+  },
+  {
+    "id": "TotalSettlement",
+    "defaultMessage": "TotalSettlement"
+  },
+  {
+    "id": "ForcedLiquidation",
+    "defaultMessage": "ForcedLiquidation"
+  },
+  {
+    "id": "OCOLimitPrice",
+    "defaultMessage": "OCOLimitPrice"
+  },
+  {
+    "id": "OCOStopLoss",
+    "defaultMessage": "OCOStopLoss"
   }
 ]

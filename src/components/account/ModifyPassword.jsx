@@ -11,6 +11,7 @@ import 'whatwg-fetch'
 class ModifyPassword extends Component {
   onOpenClick = () => {
     const { getFieldValue } = this.props.form
+    const formatMessage = this.props.intl.formatMessage
     //let accountid = getFieldValue('accountId')
     let oldpass = getFieldValue('oldpassword')
     let pass = getFieldValue('password')
@@ -21,19 +22,19 @@ class ModifyPassword extends Component {
     const regStr = /[0-9]/;
     let complex = 0
     if (!oldpass || oldpass.trim() == '') {
-      Toast.fail('请输入旧密码', 1.2)
+      Toast.fail(formatMessage(messages.inputoldpass), 1.2)
       return
     }
     if (!pass || pass.trim() == '') {
-      Toast.fail('请输入新密码', 1.2)
+      Toast.fail(formatMessage(messages.inputnewpass), 1.2)
       return
     }
     if (!againpass || againpass.trim() == '') {
-      Toast.fail('请再次输入新密码', 1.2)
+      Toast.fail(formatMessage(messages.inputagainpass), 1.2)
       return
     }
     if (pass != againpass) {
-      Toast.fail('新密码输入不一致', 1.2)
+      Toast.fail(formatMessage(messages.NotSameInputPassword), 1.2)
       return
     }
     if (regLower.test(pass)) {
@@ -46,15 +47,15 @@ class ModifyPassword extends Component {
         ++complex;
     }
     if (len > 32 || len < 8) {
-      Toast.fail('密码长度需要8到16位', 1.2)
+      Toast.fail(formatMessage(messages.PasswordLengthNeeds), 1.2)
       return
     }
     if (complex < 3 ) {
-      Toast.fail('密码需包含大小写字母及数字', 1.2)
+      Toast.fail(formatMessage(messages.PasswordNeedsNumberAnd), 1.2)
       return
     }
-    Toast.loading('正在提交...', 10, () => {
-      Toast.fail('提交失败！')
+    Toast.loading(formatMessage(messages.submitting), 10, () => {
+      Toast.fail(formatMessage(messages.submitFaild))
     })
     let options = {
       method: 'POST',
@@ -78,21 +79,21 @@ class ModifyPassword extends Component {
       result = text.slice(0,-1)
       options.body = encodeURI(result)
     }
-   fetch('http://47.75.10.124/demo/password/save', options)
+   fetch('https://news.byfx.r0.vc/demo/password/save', options)
     .then((rs) => {
      return rs.json()
     }).then((rs) => {
       Toast.hide()
       //console.log(rs, 'rs')
       if (rs && rs.error == 0) {
-        Toast.success('修改密码成功', 1.2, () => {
+        Toast.success(formatMessage(messages.ChangePasswordSuccessing), 1.2, () => {
           if (localStorage.remember == 2 && localStorage.password) {
             localStorage.setItem('password', pass)
           }
-          hashHistory.push('/account')
+          hashHistory.push('/trade')
         })
       } else {
-        Toast.fail('修改密码失败', 1.2)
+        Toast.fail(formatMessage(messages.ChangePasswordFailling), 1.2)
       }
     })
   }

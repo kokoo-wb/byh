@@ -83,7 +83,7 @@ class RealLogin extends Component {
         Toast.hide()
 
         Toast.success(loginSuccess, 1.2, () => {
-          hashHistory.push('/account')
+          hashHistory.push('/trade')
         })
       }
     })
@@ -151,7 +151,7 @@ class RealLogin extends Component {
           this.onInit()
           Toast.hide()
           Toast.success(loginSuccess, 1.2, () => {
-            hashHistory.push('/account')
+            hashHistory.push('/trade')
           })
         }
       })
@@ -192,7 +192,7 @@ class RealLogin extends Component {
               {...getFieldProps('mobile', {
                 initialValue: initMobile,
               })}
-              placeholder={account}
+              placeholder={str}
               clear
             />
             <div className="password-box">
@@ -202,7 +202,7 @@ class RealLogin extends Component {
               {...getFieldProps('password', {
                 initialValue: initPassword,
               })}
-              placeholder={str}
+              placeholder={account}
               clear
              />
              <Switch

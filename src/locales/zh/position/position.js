@@ -44,7 +44,17 @@ const position = {
 	    liquidationSuccess: '平仓成功',
 	    loading: '正在加载...',
 	    noMore: '没有更多',
-	    loadMore: '加载更多'
+			loadMore: '加载更多',
+			ChangePendingDetail: '挂单详情',
+			ModifyPendingSuccess: '修改挂单成功',
+			ModifyViceSingleSuccess: '修改副单成功',
+			AmendSingleSuccess: '修改副单一成功',
+			AmendSingleTwoSuccess: '修改副单二成功',
+
+			ChangeFiniceNodata: '没有相关数据',
+			ChangeFrontData: '前值',
+			ChangeNowData: '现值',
+			ChangeForecastData: '预测'
 
 }
 export default position

@@ -1,51 +1,53 @@
 import React, { Component } from 'react'
 import { Modal } from 'antd-mobile'
 import { CommonHeader } from 'component/header'
-import { FormattedMessage } from 'react-intl'
 import { config, helper, myFetch } from 'component/utils'
 import moment from 'moment'
-const onGuadanType = (val = 0) => {
-  let result = '市价/限价/止损'
+import { defineMessages, intlShape, injectIntl, FormattedMessage } from 'react-intl'
+import { messagex } from './'
+const onGuadanType = (val = 0, formatMessage) => {
+  let result = formatMessage(messagex.MarketPriceLimitPrice) 
   switch(val) {
     case 0: 
-      result = '市价/限价/止损';
+      result = formatMessage(messagex.MarketPriceLimitPrice);
       break
     case 11: 
-      result = 'IFD1次';
+      result = formatMessage(messagex.IFD1);
       break
     case 12:
-      result = 'IFD2次';
+      result = formatMessage(messagex.IFD2);
       break
     case 21:
-      result = 'OCO限价';
+      result = formatMessage(messagex.OCOLimitPrice);
       break
     case 22:
-      result = 'OCO止损';
+      result = formatMessage(messagex.OCOStopLoss);
       break
     case 31:
-      result = 'IFO1次';
+      result = formatMessage(messagex.IFO1);
       break
     case 32:
-      result = 'IFO2次限价';
+      result = formatMessage(messagex.IFO2LimitPrice);
       break
     case 33:
-      result = 'IFO2次止损';
+      result = formatMessage(messagex.IFO2StopLoss);
       break
     case 41:
-      result = '全決済';
+      result = formatMessage(messagex.TotalSettlement);
       break
     case 51:
-      result = '强制平仓';
+      result = formatMessage(messagex.ForcedLiquidation);
       break
     default:
-      result = '市价/限价/止损'
+      result = formatMessage(messagex.MarketPriceLimitPrice) 
   }
   return result
 }
 
-export default class HistoryDetail extends Component {
+class HistoryDetail extends Component {
 	
 	render() {
+    const formatMessage = this.props.intl.formatMessage
 		const { visible, onClose, data } = this.props
 		const ccy = helper.splitString(data.ccyPair)
 		console.log(data)
@@ -104,7 +106,7 @@ export default class HistoryDetail extends Component {
 					</li>
 					<li className="-item">
 						<FormattedMessage id="type"/>
-						<span>{data ? onGuadanType(data.orderFormDtlCls) : ''}</span>
+						<span>{data ? onGuadanType(data.orderFormDtlCls, formatMessage) : ''}</span>
 					</li>
           <li className="-item">
             <FormattedMessage id="guadandata"/>
@@ -120,7 +122,7 @@ export default class HistoryDetail extends Component {
           </li>
           <li className="-item">
             <FormattedMessage id="open/close"/>
-            <span>{data ? data.newcloseCls == 2 ? '平仓':'开仓': ''}</span>
+            <span>{data ? data.newcloseCls == 2 ? formatMessage(messagex.closeposition1):formatMessage(messagex.OpenGranaryProvide): ''}</span>
           </li>
 				</ul>
         
@@ -150,3 +152,5 @@ export default class HistoryDetail extends Component {
 			)
 	}
 }
+
+export default injectIntl(HistoryDetail)

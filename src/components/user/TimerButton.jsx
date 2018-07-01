@@ -114,7 +114,7 @@ class TimerButton extends Component {
         result = text.slice(0,-1)
         options.body = encodeURI(result)
       }
-     fetch('http://47.75.10.124/demo/vcode', options)
+     fetch('http://news.byfx.r0.vc/demo/vcode', options)
       .then((rs) => {
         //console.log(rs, 1)
        return rs.json()

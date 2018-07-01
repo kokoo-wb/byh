@@ -25,7 +25,9 @@ const zh = {
   mobilenull: '手机号码不能为空',
   mobilevalid: '不是有效的手机号码',
   emailnull: '邮箱不能为空',
-  emailvalid: '请输入正确的邮箱格式'
+  emailvalid: '请输入正确的邮箱格式',
+  informationTitle: '资讯',
+  undefined: ''
 }
 
 const zh_CN = Object.assign(zh, trade, setting, position, currencyPair, account, chart, time)

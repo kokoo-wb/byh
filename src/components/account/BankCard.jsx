@@ -1,18 +1,20 @@
 import React, { Component } from 'react'
 import { hashHistory } from 'react-router'
 import { Icon, SwipeAction, List, Button } from 'antd-mobile'
-import { FormattedMessage } from 'react-intl'
+import { defineMessages, intlShape, injectIntl, FormattedMessage } from 'react-intl'
 import { CommonHeader } from 'component/header'
+import { messagex } from './'
 
 
 
-export default class BankCard extends Component {
+class BankCard extends Component {
   state = {
     active: 0,
     getInfo: {}
   }
 
   render() {
+    const formatMessage = this.props.intl.formatMessage
     const { active, getInfo } = this.state
     return (
       <div className="rt-bank-card">
@@ -33,7 +35,7 @@ export default class BankCard extends Component {
             autoClose
             right={[
               {
-                text: '解绑',
+                text: formatMessage(messagex.ChangeUnbundling),
                 onPress: () => console.log('cancel'),
               },
             ]}
@@ -48,7 +50,7 @@ export default class BankCard extends Component {
             autoClose
             right={[
               {
-                text: '解绑',
+                text: formatMessage(messagex.ChangeUnbundling),
                 onPress: () => console.log('cancel'),
               },
             ]}
@@ -75,3 +77,5 @@ export default class BankCard extends Component {
     )
   }
 }
+
+export default injectIntl(BankCard)

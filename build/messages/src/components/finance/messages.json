@@ -1,0 +1,42 @@
+[
+  {
+    "id": "informationTitle",
+    "defaultMessage": "informationTitle"
+  },
+  {
+    "id": "month",
+    "defaultMessage": "month"
+  },
+  {
+    "id": "ChartRoomToday",
+    "defaultMessage": "ChartRoomToday"
+  },
+  {
+    "id": "ChangeFiniceNodata",
+    "defaultMessage": "ChangeFiniceNodata"
+  },
+  {
+    "id": "ChangeFrontData",
+    "defaultMessage": "ChangeFrontData"
+  },
+  {
+    "id": "ChangeNowData",
+    "defaultMessage": "ChangeNowData"
+  },
+  {
+    "id": "ChangeForecastData",
+    "defaultMessage": "ChangeForecastData"
+  },
+  {
+    "id": "loading",
+    "defaultMessage": "loading"
+  },
+  {
+    "id": "Nopositionstodisplay",
+    "defaultMessage": "Nopositionstodisplay"
+  },
+  {
+    "id": "MoreLoad",
+    "defaultMessage": "MoreLoad"
+  }
+]

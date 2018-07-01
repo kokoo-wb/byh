@@ -215,6 +215,22 @@ const messageString = defineMessages({
   Chinese: {
     id: 'Chinese',
     defaultMessage: '简中'
+  },
+  PleaseModifyNickNameFirst: {
+    id: 'PleaseModifyNickNameFirst',
+    defaultMessage: 'PleaseModifyNickNameFirst'
+  },
+  addProducts: {
+    id: 'addProducts',
+    defaultMessage: 'addProducts'
+  },
+  PleaseClickFinishToJump: {
+    id: 'PleaseClickFinishToJump',
+    defaultMessage: 'PleaseClickFinishToJump'
+  },
+  ChangeMatchingResultFound: {
+    id: 'ChangeMatchingResultFound',
+    defaultMessage: 'ChangeMatchingResultFound'
   }
 })
 

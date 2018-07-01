@@ -6,7 +6,7 @@ import 'whatwg-fetch'
 
 export default class AccountName extends Component {
   onGetUserInfor = () => {
-    fetch(`http://47.91.223.92/api/user?token=${localStorage.token}&uid=${localStorage.uid}`)
+    fetch(`https://chat.byfx.r0.vc/api/user?token=${localStorage.token}&uid=${localStorage.uid}`)
     .then((rs) => rs.json())
     .then((rs) => {
       //console.log(rs)
@@ -43,7 +43,7 @@ export default class AccountName extends Component {
           <span>{this.state.nickname}</span>
           <span className="-font">
             <FormattedMessage id="account1"/>
-            <span>ID: {this.state.id}</span>
+            <span> ID: {this.state.id}</span>
           </span>
         </div>
         <div
@@ -55,8 +55,7 @@ export default class AccountName extends Component {
           }
         >
           <span>
-            <FormattedMessage id="account1"/>
-            <FormattedMessage id="set"/>
+            <FormattedMessage id="account1"/> <FormattedMessage id="set"/>
           </span>
           <Icon type="right"/>
         </div>

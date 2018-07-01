@@ -214,5 +214,21 @@
   {
     "id": "Chinese",
     "defaultMessage": "简中"
+  },
+  {
+    "id": "PleaseModifyNickNameFirst",
+    "defaultMessage": "PleaseModifyNickNameFirst"
+  },
+  {
+    "id": "addProducts",
+    "defaultMessage": "addProducts"
+  },
+  {
+    "id": "PleaseClickFinishToJump",
+    "defaultMessage": "PleaseClickFinishToJump"
+  },
+  {
+    "id": "ChangeMatchingResultFound",
+    "defaultMessage": "ChangeMatchingResultFound"
   }
 ]

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "TradeHoldDetail",
+    "defaultMessage": "TradeHoldDetail"
+  },
+  {
+    "id": "TradeOpenPendingSuccess",
+    "defaultMessage": "TradeOpenPendingSuccess"
+  },
+  {
+    "id": "inprocessof",
+    "defaultMessage": "inprocessof"
+  },
+  {
+    "id": "submitFailure",
+    "defaultMessage": "submitFailure"
+  },
+  {
+    "id": "ModifyPendingSuccess",
+    "defaultMessage": "ModifyPendingSuccess"
+  },
+  {
+    "id": "ModifyViceSingleSuccess",
+    "defaultMessage": "ModifyViceSingleSuccess"
+  },
+  {
+    "id": "loading",
+    "defaultMessage": "loading"
+  },
+  {
+    "id": "Loadfailed",
+    "defaultMessage": "Loadfailed"
+  },
+  {
+    "id": "AmendSingleSuccess",
+    "defaultMessage": "AmendSingleSuccess"
+  },
+  {
+    "id": "AmendSingleTwoSuccess",
+    "defaultMessage": "AmendSingleTwoSuccess"
+  },
+  {
+    "id": "USD",
+    "defaultMessage": "USD"
+  },
+  {
+    "id": "EUR",
+    "defaultMessage": "EUR"
+  },
+  {
+    "id": "CAD",
+    "defaultMessage": "CAD"
+  },
+  {
+    "id": "JPY",
+    "defaultMessage": "JPY"
+  },
+  {
+    "id": "NZD",
+    "defaultMessage": "NZD"
+  },
+  {
+    "id": "AUD",
+    "defaultMessage": "AUD"
+  },
+  {
+    "id": "CHF",
+    "defaultMessage": "CHF"
+  },
+  {
+    "id": "GBP",
+    "defaultMessage": "GBP"
+  },
+  {
+    "id": "XAU",
+    "defaultMessage": "XAU"
+  },
+  {
+    "id": "XAG",
+    "defaultMessage": "XAG"
+  }
+]

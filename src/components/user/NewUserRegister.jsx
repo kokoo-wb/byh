@@ -63,9 +63,12 @@ class NewUserRegister extends Component {
       mobile = mobile.replace(/\s/g, '')
       mobileData = Object.assign({}, {type: 1, area_code: this.state.areaCode, mobile: mobile})
     }*/
-    Toast.loading(submitting, 20, () => {
-      Toast.fail(submitFaild)
-    })
+    Toast.loading(submitting, 20
+    //   , 
+    //   () => {
+    //   Toast.fail(submitFaild)
+    // }
+  )
     let options = {
       method: 'POST',
       headers:{
@@ -87,13 +90,13 @@ class NewUserRegister extends Component {
       result = text.slice(0,-1)
       options.body = encodeURI(result)
     }
-   fetch('http://47.75.10.124/demo/create', options)
+   fetch('http://news.byfx.r0.vc/demo/create', options)
     .then((rs) => {
       //console.log(rs, 1)
      return rs.json()
     })
     .then((rs) => {
-      console.log(rs)
+      // console.log(rs)
       Toast.hide()
       if (rs.error == 0) {
          Toast.success(opendemoSuccess, 1.2, () => {

@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { Icon, ListView } from  'antd-mobile'
-import { FormattedMessage } from 'react-intl'
-import { HistoryDetail } from './'
+import { defineMessages, intlShape, injectIntl, FormattedMessage } from 'react-intl'
+import { HistoryDetail, messagex } from './'
 import { config, myFetch, helper } from '../utils'
 import moment from 'moment'
 
 let pageIndex = 1;
 //console.log(pageIndex, 'pageIndex')
-export default class HistoryList extends Component {
+class HistoryList extends Component {
 	constructor(props) {
     super(props);
 
@@ -64,22 +64,30 @@ export default class HistoryList extends Component {
     	this.onFetchData()
   	}
   	_RenderRow = (rowData= {}, sectionID, rowID) => {
-  		//console.log(rowData)
+			//console.log(rowData.execAmt)
+			let results = ''
+			if (String(rowData.execAmt).length < 4) {
+				results = rowData.execAmt
+			} else if (String(rowData.execAmt).length >= 4 && String(rowData.execAmt).length < 7) {
+				results = helper.accDiv(rowData.execAmt, 1000) + 'K'
+			} else if (String(rowData.execAmt).length >= 7) {
+				results = helper.accDiv(rowData.execAmt, 1000000) + 'M'
+			}
   	  return (
         <div key={rowID} className="-item">
-			<span className="-first">{moment(rowData.execDt, "YYYY-MM-DD hh:mm:ss").format('MM月DD日')}</span>
+			<span className="-first">{moment(rowData.execDt, "YYYY-MM-DD hh:mm:ss").format('YY/MM/DD')}</span>
 			<span className="-second">
 			  <FormattedMessage id={helper.splitString(rowData.ccyPair)[0]}/>
               <span>/</span>
               <FormattedMessage id={helper.splitString(rowData.ccyPair)[1]}/>
 			</span>
-			<span className="-third">{rowData.execAmt}</span>
+			<span className="-third">{results}</span>
 			<span className="-four">
 				<em className={`-bgCls ${rowData.bsCls == 0 ? '' : '-green'}`}>
 					<FormattedMessage id={rowData.bsCls == 0 ? 'sell' : 'buy'}/>
 				</em>
 			</span>
-			<span>{rowData.totalPl ? rowData.totalPl : 0}</span>
+			<span className="-five">{rowData.totalPl ? rowData.totalPl : 0}</span>
 			<span
 				className="-last"
 				onClick={
@@ -116,8 +124,9 @@ export default class HistoryList extends Component {
 	 }
 	render() {
 		const { visible } = this.state
+		const formatMessage = this.props.intl.formatMessage
 		const footer = () => (<div style={{ padding: 30, textAlign: 'center' }}>
-		          {this.state.isLoading ? '正在加载...' : this.state.hasMore ? '没有更多' : '加载更多'}
+		          {this.state.isLoading ? formatMessage(messagex.LoadingLoad) : this.state.hasMore ? formatMessage(messagex.Nopositionstodisplay) : formatMessage(messagex.MoreLoad)}
 		        </div>)
 		return (
 			<div>
@@ -138,7 +147,7 @@ export default class HistoryList extends Component {
 						<span>
               <FormattedMessage id="direction"/>        
             </span>
-						<span>
+						<span className="-five">
               <FormattedMessage id="profitandloss"/>
             </span>
 						<span></span>
@@ -182,3 +191,5 @@ export default class HistoryList extends Component {
 			)
 	}
 }
+
+export default injectIntl(HistoryList)

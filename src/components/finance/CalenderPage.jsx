@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import { Calendar } from './'
+import { Calendar, messages } from './'
 import 'whatwg-fetch'
 import moment from 'moment'
 import { Icon, Result } from 'antd-mobile'
+import { defineMessages, intlShape, injectIntl, FormattedMessage } from 'react-intl'
 
-export default class CalenderPage extends Component {
+class CalenderPage extends Component {
   onFetchData = (date) => {
   	let lang = 'en-us'
     if (this.props.lang == 'zh') {
@@ -12,7 +13,7 @@ export default class CalenderPage extends Component {
     } else {
     	lang = 'en-us'
     }
-    fetch(`http://47.75.10.124/calendar?date=${date}&culture=${lang}`)
+    fetch(`https://news.byfx.r0.vc/calendar?date=${date}&culture=${lang}`)
       .then((rs) => {
         return rs.json()
       }).then((rs) => {
@@ -54,6 +55,7 @@ export default class CalenderPage extends Component {
 		})
 	}
 	render() {
+		const formatMessage = this.props.intl.formatMessage
 		return (
 			<div className="cm-scrollable-container">
 				<Calendar onChange={this.onChange}/>
@@ -63,7 +65,7 @@ export default class CalenderPage extends Component {
 		              ?
 		          <Result
 		            imgUrl="https://os.alipayobjects.com/rmsportal/MKXqtwNOLFmYmrY.png"
-		            message="没有相关数据"
+		            message={formatMessage(messages.ChangeFiniceNodata)}
 		          /> :
 		          this.state.data.map((val, index) => {
 		            return (
@@ -81,10 +83,10 @@ export default class CalenderPage extends Component {
 		                 <div className= {this.active ? '-center' : '-active'}>{val.Name}</div>
 		                 <div className="-bottom">
 		                   <div className="-one">
-		                     <div className="-inner-one">前值：<span className="-price">{val.DisplayPrevious}</span></div>
-		                     <div className="-inner-two">现值：<span className="-price">{val.DisplayActual}</span></div>
+		                     <div className="-inner-one">{formatMessage(messages.ChangeFrontData)}：<span className="-price">{val.DisplayPrevious}</span></div>
+		                     <div className="-inner-two">{formatMessage(messages.ChangeNowData)}：<span className="-price">{val.DisplayActual}</span></div>
 		                   </div>
-		                   <div className="-two">预测：<span className="-price">{val.DisplayRevised}</span></div>
+		                   <div className="-two">{formatMessage(messages.ChangeForecastData)}：<span className="-price">{val.DisplayRevised}</span></div>
 		                 </div>
 		               </div>
 		             </li>
@@ -96,3 +98,4 @@ export default class CalenderPage extends Component {
 		)
 	}
 }
+export default injectIntl(CalenderPage)

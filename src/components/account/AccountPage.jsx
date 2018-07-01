@@ -35,7 +35,7 @@ export default class AccountPage extends Component {
               className="-notice_change"
               onClick={
                 () => {
-                  //hashHistory.push('/openaccount')
+                  hashHistory.push('/openaccount')
                 }
               }
             >

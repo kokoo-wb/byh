@@ -87,9 +87,9 @@ class RealAccount extends Component {
       options.body = encodeURI(result)
     }
     Toast.loading(loading, 10, () => {
-      Toast.fail(loginFailed)
+      //Toast.fail(loginFailed)
     })
-    fetch('http://47.75.10.124/demo/mlogin', options)
+    fetch('http://news.byfx.r0.vc/demo/mlogin', options)
     .then((rs) => {
       return rs.json()
     })
@@ -109,7 +109,7 @@ class RealAccount extends Component {
         if (rs.data.tmConfirmStatus == '0') {
           alert(ConfirmTrade, 
             <div className="tips-message">
-              <a target="_blank" href="http://47.75.10.124/demo/agreement?lang=SC"><FormattedMessage id="linkTrade"/></a>
+              <a target="_blank" href="https://news.byfx.r0.vc/demo/agreement?lang=SC"><FormattedMessage id="linkTrade"/></a>
               <p className="check">
                 <FormattedMessage id="lSureOrNot"/>
               </p>
@@ -130,7 +130,7 @@ class RealAccount extends Component {
                     if (res) {
                       if (rs.data.pwChangeFlag == '0') {
                         Toast.success(loginSuccess,1.2,() => {
-                          hashHistory.push('/account')
+                          hashHistory.push('/trade')
                         })
                       } else if (rs.data.pwChangeFlag == '1') {
                         Toast.success(loginReset,1.2, () => {
@@ -152,7 +152,7 @@ class RealAccount extends Component {
           this.onInit()
           if (rs.data.pwChangeFlag == '0') {
               Toast.success(loginSuccess,1.2,() => {
-                hashHistory.push('/account')
+                hashHistory.push('/trade')
               })
           } else if (rs.data.pwChangeFlag == '1') {
             Toast.success(loginReset,1.2, () => {
@@ -251,7 +251,7 @@ class RealAccount extends Component {
         result = text.slice(0,-1)
         options.body = encodeURI(result)
       }
-     fetch('http://47.75.10.124/demo/mlogin', options)
+     fetch('https://news.byfx.r0.vc/demo/mlogin', options)
       .then((rs) => {
         return rs.json()
       })
@@ -271,7 +271,7 @@ class RealAccount extends Component {
         if (rs.data.tmConfirmStatus == '0') {
           alert(ConfirmTrade, 
             <div className="tips-message">
-              <a target="_blank" href="http://47.75.10.124/demo/agreement?lang=SC">{linkTrade}</a>
+              <a target="_blank" href="https://news.byfx.r0.vc/demo/agreement?lang=SC">{linkTrade}</a>
               <p className="check">
                 {SureOrNot}
               </p>
@@ -292,7 +292,7 @@ class RealAccount extends Component {
                     if (res) {
                       if (rs.data.pwChangeFlag == '0') {
                         Toast.success(loginSuccess,1.2,() => {
-                          hashHistory.push('/account')
+                          hashHistory.push('/trade')
                         })
                       } else if (rs.data.pwChangeFlag == '1') {
                         Toast.success(loginReset,1.2, () => {
@@ -314,7 +314,7 @@ class RealAccount extends Component {
           this.onInit()
           if (rs.data.pwChangeFlag == '0') {
               Toast.success(loginSuccess,1.2,() => {
-                hashHistory.push('/account')
+                hashHistory.push('/trade')
               })
           } else if (rs.data.pwChangeFlag == '1') {
             Toast.success(loginReset,1.2, () => {
@@ -365,7 +365,7 @@ class RealAccount extends Component {
               {...getFieldProps('mobile', {
                 initialValue: initMobile,
               })}
-              placeholder={account}
+              placeholder={str}
               clear
             />
             <div className="password-box">
@@ -375,7 +375,7 @@ class RealAccount extends Component {
               {...getFieldProps('password', {
                 initialValue: initPassword,
               })}
-              placeholder={str}
+              placeholder={account}
               clear
              />
              <Switch
@@ -401,10 +401,16 @@ class RealAccount extends Component {
               />
             </Button>
             <span className="rt-forgot">
-              <span>
+              <span
+                onClick={
+                  () => {
+                    location.href = "http://110.79.14.162:8080/sbi/website/form.html"
+                  }
+                }
+              >
                 <FormattedMessage
-                 id="forgotPassWord"
-              />
+                  id="openAccount"
+                />
               </span>
               <span
                 onClick={
@@ -418,8 +424,7 @@ class RealAccount extends Component {
                 />
               </span>
             </span>
-            {/*<p className="rt-cancel">
-            </p>*/}
+            <p className="rt-changeForgot"><FormattedMessage id="forgotPassWord"/></p>
           </div>
         </div>
       )

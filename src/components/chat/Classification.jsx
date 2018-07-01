@@ -7,6 +7,7 @@ const TabPane = Tabs.TabPane
 export default class Classification extends Component {
   render() {
     const { className, handleTabClick, activeIndex, rooms } = this.props
+    console.log(rooms,'rooms')
 
     return (
       <Tabs

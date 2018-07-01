@@ -1,21 +1,23 @@
 import React, {Component} from 'react'
-import { FormattedMessage } from 'react-intl'
+import { defineMessages, intlShape, injectIntl, FormattedMessage } from 'react-intl'
 import { hashHistory } from 'react-router'
 import { Icon, Button, Toast } from 'antd-mobile'
 import { CommonHeader } from 'component/header'
 import { SideLeftRight, ThreeItem } from 'component/common'
 import { TopAccount } from 'component/trade'
 import { myFetch, config, helper } from 'component/utils'
+import { messagex } from './'
 import 'whatwg-fetch'
 
-export default class AccountCondition extends Component {
+class AccountCondition extends Component {
   constructor(props){
     super(props)
     this.getUserMessage = this.getUserMessage.bind(this)
  }
   loginOut = () => {
-    Toast.loading('正在注销...', 10, () => {
-      Toast.fail('注销失败！')
+    const formatMessage = this.props.intl.formatMessage
+    Toast.loading(formatMessage(messagex.IsLogouting), 10, () => {
+      Toast.fail(formatMessage(messagex.LogoutFaill))
     })
     const options = {
       method: 'POST'
@@ -24,7 +26,7 @@ export default class AccountCondition extends Component {
       .then((rs) => {
         if (rs) {
           Toast.hide()
-          Toast.success('注销成功！', 1.2, () => {
+          Toast.success(formatMessage(messagex.LogoutSuccess), 1.2, () => {
             localStorage.clear()
             sessionStorage.removeItem('notice')
             hashHistory.push('/')
@@ -39,7 +41,7 @@ export default class AccountCondition extends Component {
     this.getUserMessage()
   }
   onGetUserInfor = () => {
-    fetch(`http://47.91.223.92/api/user?token=${localStorage.token}&uid=${localStorage.uid}`)
+    fetch(`https://chat.byfx.r0.vc/api/user?token=${localStorage.token}&uid=${localStorage.uid}`)
     .then((rs) => rs.json())
     .then((rs) => {
       //console.log(rs)
@@ -196,3 +198,5 @@ export default class AccountCondition extends Component {
     )
   }
 }
+
+export default injectIntl(AccountCondition)

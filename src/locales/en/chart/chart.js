@@ -4,6 +4,7 @@ const chart={
 							IWantSay:'I want to say something',
 							Cancel:'Cancel',
 							ChatContent:'Chatroom content',
-							SendOut:'Send'
+							SendOut:'Send',
+							ChartRoomToday: 'Today'
 }
 export default chart

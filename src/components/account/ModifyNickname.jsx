@@ -5,10 +5,12 @@ import { Icon, Button, InputItem, Toast } from 'antd-mobile'
 import { CommonHeader } from 'component/header'
 import { createForm } from 'rc-form'
 import { myFetch, config, helper } from 'component/utils'
+import { messagex } from './'
 import 'whatwg-fetch'
 
  class ModifyNickname extends Component {
   render() {
+    const formatMessage = this.props.intl.formatMessage
     const { getFieldProps } = this.props.form
     let defname = this.props.location.query ? this.props.location.query.defname : ''
     return (
@@ -41,7 +43,7 @@ import 'whatwg-fetch'
                 result = text.slice(0,-1)
                 options.body = encodeURI(result)
               }
-             fetch('http://47.91.223.92/api/nickname/save', options)
+             fetch('https://chat.byfx.r0.vc/api/nickname/save', options)
               .then((rs) => {
                return rs.json()
               })
@@ -49,7 +51,7 @@ import 'whatwg-fetch'
                 console.log(rs)
                 if (rs.status) {
                   Toast.hide()
-                   Toast.success('设置成功！', 1.2, () => {
+                   Toast.success(formatMessage(messagex.SetUpSuccess), 1.2, () => {
                     hashHistory.goBack()
                   })
                 } else {
@@ -66,7 +68,7 @@ import 'whatwg-fetch'
             clear
             placeholder={defname}
             autoFocus
-          >昵称</InputItem>
+          >{formatMessage(messagex.ChangeNickName)}</InputItem>
         </div>
       </div>
     )

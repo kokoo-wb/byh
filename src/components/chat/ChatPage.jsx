@@ -28,7 +28,7 @@ class ChatPage extends Component {
   }
 
   connect(namespace) {
-    const socket = io('http://47.91.223.92:3000' + namespace, { transports: ['websocket'] })
+    const socket = io('wss://wss.byfx.r0.vc' + namespace, { transports: ['websocket'] })
     return new Promise(resolve => {
       socket.on('connect', () => {
         resolve(socket)
@@ -40,6 +40,7 @@ class ChatPage extends Component {
 
   async componentDidMount() {
 
+    Toast.loading('Connecting Chat Service', 10)
     this.onGetUserInfor()
     
     this.socketIo = await this.connect('/chat')
@@ -48,7 +49,9 @@ class ChatPage extends Component {
     
     // 登录成功
     this.socketIo.on('loginSuccess', () => {
-    this.socketIo.emit('getRoomList', {})
+      Toast.hide()
+      Toast.loading('Getting Rooms', 10)
+      this.socketIo.emit('getRoomList', {})
     })
 
     // 更新房间列表
@@ -57,6 +60,7 @@ class ChatPage extends Component {
         rooms
       }, () => {
         this.socketIo.emit('join', this.state.rooms[0]._id)
+        Toast.hide()
       })
     })
 
@@ -131,7 +135,6 @@ class ChatPage extends Component {
   // 发送消息
   onSendMessge = (msg) => {
     let Changenickname = this.props.intl.formatMessage(messageString.Changenickname)
-    console.log(this.state.user.nickname, 12)
     Popup.hide()
     if (this.state.user.nickname != '佰益滙用户') {
       
@@ -160,7 +163,7 @@ class ChatPage extends Component {
   }
 
   onGetUserInfor = () => {
-    fetch(`http://47.91.223.92/api/user?token=${localStorage.token}&uid=${localStorage.uid}`)
+    fetch(`https://chat.byfx.r0.vc/api/user?token=${localStorage.token}&uid=${localStorage.uid}`)
     .then((rs) => rs.json())
     .then((rs) => {
       //console.log(rs)

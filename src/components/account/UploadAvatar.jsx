@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import { Button, Toast } from 'antd-mobile'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, intlShape, injectIntl,formatMessage } from 'react-intl'
 import Upload from 'rc-upload'
 import 'whatwg-fetch'
 import CosCloud from 'cos-js-sdk-v4'
 import { CommonHeader } from 'component/header'
+import { messages } from 'component/trade'
 
-export default class UploadAvatar extends Component {
+class UploadAvatar extends Component {
   onGetSign = (fileName) => {
     let options = {
       method: 'POST',
@@ -29,7 +30,7 @@ export default class UploadAvatar extends Component {
       result = text.slice(0,-1)
       options.body = encodeURI(result)
     }
-    return fetch('http://47.91.223.92/api/avatar/upload', options)
+    return fetch('https://chat.byfx.r0.vc/api/avatar/upload', options)
   }
 
   onSaveAvatar = (avatar) => {
@@ -54,7 +55,7 @@ export default class UploadAvatar extends Component {
       result = text.slice(0,-1)
       options.body = encodeURI(result)
     }
-    return fetch('http://47.91.223.92/api/avatar/save', options)
+    return fetch('https://chat.byfx.r0.vc/api/avatar/save', options)
   }
 
   state = {
@@ -73,9 +74,9 @@ export default class UploadAvatar extends Component {
   }
 
   uploadFile(e) {
-
-    Toast.loading('正在上传...', 10, () => {
-      Toast.fail('上传失败！')
+    const formatMessage = this.props.intl.formatMessage
+    Toast.loading(formatMessage(messages.ChangeUploading), 10, () => {
+      Toast.fail(formatMessage(messages.ChangeUploadeFailure))
     })
 
     let file = e.target.files[0]
@@ -102,11 +103,11 @@ export default class UploadAvatar extends Component {
       response = await response.json()
       this.setState({imgUrl: avatar})
       Toast.hide()
-      Toast.success('上传成功！')
+      Toast.success(formatMessage(messages.ChangeUploadeSuccess))
     }
     let errorCallBack = (result) => {
       Toast.hide()
-      Toast.error('上传失败！')
+      Toast.error(formatMessage(messages.ChangeUploadeFailure))
     }
     let progressCallBack = () => {
 
@@ -139,3 +140,5 @@ export default class UploadAvatar extends Component {
     )
   }
 }
+
+export default injectIntl(UploadAvatar)

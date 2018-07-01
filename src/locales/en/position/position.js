@@ -11,7 +11,7 @@ const position = {
 	    termofvalidity:'Valid Period',
 	    bidirectionalsingle:'OCO order',
 	    profitpandploss:'P&L',
-	    confirm:'P&L',
+	    confirm:'Close',
 	    direction:'Direction',
 	    mainsublist:'After the first order is executed, the second order will be executed',
 	    highest:'Highest',
@@ -44,7 +44,16 @@ const position = {
 	    liquidationSuccess: 'Closing successful!',
 	    loading: 'Loading…',
 	    noMore: 'No positions to display',
-	    loadMore: 'More'
+			loadMore: 'More',
+			ChangePendingDetail: 'Pending Order Details',
+			ModifyPendingSuccess: 'Modify the success of Pending',
+			ModifyViceSingleSuccess: 'Amend the vice - single success',
+			AmendSingleSuccess: 'Amend a single success',
+			AmendSingleTwoSuccess: 'Amend the vice single two success',
+			ChangeFiniceNodata: 'No relevant data',
+			ChangeFrontData: 'The former value',
+			ChangeNowData: 'present value',
+			ChangeForecastData: 'Forecast'
 
 }
 export default position

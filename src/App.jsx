@@ -10,44 +10,48 @@ import zh_CN from './locales/zh/zh'
 
 class App extends Component {
   state = {
-    language: 'zh-CN',
-    obj: zh_CN,
-    lang: 'zh'
+    flag: false,
   }
   componentDidMount() {
-    localStorage.setItem('language', 'zh-CN')
+    if (!localStorage.language) {
+      let lang = navigator.language
+      localStorage.setItem('language', lang)
+    }
   }
   chooseLocale = (language) => {
     switch(language){
-      case 'en':
-       if (this.state.language == 'en') return
+      case 'en-US':
+        if (localStorage.language == 'en-US') return
+        localStorage.setItem('language', 'en-US')
         this.setState({
-          obj: en_US,
-          language: 'en',
-          lang: 'en'
-        }, () => {
-          localStorage.setItem('language', 'en')
+          flag: true
         })
-        break;
+      break;
       case 'zh-CN':
-        if (this.state.language == 'zh-CN') return
-          this.setState({
-            obj: zh_CN,
-            language: 'zh-CN',
-            lang: 'zh'
-          }, () => {
-            localStorage.setItem('language', 'zh-CN')
-          })
-        
-        break;
+        if (localStorage.language == 'zh-CN') return
+        localStorage.setItem('language', 'zh-CN')
+        this.setState({
+          flag: true
+        })
+      break;
     }
   }
   render() {
-     // console.log(this.state.language, 'language')
+    let lang = 'zh-CN'
+    if (!localStorage.language) {
+      lang = navigator.language
+      localStorage.setItem('language', lang)
+    }
+    let messages
+    if (localStorage.language == 'zh-CN') {
+      messages = zh_CN
+    } else {
+      messages = en_US
+    }
     return (
       <IntlProvider
-        locale={this.state.language}
-        messages={this.state.obj}
+        locale={localStorage.language ? localStorage.language : lang}
+        messages={messages}
       >
         <div className={`rt-app-container`}>
           <div id="error-notice"></div>

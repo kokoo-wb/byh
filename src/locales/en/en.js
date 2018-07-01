@@ -47,7 +47,9 @@ const en_US = {
           mobilenull: 'Mobile number cannot be empty',
           mobilevalid: 'Mobile number cannot be empty',
           emailnull: 'Email address cannot be empty',
-          emailvalid: 'Please enter a valid email address'
+          emailvalid: 'Please enter a valid email address',
+          informationTitle: 'News',
+          undefined: ''
         }
   const zh_CN = Object.assign(en_US, trade, setting, position, currencyPair, account, chart, time)
 

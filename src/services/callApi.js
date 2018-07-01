@@ -23,54 +23,73 @@ export function callApi(endpoint, method = 'POST', data = {}, jsonp = false) {
 
     const myFetch = jsonp ? fetchJsonp : fetch
 
-    myFetch(endpoint, {
+    let params = {
         method: method,
-        headers: header,
-        body: bodySteam != '' ? bodySteam : undefined
-    }).then((res) => {
-        return res.json()
-    }).then((json) => {
-        if (json === undefined) {
-            return {}
+        headers: header
+    }
+
+    if (method != 'GET') {
+        params = {
+            ...params,
+            body: bodySteam != '' ? bodySteam : undefined
         }
-        if (json.statusCode == '0') {
-            return json
-        } else {
-            let error = json.errorInfo
-            if (error && error.errorList) {
-                const { errorCode, errorMessageList } = error.errorList[0];
-                if (errorCode == 'st-ml1era2103') {
-                    Toast.fail(errorMessageList[0], 2, () => {
-                        hashHistory.push('/')
-                    })
-                }
+    }
 
-                let lang = localStorage.getItem("language")
-                error.errorList.map((item) => {
-                    let errMsg = errorJson[item.errorCode] && errorJson[item.errorCode][lang]
-                    if (item.errorParamList) {
-                        let replacestr1 = item.errorParamList[0]
-                        let replacestr2 = item.errorParamList[1]
-                        let newStr1 = errMsg.replace(/\{0\}/g, replacestr1)
-                        let newStr2 = newStr1.replace(/\{1\}/g, replacestr2)
-                        Toast.fail(newStr2)
-                    } else {
-                        Toast.fail(errMsg)
-                    }
-                })
-
-                return json
+    var promise = new Promise((resolve, reject) => {
+        myFetch(endpoint, params).then((res) => {
+            return res.json()
+        }).then((json) => {
+            if (json === undefined) {
+                resolve({});
             }
-        }
-    }).catch((err) => {
-        console.log(err)
+            if (json.code == '200') {
+                resolve(json);
+            } else {
+                let error = json.errorInfo
+                if (error && error.errorList) {
+                    const { errorCode, errorMessageList } = error.errorList[0];
+                    if (errorCode == 'st-ml1era2103') {
+                        Toast.fail(errorMessageList[0], 2, () => {
+                            hashHistory.push('/')
+                        })
+                    }
+
+                    let lang = localStorage.getItem("language")
+                    error.errorList.map((item) => {
+                        let errMsg = errorJson[item.errorCode] && errorJson[item.errorCode][lang]
+                        if (item.errorParamList) {
+                            let replacestr1 = item.errorParamList[0]
+                            let replacestr2 = item.errorParamList[1]
+                            let newStr1 = errMsg.replace(/\{0\}/g, replacestr1)
+                            let newStr2 = newStr1.replace(/\{1\}/g, replacestr2)
+                            Toast.fail(newStr2)
+                        } else {
+                            Toast.fail(errMsg)
+                        }
+                    })
+
+                    reject(json);
+                }
+            }
+        }).catch((err) => {
+            reject(err)
+        })
     })
+
+    return promise
+
 }
 
 
 
 function getHeader() {
-    return new Headers({
+    let header = {
         'Content-Type': 'application/x-www-form-urlencoded'
-    });
+    }
+    if (localStorage.getItem('token')) {
+        // header.Authorization = `Basic ${localStorage.getItem('token')}`
+    }
+
+    console.log(header)
+    return new Headers(header)
 }

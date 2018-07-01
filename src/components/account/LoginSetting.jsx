@@ -21,7 +21,7 @@ class LoginSetting extends Component {
 						<FormattedMessage id="logaccsetting"/>
 					}
 				/>
-				<h3 className="rt-explain">为了保留您模拟账户的交易记录，请您设置登录账户及密码</h3>
+				<h3 className="rt-explain"><FormattedMessage id="KeepTransitionHistory"/></h3>
 				<div className="cm-scrollable-container rt-padding-40">
 					<InputItem
 						type="phone"

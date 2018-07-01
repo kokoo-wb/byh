@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import PropTypes from 'prop-types'
-import { FormattedMessage } from 'react-intl'
+import { defineMessages, intlShape, injectIntl, FormattedMessage } from 'react-intl'
 import { InputItem, NoticeBar ,Icon, Button, ListView, Toast} from 'antd-mobile'
 import { myFetch, config, helper } from '../utils'
 import 'whatwg-fetch'
 import moment from 'moment'
-import { InformationDetail } from './'
+import { InformationDetail, messages } from './'
 
 const NUM_ROW = 20;
 
@@ -51,7 +51,7 @@ class InformationList extends Component {
     } else {
       lang = 'en-us'
     }
-    fetch(`http://47.75.10.124/news/list?page=${page}&limit=${NUM_ROW}&culture=${lang}`)
+    fetch(`https://news.byfx.r0.vc/news/list?page=${page}&limit=${NUM_ROW}&culture=${lang}`)
       .then((rs) => {
         return rs.json()
       }).then((rs) => {
@@ -67,7 +67,7 @@ class InformationList extends Component {
     })
   }
   onFetchDetail = (id) => {
-    fetch(`http://47.75.10.124/news/detail?id=${id}`)
+    fetch(`https://news.byfx.r0.vc/news/detail?id=${id}`)
       .then((rs) => {
         return rs.json()
       }).then((rs) => {
@@ -127,8 +127,9 @@ class InformationList extends Component {
     //console.log(scrollTop, 'scrollTop')
   }
   render() {
+    const formatMessage = this.props.intl.formatMessage
     const footer = () => (<div style={{ padding: 30, textAlign: 'center' }}>
-              {this.state.isLoading ? '正在加载...' : this.state.hasMore ? '没有更多' : '加载更多'}
+              {this.state.isLoading ? formatMessage(messages.loading) : this.state.hasMore ? formatMessage(messages.Nopositionstodisplay) : formatMessage(messages.MoreLoad)}
             </div>)
     return (
       <div className="infomation-page cm-scrollable-container">
@@ -177,4 +178,4 @@ class InformationList extends Component {
   }
 }
 
-export default InformationList
+export default injectIntl(InformationList)

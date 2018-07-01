@@ -8,13 +8,13 @@ const dataArr = [
   {
     icon: <Icon type={require('static/svg/c_1b.svg')}/>,
     iconactive: <Icon type={require('static/svg/c_1a.svg')}/>,
-    link: '/account',
+    link: '/trade',
     name: <FormattedMessage id="quotation"/>
   },
   {
     icon: <Icon type={require('static/svg/m2b.svg')}/>,
     iconactive: <Icon type={require('static/svg/m2a.svg')}/>,
-    link: '/account',
+    link: '/position',
     name: <FormattedMessage id="trade"/>
   },
   {

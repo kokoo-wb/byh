@@ -187,8 +187,67 @@ const messages = defineMessages({
     XAG: {
       id: 'XAG',
       defaultMessage: '白银'
+    },
+    TradeLoading: {
+      id: 'TradeLoading',
+      defaultMessage: 'TradeLoading'
+    },
+    TradeIsNothing: {
+      id: 'TradeIsNothing',
+      defaultMessage: 'TradeIsNothing'
+    },
+    PleaseModifyNickNameFirst: {
+      id: 'PleaseModifyNickNameFirst',
+      defaultMessage: 'PleaseModifyNickNameFirst'
+    },
+    submitting: {
+      id: 'submitting',
+      defaultMessage: 'submitting'
+    },
+    submitFaild: {
+      id: 'submitFaild',
+      defaultMessage: 'submitFaild'
+    },
+    ChangeBugPendingSuccess: {
+      id: 'ChangeBugPendingSuccess',
+      defaultMessage: 'ChangeBugPendingSuccess'
+    },
+    ChangeMatchingResultFound: {
+      id: 'ChangeMatchingResultFound',
+      defaultMessage: 'ChangeMatchingResultFound'
+    },
+    NotSameInputPassword: {
+      id: 'NotSameInputPassword',
+      defaultMessage: 'NotSameInputPassword'
+    },
+    PasswordLengthNeeds: {
+      id: 'PasswordLengthNeeds',
+      defaultMessage: 'PasswordLengthNeeds'
+    },
+    PasswordNeedsNumberAnd: {
+      id: 'PasswordNeedsNumberAnd',
+      defaultMessage: 'PasswordNeedsNumberAnd'
+    },
+    ChangePasswordSuccessing: {
+      id: 'ChangePasswordSuccessing',
+      defaultMessage: 'ChangePasswordSuccessing'
+    },
+    ChangePasswordFailling: {
+      id: 'ChangePasswordFailling',
+      defaultMessage: 'ChangePasswordFailling'
+    },
+    ChangeUploading: {
+      id: 'ChangeUploading',
+      defaultMessage: 'ChangeUploading'
+    },
+    ChangeUploadeFailure: {
+      id: 'ChangeUploadeFailure',
+      defaultMessage: 'ChangeUploadeFailure'
+    },
+    ChangeUploadeSuccess: {
+      id: 'ChangeUploadeSuccess',
+      defaultMessage: 'ChangeUploadeSuccess'
     }
-
 })
 
 export default messages

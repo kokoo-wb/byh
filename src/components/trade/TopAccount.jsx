@@ -60,7 +60,7 @@ class TopAccount extends Reflux.Component {
             />
           </span>
         </span>
-        <span>
+        {/*<span>
           <span>
             <FormattedMessage
                  id="bond"
@@ -71,7 +71,7 @@ class TopAccount extends Reflux.Component {
               value={data ? data.maintenanceMargin : 0}
             />
           </span>
-        </span>
+        </span>*/}
         <span>
           <span>
             <FormattedMessage

@@ -160,8 +160,8 @@ const errorListJson = {
         "zh-CN": "请输入参数（[parameterName]）"
     },
     "st-ml1era2107": {
-        "en": "[parameterName] is incorrect. ",
-        "zh-CN": "参数（[parameterName]）不正确"
+        "en": "{0} is incorrect. ",
+        "zh-CN": "参数（{0}）不正确"
     },
     "st-ml1era2301": {
         "en": "Unmatch occurs between CPKB and GNKB. ",

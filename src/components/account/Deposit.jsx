@@ -12,6 +12,14 @@ const messages = defineMessages({
     placeholderTwo: {
       id: 'yuan',
       defaultMessage:'元'
+    },
+    ChangeInputNumber: {
+      id: 'ChangeInputNumber',
+      defaultMessage: 'ChangeInputNumber'
+    },
+    ChangeInputYuan: {
+      id: 'ChangeInputYuan',
+      defaultMessage: 'ChangeInputYuan'
     }
 });
 class Deposit extends Component {
@@ -26,6 +34,8 @@ class Deposit extends Component {
     const { getFieldProps } = this.props.form
     const str = this.props.intl.formatMessage(messages.placeholderOne, {name: '充值金额（大于0.02）'})
     const yuan = this.props.intl.formatMessage(messages.placeholderTwo)
+    const changeInput = this.props.intl.formatMessage(messages.ChangeInputNumber)
+    const changeInputYuan = this.props.intl.formatMessage(messages.ChangeInputYuan)
     return (
       <div className="rt-deposit-container">
         <h3><FormattedMessage id="paymethod"/></h3>
@@ -66,8 +76,8 @@ class Deposit extends Component {
         <InputItem
           {...getFieldProps('money')}
           onChange={this.onChange}
-          placeholder={str}
-          extra={yuan}
+          placeholder={changeInput}
+          extra={changeInputYuan}
           type="text"
         />
         <Button

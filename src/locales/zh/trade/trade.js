@@ -92,6 +92,20 @@ const trade = {
       yuan: '元',
       recentrecord: '最近交易记录',
       transactionPrice: '成交价格',
-      orderConfirmation: '下单确认'
+      orderConfirmation: '下单确认',
+      TradeLoading: '正在加载中',
+      TradeIsNothing: '没有关注任何商品，请通过搜索添加外汇产品',
+      TradeSettingPending: '设置挂单',
+      TradeHoldDetail: '持仓详情',
+      TradeOpenPendingSuccess: '平仓挂单成功',
+      PleaseModifyNickNameFirst: '请先修改昵称',
+      PleaseClickFinishToJump: '请先点击完成，再进行跳转',
+      ChangeBugFloat: '浮动',
+      ChangeMatchingResultFound: '没有搜到匹配结果',
+      ChangeBugPendingSuccess: '挂单成功',
+
+      TheProductHasAdded: '已添加过该商品',
+      AddProductHasSuccess: '添加商品成功',
+      HaveNotProductAdded: '无可添加的商品'
     }
 export default trade

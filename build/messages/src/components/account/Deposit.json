@@ -1,0 +1,18 @@
+[
+  {
+    "id": "placeholder",
+    "defaultMessage": "请输入"
+  },
+  {
+    "id": "yuan",
+    "defaultMessage": "元"
+  },
+  {
+    "id": "ChangeInputNumber",
+    "defaultMessage": "ChangeInputNumber"
+  },
+  {
+    "id": "ChangeInputYuan",
+    "defaultMessage": "ChangeInputYuan"
+  }
+]

@@ -1,0 +1,250 @@
+[
+  {
+    "id": "transactionPrice",
+    "defaultMessage": "成交价格"
+  },
+  {
+    "id": "orderConfirmation",
+    "defaultMessage": "下单确认"
+  },
+  {
+    "id": "phoneAslogin",
+    "defaultMessage": "请输入手机号码作为登录账户"
+  },
+  {
+    "id": "inputVerify",
+    "defaultMessage": "请输入收到的验证码"
+  },
+  {
+    "id": "inputloginpass",
+    "defaultMessage": "请输入登录密码"
+  },
+  {
+    "id": "inputoldpass",
+    "defaultMessage": "请输入旧密码"
+  },
+  {
+    "id": "inputnewpass",
+    "defaultMessage": "请输入新密码"
+  },
+  {
+    "id": "inputagainpass",
+    "defaultMessage": "请再次输入新密码"
+  },
+  {
+    "id": "inputaccount",
+    "defaultMessage": "请输入当前帐号"
+  },
+  {
+    "id": "inputemail",
+    "defaultMessage": "请输入邮箱"
+  },
+  {
+    "id": "inputmobile",
+    "defaultMessage": "请输入手机号码"
+  },
+  {
+    "id": "mobilenull",
+    "defaultMessage": "手机号码不能为空"
+  },
+  {
+    "id": "mobilevalid",
+    "defaultMessage": "不是有效的手机号码"
+  },
+  {
+    "id": "emailnull",
+    "defaultMessage": "邮箱不能为空"
+  },
+  {
+    "id": "emailvalid",
+    "defaultMessage": "请输入正确的邮箱格式"
+  },
+  {
+    "id": "positionConfirm",
+    "defaultMessage": "建仓确认"
+  },
+  {
+    "id": "closeConfirm",
+    "defaultMessage": "平仓确认"
+  },
+  {
+    "id": "closeNum",
+    "defaultMessage": "平仓数量"
+  },
+  {
+    "id": "inputTextNum1",
+    "defaultMessage": "请输入小于"
+  },
+  {
+    "id": "inputTextNum2",
+    "defaultMessage": "的整数"
+  },
+  {
+    "id": "prompts",
+    "defaultMessage": "提示"
+  },
+  {
+    "id": "inputCorrectNum",
+    "defaultMessage": "请输入正确的数量"
+  },
+  {
+    "id": "inprocessof",
+    "defaultMessage": "正在提交..."
+  },
+  {
+    "id": "submitFailure",
+    "defaultMessage": "提交失败！"
+  },
+  {
+    "id": "loading",
+    "defaultMessage": "正在加载..."
+  },
+  {
+    "id": "noMore",
+    "defaultMessage": "没有更多"
+  },
+  {
+    "id": "loadMore",
+    "defaultMessage": "加载更多"
+  },
+  {
+    "id": "liquidationSuccess",
+    "defaultMessage": "平仓成功"
+  },
+  {
+    "id": "cancelguadan",
+    "defaultMessage": "确定要取消此挂单吗？"
+  },
+  {
+    "id": "closeposition",
+    "defaultMessage": "确定要平掉此持仓吗？"
+  },
+  {
+    "id": "turnoveroffset",
+    "defaultMessage": "成交偏移量"
+  },
+  {
+    "id": "distance",
+    "defaultMessage": "距离"
+  },
+  {
+    "id": "sell",
+    "defaultMessage": "卖"
+  },
+  {
+    "id": "buy",
+    "defaultMessage": "买"
+  },
+  {
+    "id": "currentPrice",
+    "defaultMessage": "现价"
+  },
+  {
+    "id": "goods",
+    "defaultMessage": "商品"
+  },
+  {
+    "id": "number",
+    "defaultMessage": "数量"
+  },
+  {
+    "id": "USD",
+    "defaultMessage": "美元"
+  },
+  {
+    "id": "EUR",
+    "defaultMessage": "欧元"
+  },
+  {
+    "id": "CAD",
+    "defaultMessage": "加元"
+  },
+  {
+    "id": "JPY",
+    "defaultMessage": "日元"
+  },
+  {
+    "id": "NZD",
+    "defaultMessage": "纽元"
+  },
+  {
+    "id": "AUD",
+    "defaultMessage": "澳元"
+  },
+  {
+    "id": "CHF",
+    "defaultMessage": "瑞郎"
+  },
+  {
+    "id": "GBP",
+    "defaultMessage": "英镑"
+  },
+  {
+    "id": "XAU",
+    "defaultMessage": "黄金"
+  },
+  {
+    "id": "XAG",
+    "defaultMessage": "白银"
+  },
+  {
+    "id": "TradeLoading",
+    "defaultMessage": "TradeLoading"
+  },
+  {
+    "id": "TradeIsNothing",
+    "defaultMessage": "TradeIsNothing"
+  },
+  {
+    "id": "PleaseModifyNickNameFirst",
+    "defaultMessage": "PleaseModifyNickNameFirst"
+  },
+  {
+    "id": "submitting",
+    "defaultMessage": "submitting"
+  },
+  {
+    "id": "submitFaild",
+    "defaultMessage": "submitFaild"
+  },
+  {
+    "id": "ChangeBugPendingSuccess",
+    "defaultMessage": "ChangeBugPendingSuccess"
+  },
+  {
+    "id": "ChangeMatchingResultFound",
+    "defaultMessage": "ChangeMatchingResultFound"
+  },
+  {
+    "id": "NotSameInputPassword",
+    "defaultMessage": "NotSameInputPassword"
+  },
+  {
+    "id": "PasswordLengthNeeds",
+    "defaultMessage": "PasswordLengthNeeds"
+  },
+  {
+    "id": "PasswordNeedsNumberAnd",
+    "defaultMessage": "PasswordNeedsNumberAnd"
+  },
+  {
+    "id": "ChangePasswordSuccessing",
+    "defaultMessage": "ChangePasswordSuccessing"
+  },
+  {
+    "id": "ChangePasswordFailling",
+    "defaultMessage": "ChangePasswordFailling"
+  },
+  {
+    "id": "ChangeUploading",
+    "defaultMessage": "ChangeUploading"
+  },
+  {
+    "id": "ChangeUploadeFailure",
+    "defaultMessage": "ChangeUploadeFailure"
+  },
+  {
+    "id": "ChangeUploadeSuccess",
+    "defaultMessage": "ChangeUploadeSuccess"
+  }
+]

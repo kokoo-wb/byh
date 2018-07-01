@@ -1,0 +1,22 @@
+[
+  {
+    "id": "placeholderSearch",
+    "defaultMessage": "搜索外汇"
+  },
+  {
+    "id": "TheProductHasAdded",
+    "defaultMessage": "TheProductHasAdded"
+  },
+  {
+    "id": "AddProductHasSuccess",
+    "defaultMessage": "AddProductHasSuccess"
+  },
+  {
+    "id": "HaveNotProductAdded",
+    "defaultMessage": "HaveNotProductAdded"
+  },
+  {
+    "id": "Cancel",
+    "defaultMessage": "Cancel"
+  }
+]

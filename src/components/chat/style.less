@@ -1,0 +1,238 @@
+.rt-chart-page{
+	.cm-centerRight-header{
+		.-right{
+			line-height: 50px;
+			.cm-circle{
+				width: 0.5rem;
+		    height: 0.5rem;
+		    border-radius: 50%;
+		    background-color: #fff;
+		    box-shadow: 0 0.06rem 0rem rgba(0, 0, 0, 0.1);
+		    display: flex;
+		    align-items: center;
+		    overflow: hidden;
+		    justify-content: center;
+		    float: right;
+		    margin-left: 15px;
+			    .am-icon{
+					width: 0.34rem;
+			    height: 0.34rem;
+			    vertical-align: middle;
+				}
+			}
+		}
+	}
+	.rt-suspension{
+		z-index: 20;
+		.am-tabs.am-tabs-top.rt-tab-nav{
+			.am-tabs-bar{
+				.am-tabs-tab{
+					height: 76px;
+					font-size: 24px;
+					background: #F6F6F7;
+					color:#6E6E6E;
+				}
+				.am-tabs-tab-active{
+					color:#9DBE19;
+				}
+				.am-tabs-ink-bar-animated{
+					background-color: #F6F6F7;
+				}
+				.am-tabs-nav{
+					.am-tabs-ink-bar{
+						background-color: #9DBE19;
+					}
+				}
+			}
+		}
+	}
+
+	.cm-scrollable-container{
+		background: #EDEEF0;
+		.am-tabs.am-tabs-top.rt-tab-nav{
+			.am-tabs-bar{
+				.am-tabs-tab{
+					height: 76px;
+					font-size: 24px;
+					background: #F6F6F7;
+					color:#6E6E6E;
+				}
+				.am-tabs-tab-active{
+					color:#9DBE19;
+				}
+				.am-tabs-ink-bar-animated{
+					background-color: #F6F6F7;
+				}
+				.am-tabs-nav{
+					.am-tabs-ink-bar{
+						background-color: #9DBE19;
+					}
+				}
+			}
+		}
+		.rt-chart-room{
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+				.rt-large-room{
+					padding: 0 20px 80px 32px;
+					background: #fff;
+					box-sizing: border-box;
+				.-items{
+					padding-top: 24px;
+					padding-bottom: 12px;
+					display: flex;
+					justify-content:space-around;
+					flex-direction: row;
+					min-height: 100px;
+					.-left{
+						flex:1;
+
+					    span {
+						    display: flex;
+						    width: 72px;
+						    height: 72px;
+						    border-radius: 50%;
+						    overflow: hidden;
+						    box-sizing: border-box;
+					      	align-items: center;
+					      	img {
+					      		width: 72px;
+					      		height: 72px;
+					      	}
+					    }
+					}
+					.-right{
+						flex:7;
+						display: flex;
+						justify-content:space-around;
+						flex-direction: column;
+						box-sizing: border-box;
+						overflow: hidden;
+						border-bottom: 1px solid #EDEDED;
+						margin-left: 20px;
+						margin-right: 20px;
+						.-top{
+							flex:1;
+							font-size: 22px;
+							.-name{
+								float: left;
+								color:#393A3F;
+								font-size: 24px;
+							}
+							.-time{
+								float: right;
+								color:#AFAFB3;
+							}
+							.-irtual{
+								float: left;
+								margin-left: 10px;
+								width: 60px;
+								background: #6F7072;
+								color:#fff;
+								text-align: center;
+								font-size: 16px;
+								height: 25px;
+								line-height: 25px;
+								border-radius: 20px;
+							}
+						}
+						.-bottom{
+							flex:3;
+							border-radius: 10px;
+							.-dec{
+								font-size: 24px;
+								color:#7C7B82;
+								line-height: 1.5;
+								
+							}
+						}
+					}
+				}
+			}
+		}
+
+	}
+	.click-say{
+		width: 100%;
+		background: #EDEEF0;
+		.-say{
+				margin: 10px 28px;
+				background: #fff;
+				height: 66px;
+				border: 2px solid #E4E7EC;
+				border-radius: 40px;
+				color:#969696;
+			.am-icon.am-icon-md{
+				margin-top: 10px;
+				margin-left: 24px;
+				vertical-align: middle;
+				float: left;
+			}
+			.i-can-say{
+				width: 80%;
+				float: left;
+				margin-left: 10px;
+				line-height: 66px;
+				color:#909090;
+				font-size: 24px;
+			}
+		}
+	}
+		
+}
+.am-popup-mask{
+	z-index: 1000;
+}
+.am-popup.am-popup-slide-up{
+	z-index: 1000;
+	background: #EDEEF0;
+	.am-popup-content{
+		.am-popup-body{
+			.-say-box{
+				.-say-top{
+					height: 96px;
+					padding: 0 16px 0 16px;
+					box-sizing: border-box;
+					line-height: 96px;
+					font-size: 32px;
+					color:#393A3F;
+					display: flex;
+					justify-content: space-around;
+					.-left{
+						flex:1;
+						text-align: left;
+					}
+					.-center{
+						flex:2;
+						text-align: center;
+					}
+					.-right{
+						flex:1;
+						text-align: right;
+						color:#9DBE19;
+					}
+				}
+				.-say-content{
+					background: #fff;
+					height: 212px;
+					border-radius: 10px;
+					margin: 0 16px 23px 16px;
+					.am-list-item.am-textarea-item{
+						height: 100%;
+						.am-textarea-control{
+							padding: 0;
+							height: 100%!important;
+							textarea{
+								height: 100%!important;
+								overflow: auto;
+								color:#393A3F;
+								font-size: 26px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

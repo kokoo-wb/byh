@@ -15,8 +15,6 @@ export function callApi(endpoint, method = 'POST', data = {}, jsonp = false) {
         // Toast.fail('请先登录', 2, () => {
         //     hashHistory.push('/')
         // })
-    } else {
-        data = Object.assign({ SESN: authToken }, data)
     }
 
     const bodySteam = encodeURI(new URLSearchParams(Object.entries(data)).toString());

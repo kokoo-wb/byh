@@ -5,10 +5,10 @@ const HTTP = 'http://'
 const HTTPS = 'https://'
 
 // 测试环境Server
-const TEST_API_SERVER = HTTP + '139.199.175.39:8015'
+const TEST_API_SERVER = HTTP + 'waihui.wufen21.com'
 
 // 生产环境Server
-const PRO_API_SERVER = HTTP + '139.199.175.39:8015'
+const PRO_API_SERVER = HTTP + 'waihui.wufen21.com'
 
 
 const ApiBase = {

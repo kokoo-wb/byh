@@ -15,8 +15,6 @@ export function callApi(endpoint, method = 'POST', data = {}, jsonp = false) {
         // Toast.fail('请先登录', 2, () => {
         //     hashHistory.push('/')
         // })
-    } else {
-        data = Object.assign({ SESN: authToken }, data)
     }
 
     const bodySteam = encodeURI(new URLSearchParams(Object.entries(data)).toString());
@@ -84,7 +82,8 @@ export function callApi(endpoint, method = 'POST', data = {}, jsonp = false) {
 
 function getHeader() {
     let header = {
-        'Content-Type': 'application/x-www-form-urlencoded'
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'token': localStorage.getItem('token')
     }
     if (localStorage.getItem('token')) {
         // header.Authorization = `Basic ${localStorage.getItem('token')}`

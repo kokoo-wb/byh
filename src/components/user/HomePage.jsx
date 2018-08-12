@@ -25,6 +25,10 @@ class HomePage extends Component {
         }).then((res) => {
             console.log('xxxxxxxx', res)
             localStorage.setItem('token', res.data.token)
+        });
+
+        Api.getQuestionsList({}).then((res) => {
+            console.log('xxxxxxxx', res)
         })
     }
 

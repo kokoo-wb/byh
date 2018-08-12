@@ -22,9 +22,7 @@ class ActivityList extends Component {
     }
 
     componentDidMount() {
-        Api.getUserInfo({
-            token: localStorage.getItem('token')
-        })
+        Api.getUserInfo()
     }
 
     render() {

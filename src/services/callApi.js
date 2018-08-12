@@ -83,7 +83,7 @@ export function callApi(endpoint, method = 'POST', data = {}, jsonp = false) {
 function getHeader() {
     let header = {
         'Content-Type': 'application/x-www-form-urlencoded',
-        'token': localStorage.getItem('token')
+        // 'token': localStorage.getItem('token')
     }
     if (localStorage.getItem('token')) {
         // header.Authorization = `Basic ${localStorage.getItem('token')}`

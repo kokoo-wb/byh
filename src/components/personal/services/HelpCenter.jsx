@@ -7,17 +7,40 @@ import { myFetch, config, helper } from 'component/utils'
 import 'whatwg-fetch'
 import './style.less'
 
+import * as Api from '../../../services';
+
 export default class HelpCenter extends Component {
     constructor(...args){
         super(...args)
         this.state = {
-            
+            iconList: [
+                '../../../statics/images/help_center_icon_one.png',
+                '../../../statics/images/help_center_icon_two.png',
+                '../../../statics/images/help_center_icon_three.png',
+                '../../../statics/images/help_center_icon_four.png',
+                '../../../statics/images/help_center_icon_five.png',
+                '../../../statics/images/help_center_icon_six.png'
+            ],
+            dataList: []
         }
+    }
+    componentWillMount() {
+        Api.getHelpersList({
+            pageNum: 1,
+            searchWords: ''
+        }).then((res) => {
+            if(res.data){
+                this.setState({
+                    dataList: res.data
+                })
+            }
+        })
     }
     componentDidMount() {
 
     }
     render() {
+        const { dataList, iconList } = this.state
         return (
             <div className="help-center">
                 <div className="search">
@@ -27,61 +50,19 @@ export default class HelpCenter extends Component {
                     />
                 </div>
                 <div className="help-items">
-                    <div className="help-item" onClick={() => {hashHistory.push('/personal/helpcenterdetail')}}>
-                        <div className="item-name">
-                            <h4>开立账户</h4>
-                            <img src="../../../statics/images/help_center_icon_one.png" />
-                        </div>
-                        <p className="item-desc">
-                            开户流程指引，开户所需证件，其他问题/条款
-                        </p>
-                    </div>
-                    <div className="help-item">
-                        <div className="item-name">
-                            <h4>开立账户</h4>
-                            <img src="../../../statics/images/help_center_icon_two.png" />
-                        </div>
-                        <p className="item-desc">
-                            开户流程指引，开户所需证件，其他问题/条款
-                        </p>
-                    </div>
-                    <div className="help-item">
-                        <div className="item-name">
-                            <h4>开立账户</h4>
-                            <img src="../../../statics/images/help_center_icon_three.png" />
-                        </div>
-                        <p className="item-desc">
-                            开户流程指引，开户所需证件，其他问题/条款
-                            开户流程指引，开户所需证件，其他问题/条款
-                        </p>
-                    </div>
-                    <div className="help-item">
-                        <div className="item-name">
-                            <h4>开立账户</h4>
-                            <img src="../../../statics/images/help_center_icon_four.png" />
-                        </div>
-                        <p className="item-desc">
-                            开户流程指引，开户所需证件，其他问题/条款
-                        </p>
-                    </div>
-                    <div className="help-item">
-                        <div className="item-name">
-                            <h4>开立账户</h4>
-                            <img src="../../../statics/images/help_center_icon_five.png" />
-                        </div>
-                        <p className="item-desc">
-                            开户流程指引，开户所需证件，其他问题/条款
-                        </p>
-                    </div>
-                    <div className="help-item">
-                        <div className="item-name">
-                            <h4>开立账户</h4>
-                            <img src="../../../statics/images/help_center_icon_six.png" />
-                        </div>
-                        <p className="item-desc">
-                            开户流程指引，开户所需证件，其他问题/条款
-                        </p>
-                    </div>
+                    {
+                        dataList.length>0? dataList.map((item,index)=>{
+                            return <div className="help-item" onClick={() => {hashHistory.push({pathname:'/personal/helpcenterdetail',query:{id:item.id}})}}>
+                                <div className="item-name">
+                                    <h4>{item.articleTitle}</h4>
+                                    <img src={iconList[index]} />
+                                </div>
+                                <p className="item-desc">
+                                    {item.info}
+                                </p>
+                            </div>
+                        }) : <div style={{textAlign: 'center', marginTop: 100}}>暂无内容^_^!!</div>
+                    }
                 </div>
             </div>
         )

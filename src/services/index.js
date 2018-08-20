@@ -10,3 +10,5 @@ export const getQuestionsList = (data) => callApi(ApiBaseName + '/api/artcle/get
 export const getHelpersList = (data) => callApi(ApiBaseName + '/api/artcle/getHelpersList', 'POST', data);
 
 export const getHelpersById = (data) => callApi(ApiBaseName + '/api/artcle/getHelpersById', 'POST', data);
+
+export const myFocusList = (data) => callApi(ApiBaseName + '/api/user/myFocusList.json', 'POST', data);

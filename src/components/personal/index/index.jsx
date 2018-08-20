@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import './style.less'
 
+import * as Api from '../../../services';
+
 export default class PersonalIndex extends Component {
 
   constructor(...args){
@@ -9,8 +11,13 @@ export default class PersonalIndex extends Component {
         
     }
   }
+
   componentDidMount() {
-    
+    Api.myFocusList({
+      
+    }).then((res) => {
+        console.log(res)
+    })
   }
 
   

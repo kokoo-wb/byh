@@ -25,7 +25,7 @@ class ActivityList extends Component {
         Api.getUserInfo();
         Api.getMyInviteCode({
             token: localStorage.getItem('token')
-        })
+        });
     }
 
     render() {

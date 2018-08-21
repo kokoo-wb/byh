@@ -4,7 +4,7 @@ import fetchJsonp from 'fetch-jsonp'
 import { Toast } from 'antd-mobile'
 import errorJson from './errorJson'
 
-export function callApi(endpoint, method = 'POST', data = {}, jsonp = false) {
+export function callApi(endpoint, method = 'POST', data) {
 
     const header = getHeader();
 
@@ -17,24 +17,29 @@ export function callApi(endpoint, method = 'POST', data = {}, jsonp = false) {
         // })
     }
 
-    const bodySteam = encodeURI(new URLSearchParams(Object.entries(data)).toString());
-
-    const myFetch = jsonp ? fetchJsonp : fetch
-
     let params = {
         method: method,
         headers: header
     }
 
-    if (method != 'GET') {
+    if (method.toUpperCase() != 'GET') {
         params = {
             ...params,
-            body: bodySteam != '' ? bodySteam : undefined
+            body: data ? encodeURI(new URLSearchParams(Object.entries(data)).toString()) : undefined
+        };
+    } else {
+        var paramsArr = [];
+        if (data) {
+            for (let item in data) {
+                paramsArr.push(`${item}=${data[item]}`);
+            }
+            endpoint = endpoint + (paramsArr.length > 0 ? `?${paramsArr.join('&')}` : '');
         }
+
     }
 
     var promise = new Promise((resolve, reject) => {
-        myFetch(endpoint, params).then((res) => {
+        fetch(endpoint, params).then((res) => {
             return res.json()
         }).then((json) => {
             if (json === undefined) {
@@ -83,12 +88,10 @@ export function callApi(endpoint, method = 'POST', data = {}, jsonp = false) {
 function getHeader() {
     let header = {
         'Content-Type': 'application/x-www-form-urlencoded',
-        // 'token': localStorage.getItem('token')
     }
     if (localStorage.getItem('token')) {
-        // header.Authorization = `Basic ${localStorage.getItem('token')}`
+        // 'token': localStorage.getItem('token')
     }
 
-    console.log(header)
     return new Headers(header)
 }

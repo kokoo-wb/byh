@@ -10,24 +10,38 @@ import { myFetch, config, helper } from 'component/utils'
 import 'whatwg-fetch'
 import './style.less'
 
+import * as Api from '../../../services';
+
 export default class InviteFriends extends Component {
     constructor(...args){
         super(...args)
         this.state = {
-            
+            data: {}
         }
+    }
+    componentWillMount() {
+        Api.getMyInviteCode({
+            token: localStorage.getItem('token')
+        }).then((res) => {
+            if(res.data){
+                this.setState({
+                    data: res.data
+                })
+            }
+        })
     }
     componentDidMount() {
 
     }   
     render() {
+        const { data } = this.state
         return (
             <div className="invite-friends">
                 <div className="invite-code">
                     <div className="code-con">
-                        <img src="../../../statics/images/invite_code.jpg" />
-                        <h1>MY7872</h1>
-                        <p>邀请说明<Icon type="right"/></p>
+                        <img src={data.inviteCodeUrl} />
+                        <h1>{data.invitationCode}</h1>
+                        <p onClick={() => {hashHistory.push('/personal/inviteexplain')}}>邀请说明<Icon type="right"/></p>
                         <i className="share-icon"></i>
                     </div>
                 </div>

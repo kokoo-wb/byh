@@ -10,30 +10,54 @@ import { myFetch, config, helper } from 'component/utils'
 import 'whatwg-fetch'
 import './style.less'
 
+import * as Api from '../../../services';
+
 export default class MyPoints extends Component {
     constructor(...args){
         super(...args)
         this.state = {
-            
+            data: {},
+            pointsList: []
         }
     }
+    componentWillMount() {
+        Api.pointCenter({
+            token: localStorage.getItem('token')
+        }).then((res) => {
+            if(res.data){
+                this.setState({
+                    data: res.data
+                })
+            }
+        })
 
+        Api.pointLog({
+            token: localStorage.getItem('token')
+        }).then((res) => {
+            if(res.data){
+                this.setState({
+                    pointsList: res.data
+                })
+            }
+        })
+    }
     componentDidMount() {
 
     }
 
     render() {
+        const { data, pointsList } = this.state
 
         return (
             <div className="my-point">
                 <div className="bonus-point">
                     <div className="bonus-point-level">
-                        <p>LV46</p>
+                        <p>LV{data.level}</p>
                         <img src={require('../../../statics/images/bonuspoint.png')} />
                     </div>
 
                     <div className="bonus-point-num">
-                        <span>当前积分：2000</span>
+                        <span>当前积分：{data.points}</span>
                         <span>79/100</span>
                     </div>
 
@@ -45,7 +69,7 @@ export default class MyPoints extends Component {
                         <a className="exchange-bonus-btn">兑积分</a>
                         <a className="earn-bonus-btn">赚积分</a>
                     </div>
-                    <a className="bounus-point-instro">积分说明</a>
+                    <a className="bounus-point-instro" onClick={() => {hashHistory.push('/personal/pointsinstro')}}>积分说明</a>
                 </div>
                 <Tabs 
                     defaultActiveKey="1" 

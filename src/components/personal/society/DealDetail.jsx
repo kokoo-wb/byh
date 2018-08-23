@@ -5,12 +5,28 @@ import { linechart } from './chart';
 
 import './style.less'
 
+import * as Api from '../../../services';
+
 class DealDetail extends Component {
     constructor(props) {
         super(props)
         this.state = {
             key: 0,
+            fansInfo: {}
         }
+    }
+
+    componentWillMount() {
+        Api.myFansList({
+            token: localStorage.getItem('token'),
+            friendUid: '2'
+        }).then((res) => {
+            if(res.data){
+                this.setState({
+                    fansInfo: res.data[0]
+                })
+            }
+        })
     }
 
     componentDidMount() {
@@ -52,7 +68,7 @@ class DealDetail extends Component {
     }
 
     render() {
-
+        const { fansInfo } = this.state
         const dealRecordList = [
             { time: '4/11', dealNum: 10, type: '欧美/美元', trend: -24 },
             { time: '4/11', dealNum: 10, type: '欧美/美元', trend: 128 },
@@ -64,24 +80,24 @@ class DealDetail extends Component {
         return (
             <div className="deal-container">
                 <div className="header-box">
-                    <img className="head-img" src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2222457038,1434704351&fm=58" />
+                    <img className="head-img" src={fansInfo.headImg} />
                     <p className="userinfo">
                         <span>
-                            <span>奥利维亚</span>
+                            <span>{fansInfo.nickName}</span>
                             <div className="level">
                                 <img src={require('../../../statics/images/level.png')} />
-                                <span>LV88</span>
+                                <span>LV{fansInfo.level}</span>
                             </div>
                         </span>
                     </p>
-                    <a className="attention-btn">关注</a>
+                    <a className={fansInfo.isFocus==0?"attention-btn":"attention-btn attention-btn-done"}>{fansInfo.isFocus==0?"关注":"已关注"}</a>
                     <div className="fans-attention">
                         <div>
-                            <span className="num">888</span>
+                            <span className="num">{fansInfo.fansNum}</span>
                             <span> 粉丝</span>
                         </div>
                         <div>
-                            <span className="num">128</span>
+                            <span className="num">{fansInfo.focusNum}</span>
                             <span> 关注</span>
                         </div>
                     </div>

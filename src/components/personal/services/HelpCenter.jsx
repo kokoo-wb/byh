@@ -55,7 +55,7 @@ export default class HelpCenter extends Component {
                             return <div className="help-item" onClick={() => {hashHistory.push({pathname:'/personal/helpcenterdetail',query:{id:item.id}})}}>
                                 <div className="item-name">
                                     <h4>{item.articleTitle}</h4>
-                                    <img src={iconList[index]} />
+                                    <img src={item.icon} />
                                 </div>
                                 <p className="item-desc">
                                     {item.info}

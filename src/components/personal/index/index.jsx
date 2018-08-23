@@ -13,11 +13,7 @@ export default class PersonalIndex extends Component {
   }
 
   componentDidMount() {
-    Api.myFocusList({
-      token: localStorage.getItem('token')
-    }).then((res) => {
-        console.log(res)
-    })
+    
   }
 
   

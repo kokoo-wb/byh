@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
-import { Carousel, WingBlank, Modal, Icon } from 'antd-mobile'
+import { Carousel, WingBlank, Modal, Icon, Toast } from 'antd-mobile'
 
 import './style.less'
+
+import * as Api from '../../../services';
 
 class Commodity extends Component {
     constructor(props) {
@@ -10,10 +12,26 @@ class Commodity extends Component {
         this.state = {
             data: ['1', '2', '3'],
             imgHeight: 176,
-            visible: false
+            visible: false,
+            weaponList: [],
+            myPoint: 0,
+            weaponDetail: {}
         }
     }
-
+    componentWillMount() {
+        Api.weaponList({
+            token: localStorage.getItem('token'),
+            pageSize: 1,
+            pageNum: 10
+        }).then((res) => {
+            if(res.data){
+                this.setState({
+                    weaponList: res.data.weaponDtoList,
+                    myPoint: res.data.myPoint
+                })
+            }
+        })
+    }
     componentDidMount() {
         setTimeout(() => {
             this.setState({
@@ -22,15 +40,38 @@ class Commodity extends Component {
         }, 100);
     }
 
-    showModal = () => {
-        this.setState(Object.assign({}, this.state, { visible: true }));
+    showModal = (weaponId) => () => {
+        this.setState(Object.assign({}, this.state, { visible: true }),()=>{
+            Api.weaponInfo({
+                token: localStorage.getItem('token'),
+                weaponId: weaponId
+            }).then((res) => {
+                if(res.data){
+                    this.setState({
+                        weaponDetail: res.data
+                    })
+                }
+            })
+        });
     }
 
     hideModal = () => {
         this.setState(Object.assign({}, this.state, { visible: false }));
     }
 
+    obtainWeapon = (weaponId) => () => {
+        Api.obtainWeapon({
+            token: localStorage.getItem('token'),
+            weaponId: weaponId
+        }).then((res) => {
+            if(res.data){
+                Toast.info(res.msg)
+            }
+        })
+    }
+
     render() {
+        const { weaponList, myPoint, weaponDetail } = this.state
 
         return (
             <div className="commodity-container">
@@ -71,65 +112,31 @@ class Commodity extends Component {
                 </div>
 
                 <div className="commodity-weapon">
-                    <ul>
-                        <li onClick={this.showModal}>
-                            <div className="weapon-img">
-                                <img src="http://img1.imgtn.bdimg.com/it/u=2511394165,1594141098&fm=27&gp=0.jpg" />
-                            </div>
-                            <div className="weapon-msg">
-                                <p>武器名称</p>
-                                <p>兑换积分：7777</p>
-                                <p>所剩数量：809</p>
-                                <p>商品条件：这个是文字编辑内容</p>
-                                <p>2017/09/09 00:00 到期</p>
-                            </div>
-                            <a className="use-btn">立即使用</a>
-                        </li>
+                    {
+                        weaponList.length>0?(<ul>
+                            {
+                                weaponList.map(item=>{
+                                    return (
+                                        <li onClick={this.showModal(item.id)}>
+                                            <div className="weapon-img">
+                                                <img src="http://img1.imgtn.bdimg.com/it/u=2511394165,1594141098&fm=27&gp=0.jpg" />
+                                            </div>
+                                            <div className="weapon-msg">
+                                                <p>{item.weaponName}</p>
+                                                <p>兑换积分：{item.needPoints}</p>
+                                                <p>所剩数量：{item.num}</p>
+                                                <p>商品条件：{item.Info}</p>
+                                                <p>{item.endTime} 到期</p>
+                                            </div>
+                                            <a className="use-btn">立即兑换</a>
+                                        </li>
+                                    )
+                                })
+                            }
+                        </ul>):(<div style={{textAlign: 'center', marginTop: 100}}>暂无内容^_^!!</div>)
+                    }
 
-                        <li>
-                            <div className="weapon-img">
-                                <img src="http://img1.imgtn.bdimg.com/it/u=2511394165,1594141098&fm=27&gp=0.jpg" />
-                            </div>
-                            <div className="weapon-msg">
-                                <p>武器名称</p>
-                                <p>兑换积分：7777</p>
-                                <p>所剩数量：809</p>
-                                <p>商品条件：这个是文字编辑内容</p>
-                                <p>2017/09/09 00:00 到期</p>
-                            </div>
-                            <a className="use-btn-disable">立即使用</a>
-                        </li>
-
-                        <li>
-                            <div className="weapon-img">
-                                <img src="http://img1.imgtn.bdimg.com/it/u=2511394165,1594141098&fm=27&gp=0.jpg" />
-                            </div>
-                            <div className="weapon-msg">
-                                <p>武器名称</p>
-                                <p>兑换积分：7777</p>
-                                <p>所剩数量：809</p>
-                                <p>商品条件：这个是文字编辑内容</p>
-                                <p>2017/09/09 00:00 到期</p>
-                            </div>
-                            <a className="use-btn">立即使用</a>
-                        </li>
-
-                        <li>
-                            <div className="weapon-img">
-                                <img src="http://img1.imgtn.bdimg.com/it/u=2511394165,1594141098&fm=27&gp=0.jpg" />
-                            </div>
-                            <div className="weapon-msg">
-                                <p>武器名称</p>
-                                <p>兑换积分：7777</p>
-                                <p>所剩数量：809</p>
-                                <p>商品条件：这个是文字编辑内容</p>
-                                <p>2017/09/09 00:00 到期</p>
-                            </div>
-                            <a className="use-btn">立即使用</a>
-                        </li>
-                    </ul>
-
-                    <div className="bonus-point">当前积分：2423</div>
+                    <div className="bonus-point" onClick={this.showModal(2)}>当前积分：{myPoint}</div>
 
                     <Modal
                         className="commodity-modal"
@@ -137,14 +144,14 @@ class Commodity extends Component {
                     >
                         <div className="commodity-box">
                             <img src="http://img1.imgtn.bdimg.com/it/u=2511394165,1594141098&fm=27&gp=0.jpg" />
-                            <p className="weapon-name">武器名称</p>
-                            <p className="endtime">2017/09/09 00:00 到期</p>
+                            <p className="weapon-name">{weaponDetail.weaponName}</p>
+                            <p className="endtime">{weaponDetail.endTime} 到期</p>
                             <div className="commodity-msg">
-                                <p>兑换积分：7777</p>
-                                <p>所剩数量：809</p>
-                                <p>商品条件：叙利亚局势紧张，乌克兰也不忘凑凑热闹，先是威胁炸掉俄罗斯刚刚修建的克里米亚大桥，接着为精英部队配发北约军服。近期乌克兰还试射了刚刚从美国引进的标枪反坦克导弹示威俄罗</p>
+                                <p>兑换积分：{weaponDetail.needPoints}</p>
+                                <p>所剩数量：{weaponDetail.num}</p>
+                                <p>商品条件：{weaponDetail.info}</p>
                             </div>
-                            <a>立即兑换</a>
+                            <a onClick={this.obtainWeapon(weaponDetail.id)}>立即兑换</a>
                             <div className="close-btn" onClick={this.hideModal}>
                                 <Icon type="cross" className="close-ico" />
                             </div>

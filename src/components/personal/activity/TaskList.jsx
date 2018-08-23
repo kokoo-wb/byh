@@ -1,45 +1,61 @@
 import React, { Component } from 'react'
-import { Button } from 'antd-mobile'
+import { hashHistory } from 'react-router'
+import { Button, Toast } from 'antd-mobile'
 
 import './style.less'
 
+import * as Api from '../../../services';
+
 class TaskList extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            taskList: []
+        }
+    }
+    componentWillMount() {
+        Api.getTaskListInfo({
+            token: localStorage.getItem('token'),
+            pageSize: 1,
+            pageNum: 10
+        }).then((res) => {
+            if(res.data){
+                this.setState({
+                    taskList: res.data
+                })
+            }
+        })
+    }
+    joinTask = (actId) => () => {
+        Api.joinTask({
+            token: localStorage.getItem('token'),
+            actId: actId
+        }).then((res) => {
+            Toast.info(res.msg)
+        })
+    }
     render() {
+        const { taskList } = this.state
 
         return (
             <ul className="task-list">
-                <li>
-                    <img src="http://p3.pstatp.com/large/pgc-image/15271525818363e41e859cd" />
-                    <div className="match-msg">
-                        <div>
-                            <h1>任务比赛名称</h1>
-                            <p>距离结束：00:00:00:00</p>
-                        </div>
-                        <a>参加</a>
-                    </div>
-                </li>
-
-                <li>
-                    <img src="http://p3.pstatp.com/large/pgc-image/15271525818363e41e859cd" />
-                    <div className="match-msg">
-                        <div>
-                            <h1>任务比赛名称</h1>
-                            <p>距离结束：00:00:00:00</p>
-                        </div>
-                        <a>参加</a>
-                    </div>
-                </li>
-
-                <li>
-                    <img src="http://p3.pstatp.com/large/pgc-image/15271525818363e41e859cd" />
-                    <div className="match-msg">
-                        <div>
-                            <h1>任务比赛名称</h1>
-                            <p>距离结束：00:00:00:00</p>
-                        </div>
-                        <a>参加</a>
-                    </div>
-                </li>
+                {
+                    taskList.map(item=>{
+                        return (
+                            <li>
+                                <img src={item.img} onClick={() => {hashHistory.push({pathname:'/personal/taskdetail',query:{id:item.id}})}}/>
+                                <div className="match-msg">
+                                    <div>
+                                        <h1>{item.taskName}</h1>
+                                        <p>距离结束：{item.endTimeString}</p>
+                                    </div>
+                                    <a onClick={this.joinTask(item.id)}>参加</a>
+                                </div>
+                            </li>
+                        )
+                    })
+                }
             </ul>
         )
     }

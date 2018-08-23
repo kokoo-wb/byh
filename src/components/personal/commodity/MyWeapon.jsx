@@ -3,70 +3,60 @@ import { Button } from 'antd-mobile'
 
 import './style.less'
 
+import * as Api from '../../../services';
+
 class MyWeapon extends Component {
+    constructor(...args){
+        super(...args)
+        this.state = {
+            weaponList: [],
+            points: 0
+        }
+    }
+    componentWillMount() {
+        Api.getWeaponListByToKen({
+            token: localStorage.getItem('token'),
+            pageSize: 1,
+            pageNum: 10
+        }).then((res) => {
+            if(res.data){
+                this.setState({
+                    weaponList: res.data.list,
+                    points: res.data.points
+                })
+            }
+        })
+    }
     render() {
+        const { weaponList, points } = this.state
 
         return (
             <div className="my-weapon-container">
-                <ul>
-                    <li>
-                        <div className="weapon-img">
-                            <img src="http://img1.imgtn.bdimg.com/it/u=2511394165,1594141098&fm=27&gp=0.jpg" />
-                        </div>
-                        <div className="weapon-msg">
-                            <p>武器名称</p>
-                            <p>兑换积分：7777</p>
-                            <p>所剩数量：809</p>
-                            <p>商品条件：这个是文字编辑内容</p>
-                            <p>2017/09/09 00:00 到期</p>
-                        </div>
-                        <a className="use-btn">立即使用</a>
-                    </li>
+                {
+                    weaponList.length>0? (<ul>
+                        {
+                            weaponList.map(item=>{
+                                return (
+                                    <li onClick={() => {hashHistory.push({pathname:'/personal/weapondetail',query:{id:item.id}})}}>
+                                        <div className="weapon-img">
+                                            <img src="http://img1.imgtn.bdimg.com/it/u=2511394165,1594141098&fm=27&gp=0.jpg" />
+                                        </div>
+                                        <div className="weapon-msg">
+                                            <p>{item.weaponName}</p>
+                                            <p>兑换积分：{item.needPoints}</p>
+                                            <p>所剩数量：{item.num}</p>
+                                            <p>商品条件：{item.Info}</p>
+                                            <p>{item.weaponExpire} 到期</p>
+                                        </div>
+                                        <a className={item.weaponStatus==1?"use-btn-disable":"use-btn"}>立即使用</a>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>) : (<div style={{textAlign: 'center', marginTop: 100}}>暂无内容^_^!!</div>)
+                }
 
-                    <li>
-                        <div className="weapon-img">
-                            <img src="http://img1.imgtn.bdimg.com/it/u=2511394165,1594141098&fm=27&gp=0.jpg" />
-                        </div>
-                        <div className="weapon-msg">
-                            <p>武器名称</p>
-                            <p>兑换积分：7777</p>
-                            <p>所剩数量：809</p>
-                            <p>商品条件：这个是文字编辑内容</p>
-                            <p>2017/09/09 00:00 到期</p>
-                        </div>
-                        <a className="use-btn-disable">立即使用</a>
-                    </li>
-
-                    <li>
-                        <div className="weapon-img">
-                            <img src="http://img1.imgtn.bdimg.com/it/u=2511394165,1594141098&fm=27&gp=0.jpg" />
-                        </div>
-                        <div className="weapon-msg">
-                            <p>武器名称</p>
-                            <p>兑换积分：7777</p>
-                            <p>所剩数量：809</p>
-                            <p>商品条件：这个是文字编辑内容</p>
-                            <p>2017/09/09 00:00 到期</p>
-                        </div>
-                        <a className="use-btn">立即使用</a>
-                    </li>
-
-                    <li>
-                        <div className="weapon-img">
-                            <img src="http://img1.imgtn.bdimg.com/it/u=2511394165,1594141098&fm=27&gp=0.jpg" />
-                        </div>
-                        <div className="weapon-msg">
-                            <p>武器名称</p>
-                            <p>兑换积分：7777</p>
-                            <p>所剩数量：809</p>
-                            <p>商品条件：这个是文字编辑内容</p>
-                            <p>2017/09/09 00:00 到期</p>
-                        </div>
-                        <a className="use-btn">立即使用</a>
-                    </li>
-                </ul>
-
-                <div className="bonus-point">当前积分：2423</div>
+                <div className="bonus-point">当前积分：{points}</div>
             </div>
         )
     }

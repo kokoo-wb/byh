@@ -3,25 +3,31 @@ import { Button } from 'antd-mobile'
 
 import './style.less'
 
-class WeaponRecord extends Component {
-    render() {
+import * as Api from '../../../services';
 
-        const weaponRecord = [
-            {
-                weaponName: '武器名称',
-                startTime: '17/09/09 08:00',
-                endTime: '17/09/09 08:00',
-                way: '活动',
-                status: '激活'
-            },
-            {
-                weaponName: '武器名称',
-                startTime: '17/09/09 08:00',
-                endTime: '17/09/09 08:00',
-                way: '活动',
-                status: '激活'
+class WeaponRecord extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            weaponRecord: []
+        }
+    }
+    componentWillMount() {
+        Api.historyWeaponList({
+            token: localStorage.getItem('token'),
+            pageSize: 1,
+            pageNum: 10
+        }).then((res) => {
+            if(res.data){
+                this.setState({
+                    weaponRecord: res.data
+                })
             }
-        ];
+        })
+    }
+    render() {
+        const { weaponRecord } = this.state
 
         return (
             <div className="weapon-record">
@@ -31,8 +37,8 @@ class WeaponRecord extends Component {
                             <li key={index}>
                                 <div className="weapon-msg">
                                     <p>{item.weaponName}</p>
-                                    <p>获取时间：{item.startTime}</p>
-                                    <p>结束时间：{item.endTime}</p>
+                                    <p>获取时间：{item.weaponCreate}</p>
+                                    <p>结束时间：{item.weaponExpire}</p>
                                     <p>途径：{item.way}</p>
                                     <p>状态：{item.status}</p>
                                 </div>

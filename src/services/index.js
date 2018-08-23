@@ -37,3 +37,6 @@ export const pointLog = (data) => callApi(ApiBaseName + '/api/user/log', 'POST',
 
 //等级中心
 export const MyLevel = (data) => callApi(ApiBaseName + '/api/user/MyLevel', 'POST', data);
+
+//邀请积分列表
+export const logInvite = (data) => callApi(ApiBaseName + '/api/user/logInvite', 'POST', data);

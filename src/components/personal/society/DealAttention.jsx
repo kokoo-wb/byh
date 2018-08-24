@@ -65,7 +65,7 @@ class DealAttention extends Component {
                                     <img className="head-img" src={item.headImg} />
                                     <div className="user-msg">
                                         <p className="username">
-                                            <span>{item.nickname}</span>
+                                            <span>{item.nickName}</span>
                                             <div className="level">
                                                 <img src={require('../../../statics/images/level.png')} />
                                                 <span>LV{item.level}</span>

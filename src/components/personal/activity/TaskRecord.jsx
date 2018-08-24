@@ -15,7 +15,7 @@ class TaskRecord extends Component {
     componentWillMount() {
         Api.task({
             token: localStorage.getItem('token'),
-            id: 2
+            id: this.props.location.query.id
         }).then((res) => {
             if(res.data){
                 this.setState({

@@ -3,8 +3,30 @@ import { Button } from 'antd-mobile'
 
 import './style.less'
 
+import * as Api from '../../../services';
+
 class DealMatchJoin extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            recordList: []
+        }
+    }
+    componentWillMount() {
+        Api.getMatch({
+            token: localStorage.getItem('token'),
+            id: this.props.location.query.id
+        }).then((res) => {
+            if(res.data){
+                this.setState({
+                    recordList: res.data
+                })
+            }
+        })
+        
+    }
     render() {
+        const { recordList } = this.state
 
         return (
             <div className="deal-match-join">
@@ -19,50 +41,23 @@ class DealMatchJoin extends Component {
                         <span>排名</span>
                         <span></span>
                     </li>
-                    <li>
-                        <span>毛军林...</span>
-                        <span>+78</span>
-                        <span>+78%</span>
-                        <span>+78%</span>
-                        <span>12323</span>
-                        <span>1</span>
-                        <span>
-                            <a>关注</a>
-                        </span>
-                    </li>
-                    <li>
-                        <span>毛军林...</span>
-                        <span>+78</span>
-                        <span>+78%</span>
-                        <span>+78%</span>
-                        <span>12323</span>
-                        <span>1</span>
-                        <span>
-                            <a>关注</a>
-                        </span>
-                    </li>
-                    <li>
-                        <span>毛军林...</span>
-                        <span>+78</span>
-                        <span>+78%</span>
-                        <span>+78%</span>
-                        <span>12323</span>
-                        <span>1</span>
-                        <span>
-                            <a>关注</a>
-                        </span>
-                    </li>
-                    <li>
-                        <span>毛军林...</span>
-                        <span>+78</span>
-                        <span>+78%</span>
-                        <span>+78%</span>
-                        <span>12323</span>
-                        <span>1</span>
-                        <span>
-                            <a>关注</a>
-                        </span>
-                    </li>
+                    {
+                        recordList.map(item=>{
+                            return (
+                                <li>
+                                    <span>{item.nickname}</span>
+                                    <span>{item.earnings}</span>
+                                    <span>{item.dollarYield}</span>
+                                    <span>{item.returnYield}</span>
+                                    <span>{item.number}</span>
+                                    <span>{item.ranking}</span>
+                                    <span>
+                                        <a>关注</a>
+                                    </span>
+                                </li>  
+                            )
+                        })
+                    }
                 </ul>
             </div>
         )

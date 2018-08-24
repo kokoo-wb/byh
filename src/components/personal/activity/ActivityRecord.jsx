@@ -3,6 +3,8 @@ import { Button } from 'antd-mobile'
 
 import './style.less'
 
+import * as Api from '../../../services';
+
 class ActivityRecord extends Component {
     render() {
 

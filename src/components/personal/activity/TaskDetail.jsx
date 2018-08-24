@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { hashHistory } from 'react-router'
 import { Icon } from 'antd-mobile'
 
 import './style.less'
@@ -68,7 +69,10 @@ class TaskDetail extends Component {
                     {this.state.isShowReward && <p className="reward-desc">{taskInfo.prize}</p>}
                     {this.state.isShowReward && <a onClick={this.showReward}>收起</a>}
                 </div>
-                <div className="header">参与者</div>
+                <div className="header">
+                    <span>参与者</span>
+                    <a onClick={() => {hashHistory.push({pathname:'/personal/taskrecord',query:{id:this.props.location.query.id}})}}>查看参赛记录</a>
+                </div>
                 <ul>
                     <li>
                         <span>名称</span>

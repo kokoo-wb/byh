@@ -77,7 +77,7 @@ class Fans extends Component {
                                     <div className="header">
                                         <div className="user">
                                             <img src={item.headImg} />
-                                            <span>{item.nickname}</span>
+                                            <span>{item.nickName}</span>
                                             <div className="level">
                                                 <img src={require('../../../statics/images/level.png')} />
                                                 <span>LV{item.level}</span>

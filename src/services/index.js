@@ -79,3 +79,21 @@ export const getPersonListInfo = (data) => callApi(ApiBaseName + '/api/task/getP
 
 //参与活动
 export const joinTask = (data) => callApi(ApiBaseName + '/api/task/joinTask', 'POST', data);
+
+//交易比赛列表
+export const getMatchListInfo = (data) => callApi(ApiBaseName + '/api/match/getMatchListInfo', 'POST', data);
+
+//交易比赛详情
+export const GetMatchInfo = (data) => callApi(ApiBaseName + '/api/match/GetMatchInfo', 'POST', data);
+
+//交易比赛记录
+export const getMatch = (data) => callApi(ApiBaseName + '/api/match/match', 'POST', data);
+
+//参与交易比赛
+export const joinMatch = (data) => callApi(ApiBaseName + '/api/match/joinMatch', 'POST', data);
+
+//抽奖活动列表
+export const getDrawListInfo = (data) => callApi(ApiBaseName + '/api/draw/getDrawListInfo', 'GET', data);
+
+//抽奖活动详情
+export const getDrawInfo = (data) => callApi(ApiBaseName + '/api/draw/getDrawInfo', 'GET', data);

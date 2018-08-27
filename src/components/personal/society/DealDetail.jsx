@@ -21,7 +21,7 @@ class DealDetail extends Component {
             token: localStorage.getItem('token'),
             friendUid: '2'
         }).then((res) => {
-            if(res.data){
+            if (res.data) {
                 this.setState({
                     fansInfo: res.data[0]
                 })
@@ -85,12 +85,12 @@ class DealDetail extends Component {
                         <span>
                             <span>{fansInfo.nickName}</span>
                             <div className="level">
-                                <img src={require('../../../statics/images/level.png')} />
+                                <img src={require('static/images/level.png')} />
                                 <span>LV{fansInfo.level}</span>
                             </div>
                         </span>
                     </p>
-                    <a className={fansInfo.isFocus==0?"attention-btn":"attention-btn attention-btn-done"}>{fansInfo.isFocus==0?"关注":"已关注"}</a>
+                    <a className={fansInfo.isFocus == 0 ? "attention-btn" : "attention-btn attention-btn-done"}>{fansInfo.isFocus == 0 ? "关注" : "已关注"}</a>
                     <div className="fans-attention">
                         <div>
                             <span className="num">{fansInfo.fansNum}</span>

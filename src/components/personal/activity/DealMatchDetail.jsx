@@ -20,7 +20,7 @@ class DealMatchDetail extends Component {
             token: localStorage.getItem('token'),
             id: this.props.location.query.id
         }).then((res) => {
-            if(res.data){
+            if (res.data) {
                 this.setState({
                     matchInfo: res.data
                 })
@@ -31,13 +31,13 @@ class DealMatchDetail extends Component {
             token: localStorage.getItem('token'),
             id: this.props.location.query.id
         }).then((res) => {
-            if(res.data){
+            if (res.data) {
                 this.setState({
                     personList: res.data
                 })
             }
         })
-        
+
     }
 
     showReward = () => {
@@ -50,7 +50,7 @@ class DealMatchDetail extends Component {
             <div className="deal-match-detail">
                 <div className="match-header">
                     <div className="end-time">
-                        <img src={require('../../../statics/images/time.png')} />
+                        <img src={require('static/images/time.png')} />
                         <span>距离结束：{matchInfo.endTime}</span>
                     </div>
                     <img src="http://p3.pstatp.com/large/pgc-image/15271525818363e41e859cd" />
@@ -59,18 +59,18 @@ class DealMatchDetail extends Component {
                     <h1>{matchInfo.matchName}</h1>
                     <p>
                         <label>交易时间：</label>
-                        <span>{matchInfo.startTime+'-'+matchInfo.endTime}</span>
+                        <span>{matchInfo.startTime + '-' + matchInfo.endTime}</span>
                     </p>
                     <p>
                         <label>规则以及奖励</label>
                         {!this.state.isShowReward && <a onClick={this.showReward}>展开</a>}
                     </p>
-                    {this.state.isShowReward && <p className="reward-desc">规则：{matchInfo.rule}<br/>奖励：{matchInfo.prize}</p>}
+                    {this.state.isShowReward && <p className="reward-desc">规则：{matchInfo.rule}<br />奖励：{matchInfo.prize}</p>}
                     {this.state.isShowReward && <a onClick={this.showReward}>收起</a>}
                 </div>
                 <div className="header">
                     <span>比赛结果</span>
-                    <a onClick={() => {hashHistory.push({pathname:'/personal/dealmatchjoin',query:{id:this.props.location.query.id}})}}>查看参赛记录</a>
+                    <a onClick={() => { hashHistory.push({ pathname: '/personal/dealmatchjoin', query: { id: this.props.location.query.id } }) }}>查看参赛记录</a>
                 </div>
                 <ul>
                     <li>
@@ -81,17 +81,17 @@ class DealMatchDetail extends Component {
                         <span></span>
                     </li>
                     {
-                        personList.map(item=>{
+                        personList.map(item => {
                             return (
                                 <li>
                                     <span>{item.nickname}</span>
                                     <span>{item.nickname}</span>
-                                    <span>{item.isFinish?'完成':'未完成'}</span>
+                                    <span>{item.isFinish ? '完成' : '未完成'}</span>
                                     <span>{item.ranking}</span>
                                     <span>
                                         <a>关注</a>
                                     </span>
-                                </li>  
+                                </li>
                             )
                         })
                     }

@@ -4,9 +4,9 @@ import { Button } from 'antd-mobile'
 import './style.less'
 
 const ENUM = [
-    require('../../../statics/images/the_first.png'),
-    require('../../../statics/images/the_second.png'),
-    require('../../../statics/images/the_third.png')
+    require('static/images/the_first.png'),
+    require('static/images/the_second.png'),
+    require('static/images/the_third.png')
 ]
 
 class DealMatchRanking extends Component {
@@ -71,7 +71,7 @@ class DealMatchRanking extends Component {
                                         <p className="username">
                                             <span>{item.name}</span>
                                             <div className="level">
-                                                <img src={require('../../../statics/images/level.png')} />
+                                                <img src={require('static/images/level.png')} />
                                                 <span>LV{item.level}</span>
                                             </div>
                                         </p>

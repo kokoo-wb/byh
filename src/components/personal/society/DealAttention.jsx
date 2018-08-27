@@ -6,7 +6,7 @@ import './style.less'
 import * as Api from '../../../services';
 
 class DealAttention extends Component {
-    constructor(...args){
+    constructor(...args) {
         super(...args)
         this.state = {
             attentionList: []
@@ -16,7 +16,7 @@ class DealAttention extends Component {
         Api.waitFocusList({
             token: localStorage.getItem('token')
         }).then((res) => {
-            if(res.data){
+            if (res.data) {
                 this.setState({
                     attentionList: res.data
                 })
@@ -24,7 +24,7 @@ class DealAttention extends Component {
         })
     }
     componentDidMount() {
-        
+
     }
     handleConfirm = (waitFocusId) => () => {
         Api.waitFocusList({
@@ -67,7 +67,7 @@ class DealAttention extends Component {
                                         <p className="username">
                                             <span>{item.nickName}</span>
                                             <div className="level">
-                                                <img src={require('../../../statics/images/level.png')} />
+                                                <img src={require('static/images/level.png')} />
                                                 <span>LV{item.level}</span>
                                             </div>
                                         </p>
@@ -91,7 +91,7 @@ class DealAttention extends Component {
                     </ul>
                 ) : (
                         <div className="nodata">
-                            <img src={require('../../../statics/images/no_user.png')} />
+                            <img src={require('static/images/no_user.png')} />
                             <p>当前还没有待关注人哦</p>
                         </div>
                     )}

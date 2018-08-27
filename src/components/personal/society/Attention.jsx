@@ -6,7 +6,7 @@ import './style.less'
 import * as Api from '../../../services';
 
 class Attention extends Component {
-    constructor(...args){
+    constructor(...args) {
         super(...args)
         this.state = {
             attentionList: []
@@ -16,7 +16,7 @@ class Attention extends Component {
         Api.myFocusList({
             token: localStorage.getItem('token')
         }).then((res) => {
-            if(res.data){
+            if (res.data) {
                 this.setState({
                     attentionList: res.data
                 })
@@ -24,7 +24,7 @@ class Attention extends Component {
         })
     }
     componentDidMount() {
-        
+
     }
     render() {
         const { attentionList } = this.state
@@ -59,7 +59,7 @@ class Attention extends Component {
                                         <p className="username">
                                             <span>{item.nickName}</span>
                                             <div className="level">
-                                                <img src={require('../../../statics/images/level.png')} />
+                                                <img src={require('static/images/level.png')} />
                                                 <span>LV{item.level}</span>
                                             </div>
                                         </p>
@@ -81,7 +81,7 @@ class Attention extends Component {
                     </ul>
                 ) : (
                         <div className="nodata">
-                            <img src={require('../../../statics/images/no_user.png')} />
+                            <img src={require('static/images/no_user.png')} />
                             <p>当前还没有关注人哦</p>
                         </div>
                     )}

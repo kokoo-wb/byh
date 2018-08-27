@@ -49,7 +49,7 @@ class DealerRecord extends Component {
                         <div className="dealer-record-bottom">
                             <span>dodoleFx</span>
                             <span>
-                                <img src={require('../../../statics/images/dealerrecord_ico.png')} />
+                                <img src={require('static/images/dealerrecord_ico.png')} />
                                 <span style={{ marginLeft: '10px' }}>12/-2</span>
                             </span>
                             <span>总和：1345, $3.98</span>
@@ -81,7 +81,7 @@ class DealerRecord extends Component {
                         <div className="dealer-record-bottom">
                             <span>dodoleFx</span>
                             <span>
-                                <img src={require('../../../statics/images/dealerrecord_ico.png')} />
+                                <img src={require('static/images/dealerrecord_ico.png')} />
                                 <span style={{ marginLeft: '10px' }}>12/-2</span>
                             </span>
                             <span>总和：1345, $3.98</span>
@@ -113,7 +113,7 @@ class DealerRecord extends Component {
                         <div className="dealer-record-bottom">
                             <span>dodoleFx</span>
                             <span>
-                                <img src={require('../../../statics/images/dealerrecord_ico.png')} />
+                                <img src={require('static/images/dealerrecord_ico.png')} />
                                 <span style={{ marginLeft: '10px' }}>12/-2</span>
                             </span>
                             <span>总和：1345, $3.98</span>

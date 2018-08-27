@@ -43,7 +43,7 @@ class AceSearch extends Component {
                                             <img src={item.img} />
                                             <span>{item.name}</span>
                                             <div className="level">
-                                                <img src={require('../../../statics/images/level.png')} />
+                                                <img src={require('static/images/level.png')} />
                                                 <span>LV{item.level}</span>
                                             </div>
                                         </div>
@@ -88,7 +88,7 @@ class AceSearch extends Component {
                     </ul>
                 ) : (
                         <div className="nodata">
-                            <img src={require('../../../statics/images/no_search.png')} />
+                            <img src={require('static/images/no_search.png')} />
                             <p>当前搜索结果为空</p>
                         </div>
                     )}

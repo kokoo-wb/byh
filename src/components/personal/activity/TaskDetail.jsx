@@ -20,7 +20,7 @@ class TaskDetail extends Component {
             token: localStorage.getItem('token'),
             id: this.props.location.query.id
         }).then((res) => {
-            if(res.data){
+            if (res.data) {
                 this.setState({
                     taskInfo: res.data
                 })
@@ -31,13 +31,13 @@ class TaskDetail extends Component {
             token: localStorage.getItem('token'),
             id: this.props.location.query.id
         }).then((res) => {
-            if(res.data){
+            if (res.data) {
                 this.setState({
                     personList: res.data
                 })
             }
         })
-        
+
     }
 
     showReward = () => {
@@ -51,7 +51,7 @@ class TaskDetail extends Component {
             <div className="task-detail">
                 <div className="match-header">
                     <div className="end-time">
-                        <img src={require('../../../statics/images/time.png')} />
+                        <img src={require('static/images/time.png')} />
                         <span>距离结束：{taskInfo.endTime}</span>
                     </div>
                     <img src={taskInfo.img} />
@@ -71,7 +71,7 @@ class TaskDetail extends Component {
                 </div>
                 <div className="header">
                     <span>参与者</span>
-                    <a onClick={() => {hashHistory.push({pathname:'/personal/taskrecord',query:{id:this.props.location.query.id}})}}>查看参赛记录</a>
+                    <a onClick={() => { hashHistory.push({ pathname: '/personal/taskrecord', query: { id: this.props.location.query.id } }) }}>查看参赛记录</a>
                 </div>
                 <ul>
                     <li>
@@ -82,15 +82,15 @@ class TaskDetail extends Component {
                         <span></span>
                     </li>
                     {
-                        personList.map(item=>{
+                        personList.map(item => {
                             return (
                                 <li>
                                     <span>{item.nickname}</span>
                                     <span>{item.nickname}</span>
-                                    <span>{item.isFinish?'完成':'未完成'}</span>
+                                    <span>{item.isFinish ? '完成' : '未完成'}</span>
                                     <span>{item.ranking}</span>
                                     <span></span>
-                                </li>  
+                                </li>
                             )
                         })
                     }

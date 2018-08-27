@@ -4,7 +4,7 @@ import { Button } from 'antd-mobile'
 import * as Api from '../../../services';
 
 class Fans extends Component {
-    constructor(...args){
+    constructor(...args) {
         super(...args)
         this.state = {
             fansList: []
@@ -14,7 +14,7 @@ class Fans extends Component {
         Api.myFansList({
             token: localStorage.getItem('token')
         }).then((res) => {
-            if(res.data){
+            if (res.data) {
                 this.setState({
                     fansList: res.data
                 })
@@ -22,7 +22,7 @@ class Fans extends Component {
         })
     }
     componentDidMount() {
-        
+
     }
     handleFocus = (friendUid) => () => {
         Api.waitFocusList({
@@ -79,12 +79,12 @@ class Fans extends Component {
                                             <img src={item.headImg} />
                                             <span>{item.nickName}</span>
                                             <div className="level">
-                                                <img src={require('../../../statics/images/level.png')} />
+                                                <img src={require('static/images/level.png')} />
                                                 <span>LV{item.level}</span>
                                             </div>
                                         </div>
                                         {
-                                            item.isFocus==0? <a className="attention-btn" onClick={this.handleFocus(item.id)}>关注</a>:<a className="attention-btn" onClick={this.handleCancelFocus(item.id)}>取消关注</a>
+                                            item.isFocus == 0 ? <a className="attention-btn" onClick={this.handleFocus(item.id)}>关注</a> : <a className="attention-btn" onClick={this.handleCancelFocus(item.id)}>取消关注</a>
                                         }
                                     </div>
                                     <div className="fans-list-item">
@@ -126,7 +126,7 @@ class Fans extends Component {
                     </ul>
                 ) : (
                         <div className="nodata">
-                            <img src={require('../../../statics/images/no_user.png')} />
+                            <img src={require('static/images/no_user.png')} />
                             <p>当前还没有粉丝</p>
                         </div>
                     )}

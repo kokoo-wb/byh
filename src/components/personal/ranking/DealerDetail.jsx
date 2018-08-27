@@ -70,7 +70,7 @@ class DealerDetail extends Component {
                         <span>
                             <span>奥利维亚</span>
                             <div className="level">
-                                <img src={require('../../../statics/images/level.png')} />
+                                <img src={require('static/images/level.png')} />
                                 <span>LV88</span>
                             </div>
                         </span>
@@ -140,7 +140,7 @@ class DealerDetail extends Component {
 
                 {this.drawChart()}
 
-                <div className="footer" onClick={() => {hashHistory.push('/personal/dealerrecord')}}>
+                <div className="footer" onClick={() => { hashHistory.push('/personal/dealerrecord') }}>
                     <a>查看交易记录</a>
                 </div>
             </div>

@@ -19,7 +19,7 @@ class WeaponRecord extends Component {
             pageSize: 1,
             pageNum: 10
         }).then((res) => {
-            if(res.data){
+            if (res.data) {
                 this.setState({
                     weaponRecord: res.data
                 })
@@ -50,7 +50,7 @@ class WeaponRecord extends Component {
 
                 {weaponRecord.length <= 0 && (
                     <div className="nodata">
-                        <img src={require('../../../statics/images/no_weapon.png')} />
+                        <img src={require('static/images/no_weapon.png')} />
                         <p>暂无历史武器记录</p>
                     </div>
                 )}

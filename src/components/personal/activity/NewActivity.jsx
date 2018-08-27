@@ -56,7 +56,7 @@ class NewActivity extends Component {
                         <p>抽奖活动</p>
                         <p>抽奖活动简介</p>
                     </div>
-                    <img src={require('../../../statics/images/icon_8.png')} />
+                    <img src={require('static/images/icon_8.png')} />
                 </div>
 
                 <div className="feature-box">
@@ -64,7 +64,7 @@ class NewActivity extends Component {
                         <p>交易比赛</p>
                         <p>交易比赛简介</p>
                     </div>
-                    <img src={require('../../../statics/images/icon_3.png')} />
+                    <img src={require('static/images/icon_3.png')} />
                 </div>
 
                 <div className="feature-box">
@@ -72,7 +72,7 @@ class NewActivity extends Component {
                         <p>推荐好友</p>
                         <p>推荐好友简介</p>
                     </div>
-                    <img src={require('../../../statics/images/icon_7.png')} />
+                    <img src={require('static/images/icon_7.png')} />
                 </div>
 
                 <div className="feature-box">
@@ -80,7 +80,7 @@ class NewActivity extends Component {
                         <p>任务</p>
                         <p>任务简介</p>
                     </div>
-                    <img src={require('../../../statics/images/icon_6.png')} />
+                    <img src={require('static/images/icon_6.png')} />
                 </div>
             </div>
         )

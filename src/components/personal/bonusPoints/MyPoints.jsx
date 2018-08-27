@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { FormattedMessage } from 'react-intl'
 import { hashHistory } from 'react-router'
 import { List, Tabs, Icon } from 'antd-mobile'
@@ -13,7 +13,7 @@ import './style.less'
 import * as Api from '../../../services';
 
 export default class MyPoints extends Component {
-    constructor(...args){
+    constructor(...args) {
         super(...args)
         this.state = {
             data: {},
@@ -24,7 +24,7 @@ export default class MyPoints extends Component {
         Api.pointCenter({
             token: localStorage.getItem('token')
         }).then((res) => {
-            if(res.data){
+            if (res.data) {
                 this.setState({
                     data: res.data
                 })
@@ -34,7 +34,7 @@ export default class MyPoints extends Component {
         Api.logInvite({
             token: localStorage.getItem('token')
         }).then((res) => {
-            if(res.data){
+            if (res.data) {
                 this.setState({
                     pointsList: res.data
                 })
@@ -53,7 +53,7 @@ export default class MyPoints extends Component {
                 <div className="bonus-point">
                     <div className="bonus-point-level">
                         <p>LV{data.level}</p>
-                        <img src={require('../../../statics/images/bonuspoint.png')} />
+                        <img src={require('static/images/bonuspoint.png')} />
                     </div>
 
                     <div className="bonus-point-num">
@@ -69,28 +69,28 @@ export default class MyPoints extends Component {
                         <a className="exchange-bonus-btn">兑积分</a>
                         <a className="earn-bonus-btn">赚积分</a>
                     </div>
-                    <a className="bounus-point-instro" onClick={() => {hashHistory.push('/personal/pointsinstro')}}>积分说明</a>
+                    <a className="bounus-point-instro" onClick={() => { hashHistory.push('/personal/pointsinstro') }}>积分说明</a>
                 </div>
-                <Tabs 
-                    defaultActiveKey="1" 
-                    onChange={this.callback} 
+                <Tabs
+                    defaultActiveKey="1"
+                    onChange={this.callback}
                     animated={false}
                 >
                     <TabPane tab="赚取记录" key="1">
                         <div className="earn-record">
                             {
-                                pointsList.length>0 ? pointsList.map(item=>{
+                                pointsList.length > 0 ? pointsList.map(item => {
                                     return <div className="earn-item">
-                                    <div className="earn-item-left">
-                                        <p className="earn-item-title">{item.description}</p>
-                                        <p className="earn-item-date">{item.createDate}</p>
+                                        <div className="earn-item-left">
+                                            <p className="earn-item-title">{item.description}</p>
+                                            <p className="earn-item-date">{item.createDate}</p>
+                                        </div>
+                                        <div className="earn-item-right">
+                                            <p className="earn-item-point">+{item.incPoint}积分</p>
+                                            <p className="earn-item-sum">当前总积分 {item.point}</p>
+                                        </div>
                                     </div>
-                                    <div className="earn-item-right">
-                                        <p className="earn-item-point">+{item.incPoint}积分</p>
-                                        <p className="earn-item-sum">当前总积分 {item.point}</p>
-                                    </div>
-                                </div>
-                                }) : <div style={{textAlign: 'center', marginTop: 100}}>暂无内容^_^!!</div>
+                                }) : <div style={{ textAlign: 'center', marginTop: 100 }}>暂无内容^_^!!</div>
                             }
                         </div>
                     </TabPane>

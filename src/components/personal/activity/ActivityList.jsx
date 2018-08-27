@@ -9,9 +9,9 @@ import './style.less'
 // constants
 
 const ENUM = [
-    { name: '每日奖赏', img: require('../../../statics/images/daily.png') },
-    { name: '每月奖赏', img: require('../../../statics/images/monthly.png') },
-    { name: '特别奖励', img: require('../../../statics/images/special.png') }
+    { name: '每日奖赏', img: require('static/images/daily.png') },
+    { name: '每月奖赏', img: require('static/images/monthly.png') },
+    { name: '特别奖励', img: require('static/images/special.png') }
 ]
 
 class ActivityList extends Component {
@@ -28,7 +28,7 @@ class ActivityList extends Component {
         Api.pointCenter({
             token: localStorage.getItem('token')
         }).then((res) => {
-            if(res.data){
+            if (res.data) {
                 this.setState({
                     pointsObj: res.data
                 })
@@ -38,7 +38,7 @@ class ActivityList extends Component {
         Api.getDrawListInfo({
             token: localStorage.getItem('token')
         }).then((res) => {
-            if(res.data){
+            if (res.data) {
                 this.setState({
                     activityList: res.data
                 })
@@ -80,7 +80,7 @@ class ActivityList extends Component {
                 <div className="bonus-point">
                     <div className="bonus-point-level">
                         <p>LV{pointsObj.level}</p>
-                        <img src={require('../../../statics/images/bonuspoint.png')} />
+                        <img src={require('static/images/bonuspoint.png')} />
                     </div>
 
                     <div className="bonus-point-num">
@@ -95,9 +95,9 @@ class ActivityList extends Component {
                 <ul>
                     {activityList.map((item, index) => {
                         return (
-                            <li key={index} onClick={() => {hashHistory.push({pathname:'/personal/activitydetail',query:{id:item.id}})}}>
+                            <li key={index} onClick={() => { hashHistory.push({ pathname: '/personal/activitydetail', query: { id: item.id } }) }}>
                                 <h1>
-                                    <img src={ENUM[item.type-1].img} />
+                                    <img src={ENUM[item.type - 1].img} />
                                     {item.typeDisplay}
                                 </h1>
                                 <p>

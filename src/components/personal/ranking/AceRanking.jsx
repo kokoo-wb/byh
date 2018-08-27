@@ -34,7 +34,7 @@ class AceRanking extends Component {
         return (
             <div className="ace-ranking">
                 <div className="select-type">
-                    <span>交易比赛</span>
+                    <span>总收益</span>
                     <Icon type="down" />
                 </div>
                 {rankList.length > 0 ? (

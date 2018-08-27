@@ -40,8 +40,8 @@ export default class MyDeal extends Component {
                     </div>
                 </div>
                 <List className="deal-list">
-                    <Item arrow="horizontal" onClick={() => {hashHistory.push('/personal/faq')}}>存/取款</Item>
-                    <Item arrow="horizontal" onClick={() => {hashHistory.push('/personal/helpcenter')}}>收支明细</Item>
+                    <Item arrow="horizontal">存/取款</Item>
+                    <Item arrow="horizontal">收支明细</Item>
                     <Item arrow="horizontal">交易历史</Item>
                 </List>
             </div>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { hashHistory } from 'react-router'
 import { Button } from 'antd-mobile'
 
 import { linechart } from './chart';
@@ -139,7 +140,7 @@ class DealerDetail extends Component {
 
                 {this.drawChart()}
 
-                <div className="footer">
+                <div className="footer" onClick={() => {hashHistory.push('/personal/dealerrecord')}}>
                     <a>查看交易记录</a>
                 </div>
             </div>

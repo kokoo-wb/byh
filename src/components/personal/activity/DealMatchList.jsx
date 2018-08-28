@@ -17,8 +17,8 @@ class DealMatchList extends Component {
     componentWillMount() {
         Api.getTaskListInfo({
             token: localStorage.getItem('token'),
-            pageSize: 1,
-            pageNum: 10
+            pageSize: 10,
+            pageNum: 1
         }).then((res) => {
             if(res.data){
                 this.setState({

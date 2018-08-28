@@ -27,6 +27,7 @@ export default class HelpCenter extends Component {
     componentWillMount() {
         Api.getHelpersList({
             pageNum: 1,
+            pageSize: 10,
             searchWords: ''
         }).then((res) => {
             if (res.data) {

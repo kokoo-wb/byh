@@ -15,13 +15,14 @@ const svgDirs = [
 ]
 
 module.exports = {
-    entry: [
-        'babel-polyfill',
-        './src/index.jsx',
-    ],
+    entry: {
+        main: ['babel-polyfill', './src/index.jsx'],
+        // vendors: ['react', 'react-dom', 'react-router', 'echarts']
+    },
     output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle.[hash].js',
+        path: path.join(__dirname, 'dist/src'),
+        filename: '[name].[hash].js',
+        publicPath: '/src/'
     },
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
@@ -34,7 +35,7 @@ module.exports = {
         new ExtractTextPlugin('css/style.[hash].css'),
         // 根据模板插入css/js等生成最终`html`
         new HtmlWebpackPlugin({
-            filename: 'index.html', // 生成的html存放路径，相对于`path`
+            filename: path.join(__dirname, 'dist/') + 'index.html', // 生成的html存放路径，相对于`path`
             template: 'src/index-tpl.html', // html模板路径
             inject: true, // 允许插件修改哪些内容，包括head与body
             hash: true, // 为静态资源生成hash值
@@ -43,7 +44,8 @@ module.exports = {
             'process.env': {
                 NODE_ENV: JSON.stringify('production')
             }
-        })
+        }),
+        // new webpack.optimize.CommonsChunkPlugin('vendors', 'vendors.js')
     ],
     resolve: {
         extensions: ['', '.web.js', '.js', '.json', '.jsx', '.less'],
@@ -64,7 +66,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg)$/,
-                loader: 'url-loader?limit=8192&name=src/images/[name].[ext]',
+                loader: 'url-loader?limit=8192&name=images/[name].[ext]',
             },
             {
                 test: /\.jsx?$/,

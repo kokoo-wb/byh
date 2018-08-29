@@ -31,7 +31,7 @@ export default class PersonalIndex extends Component {
                             <p>账号号码</p>
                         </div>
                     </div>
-                    <div className="user-level">
+                    <div className="user-level" onClick={() => { hashHistory.push('/personal/mylevel') }}>
                         <h4>等级<em>21</em></h4>
                         <div className="level-info">
                             <div className="level-progress"><div className="progress"></div></div>

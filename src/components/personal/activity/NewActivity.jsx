@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { hashHistory } from 'react-router'
 import { WingBlank, Carousel } from 'antd-mobile'
 
 import './style.less'
@@ -51,7 +52,7 @@ class NewActivity extends Component {
                     </Carousel>
                 </WingBlank>
 
-                <div className="feature-box">
+                <div className="feature-box" onClick={() => { hashHistory.push('/personal/activitylist') }}>
                     <div>
                         <p>抽奖活动</p>
                         <p>抽奖活动简介</p>
@@ -59,7 +60,7 @@ class NewActivity extends Component {
                     <img src={require('static/images/icon_8.png')} />
                 </div>
 
-                <div className="feature-box">
+                <div className="feature-box" onClick={() => { hashHistory.push('/personal/dealmatchlist') }}>
                     <div>
                         <p>交易比赛</p>
                         <p>交易比赛简介</p>
@@ -67,7 +68,7 @@ class NewActivity extends Component {
                     <img src={require('static/images/icon_3.png')} />
                 </div>
 
-                <div className="feature-box">
+                <div className="feature-box" onClick={() => { hashHistory.push('/personal/invitefriends') }}>
                     <div>
                         <p>推荐好友</p>
                         <p>推荐好友简介</p>
@@ -75,7 +76,7 @@ class NewActivity extends Component {
                     <img src={require('static/images/icon_7.png')} />
                 </div>
 
-                <div className="feature-box">
+                <div className="feature-box" onClick={() => { hashHistory.push('/personal/tasklist') }}>
                     <div>
                         <p>任务</p>
                         <p>任务简介</p>

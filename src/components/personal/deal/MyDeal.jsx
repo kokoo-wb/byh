@@ -42,7 +42,7 @@ export default class MyDeal extends Component {
                 <List className="deal-list">
                     <Item arrow="horizontal">存/取款</Item>
                     <Item arrow="horizontal">收支明细</Item>
-                    <Item arrow="horizontal">交易历史</Item>
+                    <Item arrow="horizontal" onClick={() => { hashHistory.push('/personal/dealhistory') }}>交易历史</Item>
                 </List>
             </div>
         )

@@ -48,7 +48,7 @@ class MyWeapon extends Component {
                                             <p>商品条件：{item.Info}</p>
                                             <p>{item.weaponExpire} 到期</p>
                                         </div>
-                                        <a className={item.weaponStatus==1?"use-btn-disable":"use-btn"}>立即使用</a>
+                                        <a className={item.weaponStatus==1?"use-btn-disable":"use-btn"}>{item.weaponStatus==1?'不可使用':'立即使用'}</a>
                                     </li>
                                 )
                             })

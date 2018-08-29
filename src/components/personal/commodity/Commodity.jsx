@@ -15,7 +15,8 @@ class Commodity extends Component {
             visible: false,
             weaponList: [],
             myPoint: 0,
-            weaponDetail: {}
+            weaponDetail: {},
+            isHasWeapon: 0
         }
     }
     componentWillMount() {
@@ -27,7 +28,8 @@ class Commodity extends Component {
             if(res.data){
                 this.setState({
                     weaponList: res.data.weaponDtoList,
-                    myPoint: res.data.myPoint
+                    myPoint: res.data.myPoint,
+                    isHasWeapon: res.data.isHasWeapon
                 })
             }
         })
@@ -41,6 +43,10 @@ class Commodity extends Component {
     }
 
     showModal = (weaponId) => () => {
+        if(this.state.isHasWeapon==1){
+            Toast.info('存在未使用武器')
+            return false;
+        }
         this.setState(Object.assign({}, this.state, { visible: true }),()=>{
             Api.weaponInfo({
                 token: localStorage.getItem('token'),
@@ -117,7 +123,7 @@ class Commodity extends Component {
                             {
                                 weaponList.map(item=>{
                                     return (
-                                        <li onClick={this.showModal(item.id)}>
+                                        <li>
                                             <div className="weapon-img">
                                                 <img src="http://img1.imgtn.bdimg.com/it/u=2511394165,1594141098&fm=27&gp=0.jpg" />
                                             </div>
@@ -128,7 +134,7 @@ class Commodity extends Component {
                                                 <p>商品条件：{item.Info}</p>
                                                 <p>{item.endTime} 到期</p>
                                             </div>
-                                            <a className="use-btn">立即兑换</a>
+                                            <a className="use-btn" onClick={this.showModal(item.id)}>立即兑换</a>
                                         </li>
                                     )
                                 })
